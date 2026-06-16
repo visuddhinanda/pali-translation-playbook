@@ -11,6 +11,18 @@
 - 支持未来 GraphRAG、向量检索和 LLM 提示词调用。
 - 不修改 `translations/` 下的原始 JSONL 文件。
 
+## 文档格式原则
+
+最终人工编辑格式采用 `Markdown section + fenced YAML block`。具体规范见 `docs/authoring-format.md`。
+
+原则：
+
+- 人类阅读入口是 Markdown。
+- 人工校订的主数据是 Markdown 中的 YAML 块。
+- 机器导出结果是 `entries/*.jsonl`。
+- Markdown 表格只作为摘要索引，不作为主数据源。
+- `##` 标题用于定位条目，YAML 块用于程序解析。
+
 ## 总体目录
 
 建议新增 `knowledge-base/` 作为派生知识库目录：
@@ -165,13 +177,26 @@ review_status: "draft"
 
 ### `terminology.md`
 
-记录该版本的翻译用词。适合人类维护表格：
+记录该版本的翻译用词。可以在文件开头放表格摘要，但正式条目应使用 `## 条目标题 + YAML 块`：
 
-```markdown
-| Pali | 译法 | 类型 | 使用条件 | 例证 | 备注 |
-| --- | --- | --- | --- | --- | --- |
-| sabbaññutañāṇa | 一切知智 | 教理术语 | 佛智语境 | corpus:id | 可保留巴利夹注 |
+````markdown
+## term-sabbannutanana
+
+```yaml
+id: "term-sabbannutanana"
+version_id: "VERSION_ID"
+type: "terminology"
+pali: "sabbaññutañāṇa"
+chinese: "一切知智"
+description: "该版本将 sabbaññutañāṇa 译为 一切知智。"
+evidence:
+  - unit_key: "VERSION_ID:1-348-17-29"
+    source_quote: "sabbaññutañāṇampi"
+    target_quote: "一切知智"
+confidence: 0.8
+review_status: "human_reviewed"
 ```
+````
 
 对应机器条目放在 `entries/terminology.jsonl`。
 
@@ -186,6 +211,7 @@ review_status: "draft"
 - 佛教术语组合，如心、所、蕴、处、界相关搭配。
 
 对应机器条目放在 `entries/collocations.jsonl`。
+正式条目同样采用 `## 条目标题 + YAML 块`，表格只作为自动摘要。
 
 ### `sentence-patterns.md`
 
@@ -201,6 +227,7 @@ review_status: "draft"
 - 注释书词源解释句式。
 
 对应机器条目放在 `entries/sentence-patterns.jsonl`。
+正式条目同样采用 `## 条目标题 + YAML 块`，以便记录条件、风险、反例和证据。
 
 ### `strategies.md`
 
@@ -462,4 +489,3 @@ strategies:
 - 单版本知识库回答“这个版本怎样翻译”。
 - 跨版本比较层回答“不同版本之间有什么差异”。
 - 共享分类层只提供标签体系，不替代具体证据。
-

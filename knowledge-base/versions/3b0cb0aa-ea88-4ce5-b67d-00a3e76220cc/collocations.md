@@ -1,74 +1,604 @@
 # 固定搭配与公式表达
 
-当前记录该版本中可复用的表达模式。
+本文件记录全量扫描得到的固定搭配候选。正式条目使用 `## + yaml` 格式。
 
-## `paccayo` 词源后缀公式
+## 摘要索引
 
-来源形式：
+| ID | Source Pattern | Translation Pattern | Count |
+| --- | --- | --- | --- |
+| collocation-paccayo-suffix | X paccayo | X为后缀 / X 是后缀 | 2 |
+| collocation-paccayo-condition | X-paccayena paccayo / X paccayo | 以X缘为缘 / X为缘 | 44 |
+| collocation-vuccati-definition | X vuccati | 称为 / 所谓 / 被称为 / 所说 / 为 | 28 |
+| collocation-nama-naming | X nāma | 名为 / 所谓 / 即 / 是说 / 就是 | 54 |
+| collocation-va-alternative | X vā Y | X，或Y / 换行并列 | 121 |
 
-```text
-X paccayo
+## 条目
+
+## collocation-paccayo-suffix
+
+```yaml
+id: collocation-paccayo-suffix
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: collocation
+name: X paccayo
+description: 词源或语法派生说明。该版本中出现 2 次。
+source_pattern: X paccayo
+translation_pattern: X为后缀 / X 是后缀
+function: 词源或语法派生说明
+recommended_translation:
+- X为后缀
+- X 是后缀
+occurrence_count: 2
+evidence:
+- unit_id: 9-95-6-16
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-95-6-16
+  line: 2
+  source_quote: 'Sinā soceyye, sināti soceti deveti sineru, eru paccayo. '
+  target_quote: sinā，泪洗，洗涤、忧伤、悲泣为须弥山，eru为后缀。
+- unit_id: 9-95-17-30
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-95-17-30
+  line: 3
+  source_quote: 'Mī hiṃsāyaṃ, mināti hiṃsati sabbe pabbate attano uccataraṭṭhenāti
+    meru, ru paccayo. '
+  target_quote: '“mī”，有伤害，丈量，压倒性，在众山中其自身更高，而成为压迫“meru”，ru
+
+    是后缀。'
+evidence_ids:
+- ev-000275
+- ev-000276
+confidence: 0.75
+review_status: machine_generated
 ```
 
-该版本常译为：
+## collocation-paccayo-condition
 
-```text
-X 为后缀
+```yaml
+id: collocation-paccayo-condition
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: collocation
+name: X-paccayena paccayo / X paccayo
+description: 阿毗达摩缘法或条件关系说明。该版本中出现 44 次。
+source_pattern: X-paccayena paccayo / X paccayo
+translation_pattern: 以X缘为缘 / X为缘
+function: 阿毗达摩缘法或条件关系说明
+recommended_translation:
+- 以X缘为缘
+- X为缘
+occurrence_count: 44
+evidence:
+- unit_id: 9-556-122-177
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-122-177
+  line: 10
+  source_quote: Kala sadde, iṅga paccayo, kaliṅgā , tesaṃ nivāso kaliṅgā, uttarāpatho[‘‘
+    jagannāthā pubbabhāge kaṇhātīrantaraṃ sive kaliṅgadeso saṃvutto’’ ityuttadese(
+    thomanidhi)], kaliṃ gaṇhantīti vā kaliṅgā, kvi, kalaṃ madhurasaddaṃ gāyantītivā
+    kaliṅgā, assittaṃ, kena sukh…
+  target_quote: 'kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]；
+
+    困苦（kali）的获取（gaha）故为 音缘国，达成；
+
+    将甜美的声音（kala）唱（ge）出来故为 音缘国，其[额外]有[字母]“i”；
+
+    能通过任何（ka）快乐来促成（liṅga）故为 音缘国，liṅga意为是促成，daṇḍaka为词根(dhātu2)。'
+- unit_id: 44-219-20-28
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:44-219-20-28
+  line: 94
+  source_quote: 'Ārammaṇapaccayoti– rūpārammaṇaṃ cakkhuviññāṇadhātuyā taṃsampayuttakānañca
+    dhammānaṃ ārammaṇapaccayena paccayo. '
+  target_quote: “所缘缘”： 色处对眼识界及其相应诸法以所缘缘为缘。
+- unit_id: 44-219-48-58
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:44-219-48-58
+  line: 95
+  source_quote: 'Rūpāyatanaṃ saddāyatanaṃ gandhāyatanaṃ rasāyatanaṃ phoṭṭhabbāyatanaṃ
+    manodhātuyā taṃsampayuttakānañca dhammānaṃ ārammaṇapaccayena paccayo. '
+  target_quote: 色处、声处、香处、味处、触处对意界及其连带的诸法以所缘缘为缘。
+- unit_id: 67-1301-28-35
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:67-1301-28-35
+  line: 442
+  source_quote: 'Bījādiko asādhāraṇo hetu, bhūtasalilādiko sādhāraṇo paccayo. '
+  target_quote: 种子一样的独有的为因，作物、水分等一样的共通的为缘。
+- unit_id: 81-10-2-23
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:81-10-2-23
+  line: 502
+  source_quote: '1. {Hetupaccayo}ti – hetū hetusampayuttakānaṃ dhammānaṃ taṃsamuṭṭhānānañca
+    rūpānaṃ hetupaccayena paccayo[ paccayoti( syā.)]. '
+  target_quote: “因缘”：诸原因对原因相应诸法及其一同兴起的那些色以因缘为缘。
+- unit_id: 81-11-2-14
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:81-11-2-14
+  line: 503
+  source_quote: '2. {Ārammaṇapaccayo}ti– rūpāyatanaṃ cakkhuviññāṇadhātuyā taṃsampayuttakānañca
+    dhammānaṃ ārammaṇapaccayena paccayo. '
+  target_quote: “所缘缘”： 色处对眼识界及其相应诸法以所缘缘为缘。
+- unit_id: 81-11-15-23
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:81-11-15-23
+  line: 504
+  source_quote: 'Saddāyatanaṃ sotaviññāṇadhātuyā taṃsampayuttakānañca dhammānaṃ ārammaṇapaccayena
+    paccayo. '
+  target_quote: 声处对sotaviññāṇadhātu及其相应诸法以所缘缘为缘。
+- unit_id: 81-11-24-30
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:81-11-24-30
+  line: 505
+  source_quote: 'Gandhāyatanaṃ ghānaviññāṇadhātuyā taṃsampayuttakānañca dhammānaṃ
+    ārammaṇapaccayena paccayo. '
+  target_quote: 香处对ghānaviññāṇadhātu及其相应诸法以所缘缘为缘。
+evidence_ids:
+- ev-000277
+- ev-000278
+- ev-000279
+- ev-000280
+- ev-000281
+- ev-000282
+- ev-000283
+- ev-000284
+- ev-000285
+- ev-000286
+- ev-000287
+- ev-000288
+- ev-000289
+- ev-000290
+- ev-000291
+- ev-000292
+- ev-000293
+- ev-000294
+- ev-000295
+- ev-000296
+- ev-000297
+- ev-000298
+- ev-000299
+- ev-000300
+- ev-000301
+- ev-000302
+- ev-000303
+- ev-000304
+- ev-000305
+- ev-000306
+- ev-000307
+- ev-000308
+- ev-000309
+- ev-000310
+- ev-000311
+- ev-000312
+- ev-000313
+- ev-000314
+- ev-000315
+- ev-000316
+- ev-000317
+- ev-000318
+- ev-000319
+- ev-000320
+confidence: 0.75
+review_status: machine_generated
 ```
 
-例证：
+## collocation-vuccati-definition
 
-- `9-95-6-16`: `eru paccayo` -> `eru为后缀`
-- `9-95-17-30`: `ru paccayo` -> `ru 是后缀`
+```yaml
+id: collocation-vuccati-definition
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: collocation
+name: X vuccati
+description: 定义、命名或术语解释。该版本中出现 28 次。
+source_pattern: X vuccati
+translation_pattern: 称为 / 所谓 / 被称为 / 所说 / 为
+function: 定义、命名或术语解释
+recommended_translation:
+- 称为
+- 所谓
+- 被称为
+- 所说
+- 为
+occurrence_count: 28
+evidence:
+- unit_id: 23-449-60-66
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-449-60-66
+  line: 52
+  source_quote: 'Etthaca appaṭipattīti kalyāṇapakkhe aññāṇameva vuccati. '
+  target_quote: 再者，这里所说的不行道就是为了善（而表现出的）无知。
+- unit_id: 64-184-24-50
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-184-24-50
+  line: 97
+  source_quote: 'Yathā hi muggesu paccamānesu kocideva na paccati, avasesā paccanti,
+    evaṃ yassa puggalassa vacane kiñcideva saccaṃ hoti, sesaṃ alīkaṃ, ayaṃ puggalo
+    muggasūpyoti vuccati. '
+  target_quote: 就好比在煮过的绿豆中，有些没煮熟，其余的则熟了，同样的，在这种人的话中，有些是真的，其余的却是假的，这样的人称为豆汤者。
+- unit_id: 65-1499-150-160
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-1499-150-160
+  line: 201
+  source_quote: 'Rittatāyeva tucchato appakattā vā, appakampi hi loke tucchanti vuccati. '
+  target_quote: '就因为rittatā而作为tuccha，
 
-## `vuccati` 定义公式
+    因为微小而作为tuccha，
 
-来源形式：
+    确实，微小在世间也被称为tuccha。'
+- unit_id: 66-295-41-44
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-295-41-44
+  line: 235
+  source_quote: 'Tilapiṭṭhaṃ vuccati palalaṃ. '
+  target_quote: 芝麻碎，所谓的芝麻酱/粉。
+- unit_id: 67-1291-41-49
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:67-1291-41-49
+  line: 393
+  source_quote: 'Ñāṇañhi visayasabhāvaṃ ogāhetvā vavatthāne khamati sahatīti khantīti
+    vuccati. '
+  target_quote: 具体来说，智慧地投入到被观察目标的本质上之后就可以在辨识中做到忍耐，这样的克服被称为耐受。
+- unit_id: 67-1291-54-61
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:67-1291-54-61
+  line: 395
+  source_quote: So hi sammādiṭṭhiādisammattañceva anivattidhammatāya niyāmo cāti vuccati.
+  target_quote: 确实，被称为那（正确性的定则）不仅有正见等的正确性，还以不退转的法性而成为定则。
+- unit_id: 67-1590-13-25
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:67-1590-13-25
+  line: 460
+  source_quote: 'So hi jhānasinehena vipassanāya asiniddhabhāvato sukkhā lūkhā vipassanā
+    etassāti {sukkhavipassako}ti vuccati. '
+  target_quote: 因为观没有禅那的滋润的顺滑，他的观是干且涩，这样的人为干观者。
+- unit_id: 73-2130-9-32
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:73-2130-9-32
+  line: 473
+  source_quote: 'Ye te puggalā assaddhā dussīlā appassutā maccharino duppaññā, yā
+    tesaṃ sevanā nisevanā saṃsevanā bhajanā sambhajanā bhatti sambhatti taṃsampavaṅkatā–
+    ayaṃ vuccati pāpamittatā. '
+  target_quote: '那些无信(assaddha)，恶戒，寡闻(appassuta)，吝啬(macchariya)，劣慧(duppaññā)，与这样的人亲近、结交、共处——
 
-```text
-X vuccati
+    此即所说的恶友。'
+evidence_ids:
+- ev-000321
+- ev-000322
+- ev-000323
+- ev-000324
+- ev-000325
+- ev-000326
+- ev-000327
+- ev-000328
+- ev-000329
+- ev-000330
+- ev-000331
+- ev-000332
+- ev-000333
+- ev-000334
+- ev-000335
+- ev-000336
+- ev-000337
+- ev-000338
+- ev-000339
+- ev-000340
+- ev-000341
+- ev-000342
+- ev-000343
+- ev-000344
+- ev-000345
+- ev-000346
+- ev-000347
+- ev-000348
+confidence: 0.75
+review_status: machine_generated
 ```
 
-常见译法：
+## collocation-nama-naming
 
-```text
-称为...
-所谓...
-这里所说的...
-被称为...
+```yaml
+id: collocation-nama-naming
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: collocation
+name: X nāma
+description: 命名、分类或定义。该版本中出现 54 次。
+source_pattern: X nāma
+translation_pattern: 名为 / 所谓 / 即 / 是说 / 就是
+function: 命名、分类或定义
+recommended_translation:
+- 名为
+- 所谓
+- 即
+- 是说
+- 就是
+occurrence_count: 54
+evidence:
+- unit_id: 9-821-125-144
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-821-125-144
+  line: 16
+  source_quote: 'Koseyyameva dhotaṃ paṭṭuṇṇaṃ nāma, vuttañca‘‘ paṭṭuṇṇaṃ dhotakoseyyan’’
+    ti[ amara16.113]. '
+  target_quote: 將茧丝(koseyya)洗淨名為paṭṭuṇṇa，或者說“paṭṭuṇṇa即洗乾淨的茧丝”。
+- unit_id: 9-821-198-221
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-821-198-221
+  line: 18
+  source_quote: 'Saṇa sadde, kattari a, saṇo nāma thirattaco eko rukkhayoni, yassa
+    tacena kevaṭṭādayo jālādīni karonti, saṇassa vikāro sāṇaṃ, vatthaṃ. '
+  target_quote: saṇa這個詞【強化？】a，所謂saṇa即同源樹的韌皮部，漁夫等利用其樹皮可以製作網等，saṇa變麻(sāṇa)，[而成為]布料。
+- unit_id: 15-875-10-18
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:15-875-10-18
+  line: 46
+  source_quote: 'Upayogavacanaṃ nāma yo yaṃ karoti, tena tadupayuttaparidīpanattho. '
+  target_quote: 所谓宾格(upayogavacana)，某人做某事，表达被某人被作用的含义。
+- unit_id: 23-884-66-69
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-884-66-69
+  line: 60
+  source_quote: 'Taṃ niccasīlaṃ nāma. '
+  target_quote: 此即日常戒。
+- unit_id: 65-1530-2-20
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-1530-2-20
+  line: 215
+  source_quote: 'Tattha dasakesu tāva vassasatajīvino puggalassa paṭhamāni dasa vassāni
+    mandadasakaṃ nāma, tadā hi so mando hoti capalo kumārako. '
+  target_quote: 在此十个十年中，一个有着百年寿命的人的第一个十年称为蒙昧十年(mandadasaka)，确实在这个十年里，此人是蒙昧的，颤抖的，稚嫩的。
+- unit_id: 66-1188-2-15
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-1188-2-15
+  line: 313
+  source_quote: 'Nippariyāyato nirantarappavatti nāma ṭhapanāyamevāti āha‘‘ nirantaraṃ
+    pavattaṃ viyā’’ ti. '
+  target_quote: nirantaraṃ pavattaṃ  viyā 是说，就在[心]安住的地方毫无遗漏的不间断的发生。
+- unit_id: 66-1188-16-25
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-1188-16-25
+  line: 314
+  source_quote: 'Anto pavisantaṃ vātaṃ manasi karonto anto cittaṃ paveseti nāma. '
+  target_quote: 做意进入的风，就是使心进入里面。
+- unit_id: 66-1198-7-25
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-1198-7-25
+  line: 323
+  source_quote: 'Upanibandhati ārammaṇe cittaṃ etāyāti sati upanibandhanā nāma, tassā
+    assāsapassāsānaṃ sallakkhaṇassa nimittanti upanibandhanānimittaṃ, nāsikaggaṃ,
+    mukhanimittaṃ vā. '
+  target_quote: 以其（正念）将心安稳地系在所缘上，故正念被称为upanibandhanā，标记入出息（即被称为upanibandha的正念）的相，为upanibandhānimitta，即鼻头或口盖(mukhanimitta)。
+evidence_ids:
+- ev-000349
+- ev-000350
+- ev-000351
+- ev-000352
+- ev-000353
+- ev-000354
+- ev-000355
+- ev-000356
+- ev-000357
+- ev-000358
+- ev-000359
+- ev-000360
+- ev-000361
+- ev-000362
+- ev-000363
+- ev-000364
+- ev-000365
+- ev-000366
+- ev-000367
+- ev-000368
+- ev-000369
+- ev-000370
+- ev-000371
+- ev-000372
+- ev-000373
+- ev-000374
+- ev-000375
+- ev-000376
+- ev-000377
+- ev-000378
+- ev-000379
+- ev-000380
+- ev-000381
+- ev-000382
+- ev-000383
+- ev-000384
+- ev-000385
+- ev-000386
+- ev-000387
+- ev-000388
+- ev-000389
+- ev-000390
+- ev-000391
+- ev-000392
+- ev-000393
+- ev-000394
+- ev-000395
+- ev-000396
+- ev-000397
+- ev-000398
+- ev-000399
+- ev-000400
+- ev-000401
+- ev-000402
+confidence: 0.75
+review_status: machine_generated
 ```
 
-例证：
+## collocation-va-alternative
 
-- `64-184-24-50`: `vuccati` -> `称为豆汤者`
-- `65-1499-150-160`: `vuccati` -> `被称为tuccha`
-- `66-295-41-44`: `vuccati` -> `所谓的芝麻酱/粉`
+```yaml
+id: collocation-va-alternative
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: collocation
+name: X vā Y
+description: 并列解释或替代词源。该版本中出现 121 次。
+source_pattern: X vā Y
+translation_pattern: X，或Y / 换行并列
+function: 并列解释或替代词源
+recommended_translation:
+- 或
+- 或者
+- 换行并列
+occurrence_count: 121
+evidence:
+- unit_id: 9-49-68-76
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-49-68-76
+  line: 1
+  source_quote: 'Nibbhayaṭṭhena khemaṃ, khayanti vā etena rāgaggiādayoti khemaṃ. '
+  target_quote: 以无畏之义为安心，或以其耗尽爱欲之火等，为安心。
+- unit_id: 9-112-49-59
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-112-49-59
+  line: 5
+  source_quote: 'Virūpāni akkhīni yassa virūpakkho, vividhasaṇṭhānāni akkhīni yassa
+    vā virūpakkho. '
+  target_quote: '他的眼睛丑陋为异眸，
 
-## `nāma` 命名公式
+    或他的眼睛形态各异为异眸。'
+- unit_id: 9-556-90-101
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-90-101
+  line: 9
+  source_quote: 'Magena saddhiṃ dhāvantīti magadhā, kvi, maṃsesu gijjhantīti vā magadhā. '
+  target_quote: '与鹿一起奔跑，为magadhā，
 
-来源形式：
+    在肉方面有渴望的，为magadhā。'
+- unit_id: 9-556-122-177
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-122-177
+  line: 10
+  source_quote: …iṅgā, uttarāpatho[‘‘ jagannāthā pubbabhāge kaṇhātīrantaraṃ sive kaliṅgadeso
+    saṃvutto’’ ityuttadese( thomanidhi)], kaliṃ gaṇhantīti vā kaliṅgā, kvi, kalaṃ
+    madhurasaddaṃ gāyantītivā kaliṅgā, assittaṃ, kena sukhena liṅgantīti vā kaliṅgā,
+    liṅga gamanattho daṇḍako…
+  target_quote: 'kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]；
 
-```text
-X nāma
+    困苦（kali）的获取（gaha）故为 音缘国，达成；
+
+    将甜美的声音（kala）唱（ge）出来故为 音缘国，其[额外]有[字母]“i”；
+
+    能通过任何（ka）快乐来促成（liṅga）故为 音缘国，liṅga意为是促成，daṇḍaka为词根(dhātu2)。'
+- unit_id: 9-556-219-228
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-219-228
+  line: 11
+  source_quote: 'Gaṃ pathaviṃ dhārentīti gandhārā, kittigandhena arantīti vā gandhārā. '
+  target_quote: '持有行走的大地，为gandhāra，
+
+    或因声名流芳而到达，为gandhāra。'
+- unit_id: 9-557-10-19
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-557-10-19
+  line: 12
+  source_quote: 'Visiṭṭhāni dehāni yesaṃ videhā, pubbavidehadīpato āgatattā vā videhā. '
+  target_quote: 身躯卓越而称为videha，或者因为来自东勤学大陆而称为videha。
+- unit_id: 9-594-38-54
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-594-38-54
+  line: 14
+  source_quote: 'Indaṃ paramissariyabhāvaṃ pāpuṇanti etthāti indapattaṃ, indo vā sakko
+    devarājā, so patto etthāti indapattaṃ. '
+  target_quote: '获得支配他人的权利之地，为帝·印达，
+
+    天帝即萨卡天帝天帝到来的地方，为帝·印达。'
+- unit_id: 24-266-443-463
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:24-266-443-463
+  line: 90
+  source_quote: '‘‘ Aniccampi vaṭṭatī’’ ti samādāna divasaṃ atikkamitvā vikāla bhojanādiṃ
+    karontassa vītikkama dosovā duccarita doso vā natthīti adhippāyo. '
+  target_quote: '非日常(持守)也是合适的，
+
+    过午之后进行非时食的违犯的过患并不是不善行的过失。'
+evidence_ids:
+- ev-000403
+- ev-000404
+- ev-000405
+- ev-000406
+- ev-000407
+- ev-000408
+- ev-000409
+- ev-000410
+- ev-000411
+- ev-000412
+- ev-000413
+- ev-000414
+- ev-000415
+- ev-000416
+- ev-000417
+- ev-000418
+- ev-000419
+- ev-000420
+- ev-000421
+- ev-000422
+- ev-000423
+- ev-000424
+- ev-000425
+- ev-000426
+- ev-000427
+- ev-000428
+- ev-000429
+- ev-000430
+- ev-000431
+- ev-000432
+- ev-000433
+- ev-000434
+- ev-000435
+- ev-000436
+- ev-000437
+- ev-000438
+- ev-000439
+- ev-000440
+- ev-000441
+- ev-000442
+- ev-000443
+- ev-000444
+- ev-000445
+- ev-000446
+- ev-000447
+- ev-000448
+- ev-000449
+- ev-000450
+- ev-000451
+- ev-000452
+- ev-000453
+- ev-000454
+- ev-000455
+- ev-000456
+- ev-000457
+- ev-000458
+- ev-000459
+- ev-000460
+- ev-000461
+- ev-000462
+- ev-000463
+- ev-000464
+- ev-000465
+- ev-000466
+- ev-000467
+- ev-000468
+- ev-000469
+- ev-000470
+- ev-000471
+- ev-000472
+- ev-000473
+- ev-000474
+- ev-000475
+- ev-000476
+- ev-000477
+- ev-000478
+- ev-000479
+- ev-000480
+- ev-000481
+- ev-000482
+- ev-000483
+- ev-000484
+- ev-000485
+- ev-000486
+- ev-000487
+- ev-000488
+- ev-000489
+- ev-000490
+- ev-000491
+- ev-000492
+- ev-000493
+- ev-000494
+- ev-000495
+- ev-000496
+- ev-000497
+- ev-000498
+- ev-000499
+- ev-000500
+- ev-000501
+- ev-000502
+- ev-000503
+- ev-000504
+- ev-000505
+- ev-000506
+- ev-000507
+- ev-000508
+- ev-000509
+- ev-000510
+- ev-000511
+- ev-000512
+- ev-000513
+- ev-000514
+- ev-000515
+- ev-000516
+- ev-000517
+- ev-000518
+- ev-000519
+- ev-000520
+- ev-000521
+- ev-000522
+- ev-000523
+confidence: 0.75
+review_status: machine_generated
 ```
-
-常见译法：
-
-```text
-名为...
-所谓...
-即...
-```
-
-该公式在本版本中经常用于解释术语、物名或分类名。
-
-## `iti/ti` 引述和解释标记
-
-`iti` 和 `ti` 极高频出现。该版本不总是逐字译为“如此说”，而常把它处理为定义、引述或解释边界。
-
-处理建议：
-
-- 如果 `ti` 标记直接引语，可译作“说”“即”。
-- 如果 `ti` 标记词源解释，可译作“故为”“因此为”。
-- 如果只是公式边界，可不显式翻译，但应在结构化标注中保留。
-

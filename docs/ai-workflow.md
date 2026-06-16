@@ -10,6 +10,7 @@ patterns and strategies from the Pali-Chinese corpus.
 - Preserve source provenance for every derived entry.
 - Separate corpus reading, linguistic analysis, rule generation, validation, and export.
 - Prefer small, reviewable knowledge entries over large opaque summaries.
+- For large files, follow `docs/large-file-workflow.md`: programs may scan all data, but each LLM call should receive only a budgeted chunk.
 
 ## Workflow Overview
 
@@ -46,6 +47,13 @@ Recommended outputs:
 - normalized translation unit table;
 - cross-corpus alignment candidates by shared `id`;
 - exact and near-duplicate source text groups.
+- large-file chunk plan with a target data budget such as 20% of model context.
+
+For initial planning, use:
+
+```bash
+python scripts/plan_chunks.py translations/3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc.jsonl --max-context 128000 --budget-ratio 0.2 --format markdown
+```
 
 ## Step 2: Identify Translation Patterns
 
@@ -266,4 +274,3 @@ Before building complex extraction code, create small derived artifacts:
 
 This keeps the project research-first while preparing clean interfaces for
 GraphRAG, vector search, and prompt-time retrieval.
-

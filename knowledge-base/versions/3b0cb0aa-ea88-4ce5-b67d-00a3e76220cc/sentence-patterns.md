@@ -1,82 +1,969 @@
 # 特殊句式翻译技巧
 
-当前为试点观察，后续需要更多人工复核。
+本文件记录全量扫描得到的句式候选。正式条目使用 `## + yaml` 格式。`needs_review` 表示仅由形式信号检测，需人工确认。
 
-## 词源解释句
+## 摘要索引
 
-### 来源结构
+| ID | Category | Source | Target | Count | Status |
+| --- | --- | --- | --- | --- | --- |
+| syntax-etymological-explanation | etymological_explanation | root/word + meaning + derived form + paccayo | 词根义 + 派生解释 + 后缀说明 | 2 | machine_generated |
+| syntax-paccaya-condition-formula | conditional_relation_formula | X-paccayena paccayo / X paccayo | 以X缘为缘 / X为缘 | 44 | machine_generated |
+| syntax-definition-vuccati-nama | definition_formula | X vuccati / X nāma | 称为 / 所谓 / 名为 / 即 | 81 | machine_generated |
+| syntax-va-alternative | alternative_explanation | X vā Y | X，或Y / 换行并列 | 121 | machine_generated |
+| syntax-absolutive-tva-candidate | absolutive_construction_candidate | verb-tvā / verb-tvāna | 候选集合，未确认固定译法 | 368 | needs_review |
 
-```text
-root/word + meaning, derived form + explanation, suffix marker
+## 条目
+
+## syntax-etymological-explanation
+
+```yaml
+id: syntax-etymological-explanation
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: etymological_explanation
+description: 将巴利词源分析拆成中文解释单元，并保留关键巴利形式。
+grammar_category: etymological_explanation
+source_pattern: root/word + meaning + derived form + paccayo
+translation_pattern: 词根义 + 派生解释 + 后缀说明
+technique: 将巴利词源分析拆成中文解释单元，并保留关键巴利形式。
+occurrence_count: 2
+evidence:
+- unit_id: 9-95-6-16
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-95-6-16
+  line: 2
+  source_quote: 'Sinā soceyye, sināti soceti deveti sineru, eru paccayo. '
+  target_quote: sinā，泪洗，洗涤、忧伤、悲泣为须弥山，eru为后缀。
+- unit_id: 9-95-17-30
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-95-17-30
+  line: 3
+  source_quote: 'Mī hiṃsāyaṃ, mināti hiṃsati sabbe pabbate attano uccataraṭṭhenāti
+    meru, ru paccayo. '
+  target_quote: '“mī”，有伤害，丈量，压倒性，在众山中其自身更高，而成为压迫“meru”，ru
+
+    是后缀。'
+evidence_ids:
+- ev-000524
+- ev-000525
+confidence: 0.7
+review_status: machine_generated
 ```
 
-### 翻译技巧
+## syntax-paccaya-condition-formula
 
-该版本常把巴利词源结构拆成多个中文解释单元：
+```yaml
+id: syntax-paccaya-condition-formula
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: conditional_relation_formula
+description: 在阿毗达摩或因缘说明中，将 paccaya/paccayo 译为缘，并显化为条件关系。
+grammar_category: conditional_relation_formula
+source_pattern: X-paccayena paccayo / X paccayo
+translation_pattern: 以X缘为缘 / X为缘
+technique: 在阿毗达摩或因缘说明中，将 paccaya/paccayo 译为缘，并显化为条件关系。
+occurrence_count: 44
+evidence:
+- unit_id: 9-556-122-177
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-122-177
+  line: 10
+  source_quote: Kala sadde, iṅga paccayo, kaliṅgā , tesaṃ nivāso kaliṅgā, uttarāpatho[‘‘
+    jagannāthā pubbabhāge kaṇhātīrantaraṃ sive kaliṅgadeso saṃvutto’’ ityuttadese(
+    thomanidhi)], kaliṃ gaṇhantīti vā kaliṅgā, kvi, kalaṃ madhurasaddaṃ gāyantītivā
+    kaliṅgā, assittaṃ, kena sukh…
+  target_quote: 'kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]；
 
-- 先说明词根或词义；
-- 再说明派生词；
-- 再说明后缀或音变；
-- 必要时保留巴利形式。
+    困苦（kali）的获取（gaha）故为 音缘国，达成；
 
-### 例证
+    将甜美的声音（kala）唱（ge）出来故为 音缘国，其[额外]有[字母]“i”；
 
-`9-95-6-16`:
-
-- Pali: `Sinā soceyye, sināti soceti deveti sineru, eru paccayo.`
-- Chinese: `sinā，泪洗，洗涤、忧伤、悲泣为须弥山，eru为后缀。`
-
-## 多重解释并列句
-
-### 来源结构
-
-```text
-X ... vā Y ...
+    能通过任何（ka）快乐来促成（liṅga）故为 音缘国，liṅga意为是促成，daṇḍaka为词根(dhātu2)。'
+- unit_id: 44-219-20-28
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:44-219-20-28
+  line: 94
+  source_quote: 'Ārammaṇapaccayoti– rūpārammaṇaṃ cakkhuviññāṇadhātuyā taṃsampayuttakānañca
+    dhammānaṃ ārammaṇapaccayena paccayo. '
+  target_quote: “所缘缘”： 色处对眼识界及其相应诸法以所缘缘为缘。
+- unit_id: 44-219-48-58
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:44-219-48-58
+  line: 95
+  source_quote: 'Rūpāyatanaṃ saddāyatanaṃ gandhāyatanaṃ rasāyatanaṃ phoṭṭhabbāyatanaṃ
+    manodhātuyā taṃsampayuttakānañca dhammānaṃ ārammaṇapaccayena paccayo. '
+  target_quote: 色处、声处、香处、味处、触处对意界及其连带的诸法以所缘缘为缘。
+- unit_id: 67-1301-28-35
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:67-1301-28-35
+  line: 442
+  source_quote: 'Bījādiko asādhāraṇo hetu, bhūtasalilādiko sādhāraṇo paccayo. '
+  target_quote: 种子一样的独有的为因，作物、水分等一样的共通的为缘。
+- unit_id: 81-10-2-23
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:81-10-2-23
+  line: 502
+  source_quote: '1. {Hetupaccayo}ti – hetū hetusampayuttakānaṃ dhammānaṃ taṃsamuṭṭhānānañca
+    rūpānaṃ hetupaccayena paccayo[ paccayoti( syā.)]. '
+  target_quote: “因缘”：诸原因对原因相应诸法及其一同兴起的那些色以因缘为缘。
+- unit_id: 81-11-2-14
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:81-11-2-14
+  line: 503
+  source_quote: '2. {Ārammaṇapaccayo}ti– rūpāyatanaṃ cakkhuviññāṇadhātuyā taṃsampayuttakānañca
+    dhammānaṃ ārammaṇapaccayena paccayo. '
+  target_quote: “所缘缘”： 色处对眼识界及其相应诸法以所缘缘为缘。
+- unit_id: 81-11-15-23
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:81-11-15-23
+  line: 504
+  source_quote: 'Saddāyatanaṃ sotaviññāṇadhātuyā taṃsampayuttakānañca dhammānaṃ ārammaṇapaccayena
+    paccayo. '
+  target_quote: 声处对sotaviññāṇadhātu及其相应诸法以所缘缘为缘。
+- unit_id: 81-11-24-30
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:81-11-24-30
+  line: 505
+  source_quote: 'Gandhāyatanaṃ ghānaviññāṇadhātuyā taṃsampayuttakānañca dhammānaṃ
+    ārammaṇapaccayena paccayo. '
+  target_quote: 香处对ghānaviññāṇadhātu及其相应诸法以所缘缘为缘。
+evidence_ids:
+- ev-000526
+- ev-000527
+- ev-000528
+- ev-000529
+- ev-000530
+- ev-000531
+- ev-000532
+- ev-000533
+- ev-000534
+- ev-000535
+- ev-000536
+- ev-000537
+- ev-000538
+- ev-000539
+- ev-000540
+- ev-000541
+- ev-000542
+- ev-000543
+- ev-000544
+- ev-000545
+- ev-000546
+- ev-000547
+- ev-000548
+- ev-000549
+- ev-000550
+- ev-000551
+- ev-000552
+- ev-000553
+- ev-000554
+- ev-000555
+- ev-000556
+- ev-000557
+- ev-000558
+- ev-000559
+- ev-000560
+- ev-000561
+- ev-000562
+- ev-000563
+- ev-000564
+- ev-000565
+- ev-000566
+- ev-000567
+- ev-000568
+- ev-000569
+confidence: 0.7
+review_status: machine_generated
 ```
 
-### 翻译技巧
+## syntax-definition-vuccati-nama
 
-该版本常用“或”显化并列解释，并且用换行分隔多个解释。
+```yaml
+id: syntax-definition-vuccati-nama
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: definition_formula
+description: 把巴利定义公式转成中文命名或说明句。
+grammar_category: definition_formula
+source_pattern: X vuccati / X nāma
+translation_pattern: 称为 / 所谓 / 名为 / 即
+technique: 把巴利定义公式转成中文命名或说明句。
+occurrence_count: 81
+evidence:
+- unit_id: 23-449-60-66
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-449-60-66
+  line: 52
+  source_quote: 'Etthaca appaṭipattīti kalyāṇapakkhe aññāṇameva vuccati. '
+  target_quote: 再者，这里所说的不行道就是为了善（而表现出的）无知。
+- unit_id: 64-184-24-50
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-184-24-50
+  line: 97
+  source_quote: 'Yathā hi muggesu paccamānesu kocideva na paccati, avasesā paccanti,
+    evaṃ yassa puggalassa vacane kiñcideva saccaṃ hoti, sesaṃ alīkaṃ, ayaṃ puggalo
+    muggasūpyoti vuccati. '
+  target_quote: 就好比在煮过的绿豆中，有些没煮熟，其余的则熟了，同样的，在这种人的话中，有些是真的，其余的却是假的，这样的人称为豆汤者。
+- unit_id: 65-1499-150-160
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-1499-150-160
+  line: 201
+  source_quote: 'Rittatāyeva tucchato appakattā vā, appakampi hi loke tucchanti vuccati. '
+  target_quote: '就因为rittatā而作为tuccha，
 
-### 例证
+    因为微小而作为tuccha，
 
-`9-112-49-59`:
+    确实，微小在世间也被称为tuccha。'
+- unit_id: 66-295-41-44
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-295-41-44
+  line: 235
+  source_quote: 'Tilapiṭṭhaṃ vuccati palalaṃ. '
+  target_quote: 芝麻碎，所谓的芝麻酱/粉。
+- unit_id: 67-1291-41-49
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:67-1291-41-49
+  line: 393
+  source_quote: 'Ñāṇañhi visayasabhāvaṃ ogāhetvā vavatthāne khamati sahatīti khantīti
+    vuccati. '
+  target_quote: 具体来说，智慧地投入到被观察目标的本质上之后就可以在辨识中做到忍耐，这样的克服被称为耐受。
+- unit_id: 67-1291-54-61
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:67-1291-54-61
+  line: 395
+  source_quote: So hi sammādiṭṭhiādisammattañceva anivattidhammatāya niyāmo cāti vuccati.
+  target_quote: 确实，被称为那（正确性的定则）不仅有正见等的正确性，还以不退转的法性而成为定则。
+- unit_id: 67-1590-13-25
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:67-1590-13-25
+  line: 460
+  source_quote: 'So hi jhānasinehena vipassanāya asiniddhabhāvato sukkhā lūkhā vipassanā
+    etassāti {sukkhavipassako}ti vuccati. '
+  target_quote: 因为观没有禅那的滋润的顺滑，他的观是干且涩，这样的人为干观者。
+- unit_id: 73-2130-9-32
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:73-2130-9-32
+  line: 473
+  source_quote: 'Ye te puggalā assaddhā dussīlā appassutā maccharino duppaññā, yā
+    tesaṃ sevanā nisevanā saṃsevanā bhajanā sambhajanā bhatti sambhatti taṃsampavaṅkatā–
+    ayaṃ vuccati pāpamittatā. '
+  target_quote: '那些无信(assaddha)，恶戒，寡闻(appassuta)，吝啬(macchariya)，劣慧(duppaññā)，与这样的人亲近、结交、共处——
 
-- Pali: `Virūpāni akkhīni yassa virūpakkho, vividhasaṇṭhānāni akkhīni yassa vā virūpakkho.`
-- Chinese: `他的眼睛丑陋为异眸，\n或他的眼睛形态各异为异眸。`
-
-## 定义句
-
-### 来源结构
-
-```text
-X vuccati / X nāma
+    此即所说的恶友。'
+evidence_ids:
+- ev-000570
+- ev-000571
+- ev-000572
+- ev-000573
+- ev-000574
+- ev-000575
+- ev-000576
+- ev-000577
+- ev-000578
+- ev-000579
+- ev-000580
+- ev-000581
+- ev-000582
+- ev-000583
+- ev-000584
+- ev-000585
+- ev-000586
+- ev-000587
+- ev-000588
+- ev-000589
+- ev-000590
+- ev-000591
+- ev-000592
+- ev-000593
+- ev-000594
+- ev-000595
+- ev-000596
+- ev-000597
+- ev-000598
+- ev-000599
+- ev-000600
+- ev-000601
+- ev-000602
+- ev-000603
+- ev-000604
+- ev-000605
+- ev-000606
+- ev-000607
+- ev-000608
+- ev-000609
+- ev-000610
+- ev-000611
+- ev-000612
+- ev-000613
+- ev-000614
+- ev-000615
+- ev-000616
+- ev-000617
+- ev-000618
+- ev-000619
+- ev-000620
+- ev-000621
+- ev-000622
+- ev-000623
+- ev-000624
+- ev-000625
+- ev-000626
+- ev-000627
+- ev-000628
+- ev-000629
+- ev-000630
+- ev-000631
+- ev-000632
+- ev-000633
+- ev-000634
+- ev-000635
+- ev-000636
+- ev-000637
+- ev-000638
+- ev-000639
+- ev-000640
+- ev-000641
+- ev-000642
+- ev-000643
+- ev-000644
+- ev-000645
+- ev-000646
+- ev-000647
+- ev-000648
+- ev-000649
+- ev-000650
+confidence: 0.7
+review_status: machine_generated
 ```
 
-### 翻译技巧
+## syntax-va-alternative
 
-根据上下文选择：
+```yaml
+id: syntax-va-alternative
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: alternative_explanation
+description: 用“或”显化并列解释关系，必要时换行拆分。
+grammar_category: alternative_explanation
+source_pattern: X vā Y
+translation_pattern: X，或Y / 换行并列
+technique: 用“或”显化并列解释关系，必要时换行拆分。
+occurrence_count: 121
+evidence:
+- unit_id: 9-49-68-76
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-49-68-76
+  line: 1
+  source_quote: 'Nibbhayaṭṭhena khemaṃ, khayanti vā etena rāgaggiādayoti khemaṃ. '
+  target_quote: 以无畏之义为安心，或以其耗尽爱欲之火等，为安心。
+- unit_id: 9-112-49-59
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-112-49-59
+  line: 5
+  source_quote: 'Virūpāni akkhīni yassa virūpakkho, vividhasaṇṭhānāni akkhīni yassa
+    vā virūpakkho. '
+  target_quote: '他的眼睛丑陋为异眸，
 
-- `称为...`
-- `所谓...`
-- `名为...`
-- `即...`
+    或他的眼睛形态各异为异眸。'
+- unit_id: 9-556-90-101
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-90-101
+  line: 9
+  source_quote: 'Magena saddhiṃ dhāvantīti magadhā, kvi, maṃsesu gijjhantīti vā magadhā. '
+  target_quote: '与鹿一起奔跑，为magadhā，
 
-### 例证
+    在肉方面有渴望的，为magadhā。'
+- unit_id: 9-556-122-177
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-122-177
+  line: 10
+  source_quote: …iṅgā, uttarāpatho[‘‘ jagannāthā pubbabhāge kaṇhātīrantaraṃ sive kaliṅgadeso
+    saṃvutto’’ ityuttadese( thomanidhi)], kaliṃ gaṇhantīti vā kaliṅgā, kvi, kalaṃ
+    madhurasaddaṃ gāyantītivā kaliṅgā, assittaṃ, kena sukhena liṅgantīti vā kaliṅgā,
+    liṅga gamanattho daṇḍako…
+  target_quote: 'kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]；
 
-`66-295-41-44`:
+    困苦（kali）的获取（gaha）故为 音缘国，达成；
 
-- Pali: `Tilapiṭṭhaṃ vuccati palalaṃ.`
-- Chinese: `芝麻碎，所谓的芝麻酱/粉。`
+    将甜美的声音（kala）唱（ge）出来故为 音缘国，其[额外]有[字母]“i”；
 
-## 绝对分词结构
+    能通过任何（ka）快乐来促成（liṅga）故为 音缘国，liṅga意为是促成，daṇḍaka为词根(dhātu2)。'
+- unit_id: 9-556-219-228
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-219-228
+  line: 11
+  source_quote: 'Gaṃ pathaviṃ dhārentīti gandhārā, kittigandhena arantīti vā gandhārā. '
+  target_quote: '持有行走的大地，为gandhāra，
 
-本版本中检测到较多 `-tvā`、`-tvāna`、`-ya` 形式。试点阶段尚未系统整理，但建议作为后续重点。
+    或因声名流芳而到达，为gandhāra。'
+- unit_id: 9-557-10-19
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-557-10-19
+  line: 12
+  source_quote: 'Visiṭṭhāni dehāni yesaṃ videhā, pubbavidehadīpato āgatattā vā videhā. '
+  target_quote: 身躯卓越而称为videha，或者因为来自东勤学大陆而称为videha。
+- unit_id: 9-594-38-54
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-594-38-54
+  line: 14
+  source_quote: 'Indaṃ paramissariyabhāvaṃ pāpuṇanti etthāti indapattaṃ, indo vā sakko
+    devarājā, so patto etthāti indapattaṃ. '
+  target_quote: '获得支配他人的权利之地，为帝·印达，
 
-推荐标注方向：
+    天帝即萨卡天帝天帝到来的地方，为帝·印达。'
+- unit_id: 24-266-443-463
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:24-266-443-463
+  line: 90
+  source_quote: '‘‘ Aniccampi vaṭṭatī’’ ti samādāna divasaṃ atikkamitvā vikāla bhojanādiṃ
+    karontassa vītikkama dosovā duccarita doso vā natthīti adhippāyo. '
+  target_quote: '非日常(持守)也是合适的，
 
-- 时间关系：`...之后`
-- 先行动作：`先...再...`
-- 条件关系：`在...之后/由于...`
-- 方式关系：`以...方式`
+    过午之后进行非时食的违犯的过患并不是不善行的过失。'
+evidence_ids:
+- ev-000651
+- ev-000652
+- ev-000653
+- ev-000654
+- ev-000655
+- ev-000656
+- ev-000657
+- ev-000658
+- ev-000659
+- ev-000660
+- ev-000661
+- ev-000662
+- ev-000663
+- ev-000664
+- ev-000665
+- ev-000666
+- ev-000667
+- ev-000668
+- ev-000669
+- ev-000670
+- ev-000671
+- ev-000672
+- ev-000673
+- ev-000674
+- ev-000675
+- ev-000676
+- ev-000677
+- ev-000678
+- ev-000679
+- ev-000680
+- ev-000681
+- ev-000682
+- ev-000683
+- ev-000684
+- ev-000685
+- ev-000686
+- ev-000687
+- ev-000688
+- ev-000689
+- ev-000690
+- ev-000691
+- ev-000692
+- ev-000693
+- ev-000694
+- ev-000695
+- ev-000696
+- ev-000697
+- ev-000698
+- ev-000699
+- ev-000700
+- ev-000701
+- ev-000702
+- ev-000703
+- ev-000704
+- ev-000705
+- ev-000706
+- ev-000707
+- ev-000708
+- ev-000709
+- ev-000710
+- ev-000711
+- ev-000712
+- ev-000713
+- ev-000714
+- ev-000715
+- ev-000716
+- ev-000717
+- ev-000718
+- ev-000719
+- ev-000720
+- ev-000721
+- ev-000722
+- ev-000723
+- ev-000724
+- ev-000725
+- ev-000726
+- ev-000727
+- ev-000728
+- ev-000729
+- ev-000730
+- ev-000731
+- ev-000732
+- ev-000733
+- ev-000734
+- ev-000735
+- ev-000736
+- ev-000737
+- ev-000738
+- ev-000739
+- ev-000740
+- ev-000741
+- ev-000742
+- ev-000743
+- ev-000744
+- ev-000745
+- ev-000746
+- ev-000747
+- ev-000748
+- ev-000749
+- ev-000750
+- ev-000751
+- ev-000752
+- ev-000753
+- ev-000754
+- ev-000755
+- ev-000756
+- ev-000757
+- ev-000758
+- ev-000759
+- ev-000760
+- ev-000761
+- ev-000762
+- ev-000763
+- ev-000764
+- ev-000765
+- ev-000766
+- ev-000767
+- ev-000768
+- ev-000769
+- ev-000770
+- ev-000771
+confidence: 0.7
+review_status: machine_generated
+```
 
+## syntax-absolutive-tva-candidate
+
+```yaml
+id: syntax-absolutive-tva-candidate
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: absolutive_construction_candidate
+description: 仅按 -tvā/-tvāna 形式自动检测；该条目用于人工筛选，不作为翻译规则。
+grammar_category: absolutive_construction_candidate
+source_pattern: verb-tvā / verb-tvāna
+translation_pattern: 候选集合，未确认固定译法
+technique: 仅按 -tvā/-tvāna 形式自动检测；该条目用于人工筛选，不作为翻译规则。
+occurrence_count: 368
+evidence:
+- unit_id: 9-593-168-194
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-593-168-194
+  line: 13
+  source_quote: 'Takka ūhe, ūho ūnapūraṇaṃ, takkanaṃ takko, so sīlaṃ sabhāvo yattha
+    sā takkasīlā, yo hi purisakārena ūno, so tattha gantvā tamūnaṃ pūretīti. '
+  target_quote: 'takka思考的意思，思考即补充不足，
+
+    思考补充不足的动作即takka，
+
+    在思惯这个城市有思考的习惯，'
+- unit_id: 23-449-67-88
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-449-67-88
+  line: 53
+  source_quote: 'Micchāpaṭipattīti pāpapakkhe micchāñāṇameva vuccatīti, tathā hi pāpapakkhaṃ
+    patvā pañcadhammā ñāṇagatikā honti moho, lobho, diṭṭhi, vitakko, vicāroti. '
+  target_quote: '所说的邪行道：即为了恶（而生起的）邪智，
+
+    这样确实达到恶的一面之后有五种与智慧类似的法——痴，贪，成见，贯注，徘徊。'
+- unit_id: 23-977-128-153
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-977-128-153
+  line: 66
+  source_quote: Pamādapakkhe patitvā vissaṭṭhajjhānānaṃ tatoyevaca appahīnehi orambhāviya
+    saṃyojanehi heṭṭhabhāgaṃ ākaḍḍhita mānasānaṃ kāmabhave uppajjamānānaṃ tesaṃ thapetvā
+    tihetu kukkaṭṭhabhūtaṃ upacārajjhānacetanaṃ aññaṃ dubbalakammaṃ okāsaṃ nalabhatīti
+    vuttaṃ tathā {kāma…
+  target_quote: 当堕入放逸的一面时，当放弃禅那被下分结(orambhāgiyasaṃyojana)向下拉的心并出现在欲有时，作为殊胜三因的接近禅定的思，不会给其他弱业机会，而说是欲界三因。
+- unit_id: 23-980-32-42
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-980-32-42
+  line: 73
+  source_quote: 'Sayaṃ balavatarassapi sato paṭisandhiṃ adatvā dubbalassa kammantarassa
+    upatthambhane kāraṇaṃ natthīti. '
+  target_quote: '由于无法给出比自己更强的结生，
+
+    因此在弱的业力的支持下不会有（强力结生的）因存在。'
+- unit_id: 24-266-443-463
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:24-266-443-463
+  line: 90
+  source_quote: '‘‘ Aniccampi vaṭṭatī’’ ti samādāna divasaṃ atikkamitvā vikāla bhojanādiṃ
+    karontassa vītikkama dosovā duccarita doso vā natthīti adhippāyo. '
+  target_quote: '非日常(持守)也是合适的，
+
+    过午之后进行非时食的违犯的过患并不是不善行的过失。'
+- unit_id: 64-705-85-111
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-705-85-111
+  line: 111
+  source_quote: 'Thero sabbaṃ hunti paṭibāhitvā‘‘ āvuso, tayā paṭhamaṃ kathito eva
+    ācariyamaggo, ācariyamukhato pana anuggahitattā‘ evaṃ ācariyā vadantī’ ti saṇṭhātuṃ
+    nāsakkhi. '
+  target_quote: '长老都用“哼”来质疑，然后对他说：
+
+    “朋友，第一次你所说的是老师们的论调，然而因为你不是从阿阇梨之口学得的，所以你无法确定‘老师们是这么说的’。'
+- unit_id: 64-1653-69-74
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1653-69-74
+  line: 135
+  source_quote: 'Tasmā ete dose vajjetvā gaṇetabbaṃ. '
+  target_quote: 因此应该避免这些过失来数（出入息）。
+- unit_id: 64-1654-9-21
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1654-9-21
+  line: 137
+  source_quote: 'Dhaññamāpako hi nāḷiṃ pūretvā‘‘ ekan’’ ti vatvā okirati. '
+  target_quote: 量谷者会在装满量米用的筒子后，唸“一”然后倒出（谷粒）。
+evidence_ids:
+- ev-000772
+- ev-000773
+- ev-000774
+- ev-000775
+- ev-000776
+- ev-000777
+- ev-000778
+- ev-000779
+- ev-000780
+- ev-000781
+- ev-000782
+- ev-000783
+- ev-000784
+- ev-000785
+- ev-000786
+- ev-000787
+- ev-000788
+- ev-000789
+- ev-000790
+- ev-000791
+- ev-000792
+- ev-000793
+- ev-000794
+- ev-000795
+- ev-000796
+- ev-000797
+- ev-000798
+- ev-000799
+- ev-000800
+- ev-000801
+- ev-000802
+- ev-000803
+- ev-000804
+- ev-000805
+- ev-000806
+- ev-000807
+- ev-000808
+- ev-000809
+- ev-000810
+- ev-000811
+- ev-000812
+- ev-000813
+- ev-000814
+- ev-000815
+- ev-000816
+- ev-000817
+- ev-000818
+- ev-000819
+- ev-000820
+- ev-000821
+- ev-000822
+- ev-000823
+- ev-000824
+- ev-000825
+- ev-000826
+- ev-000827
+- ev-000828
+- ev-000829
+- ev-000830
+- ev-000831
+- ev-000832
+- ev-000833
+- ev-000834
+- ev-000835
+- ev-000836
+- ev-000837
+- ev-000838
+- ev-000839
+- ev-000840
+- ev-000841
+- ev-000842
+- ev-000843
+- ev-000844
+- ev-000845
+- ev-000846
+- ev-000847
+- ev-000848
+- ev-000849
+- ev-000850
+- ev-000851
+- ev-000852
+- ev-000853
+- ev-000854
+- ev-000855
+- ev-000856
+- ev-000857
+- ev-000858
+- ev-000859
+- ev-000860
+- ev-000861
+- ev-000862
+- ev-000863
+- ev-000864
+- ev-000865
+- ev-000866
+- ev-000867
+- ev-000868
+- ev-000869
+- ev-000870
+- ev-000871
+- ev-000872
+- ev-000873
+- ev-000874
+- ev-000875
+- ev-000876
+- ev-000877
+- ev-000878
+- ev-000879
+- ev-000880
+- ev-000881
+- ev-000882
+- ev-000883
+- ev-000884
+- ev-000885
+- ev-000886
+- ev-000887
+- ev-000888
+- ev-000889
+- ev-000890
+- ev-000891
+- ev-000892
+- ev-000893
+- ev-000894
+- ev-000895
+- ev-000896
+- ev-000897
+- ev-000898
+- ev-000899
+- ev-000900
+- ev-000901
+- ev-000902
+- ev-000903
+- ev-000904
+- ev-000905
+- ev-000906
+- ev-000907
+- ev-000908
+- ev-000909
+- ev-000910
+- ev-000911
+- ev-000912
+- ev-000913
+- ev-000914
+- ev-000915
+- ev-000916
+- ev-000917
+- ev-000918
+- ev-000919
+- ev-000920
+- ev-000921
+- ev-000922
+- ev-000923
+- ev-000924
+- ev-000925
+- ev-000926
+- ev-000927
+- ev-000928
+- ev-000929
+- ev-000930
+- ev-000931
+- ev-000932
+- ev-000933
+- ev-000934
+- ev-000935
+- ev-000936
+- ev-000937
+- ev-000938
+- ev-000939
+- ev-000940
+- ev-000941
+- ev-000942
+- ev-000943
+- ev-000944
+- ev-000945
+- ev-000946
+- ev-000947
+- ev-000948
+- ev-000949
+- ev-000950
+- ev-000951
+- ev-000952
+- ev-000953
+- ev-000954
+- ev-000955
+- ev-000956
+- ev-000957
+- ev-000958
+- ev-000959
+- ev-000960
+- ev-000961
+- ev-000962
+- ev-000963
+- ev-000964
+- ev-000965
+- ev-000966
+- ev-000967
+- ev-000968
+- ev-000969
+- ev-000970
+- ev-000971
+- ev-000972
+- ev-000973
+- ev-000974
+- ev-000975
+- ev-000976
+- ev-000977
+- ev-000978
+- ev-000979
+- ev-000980
+- ev-000981
+- ev-000982
+- ev-000983
+- ev-000984
+- ev-000985
+- ev-000986
+- ev-000987
+- ev-000988
+- ev-000989
+- ev-000990
+- ev-000991
+- ev-000992
+- ev-000993
+- ev-000994
+- ev-000995
+- ev-000996
+- ev-000997
+- ev-000998
+- ev-000999
+- ev-001000
+- ev-001001
+- ev-001002
+- ev-001003
+- ev-001004
+- ev-001005
+- ev-001006
+- ev-001007
+- ev-001008
+- ev-001009
+- ev-001010
+- ev-001011
+- ev-001012
+- ev-001013
+- ev-001014
+- ev-001015
+- ev-001016
+- ev-001017
+- ev-001018
+- ev-001019
+- ev-001020
+- ev-001021
+- ev-001022
+- ev-001023
+- ev-001024
+- ev-001025
+- ev-001026
+- ev-001027
+- ev-001028
+- ev-001029
+- ev-001030
+- ev-001031
+- ev-001032
+- ev-001033
+- ev-001034
+- ev-001035
+- ev-001036
+- ev-001037
+- ev-001038
+- ev-001039
+- ev-001040
+- ev-001041
+- ev-001042
+- ev-001043
+- ev-001044
+- ev-001045
+- ev-001046
+- ev-001047
+- ev-001048
+- ev-001049
+- ev-001050
+- ev-001051
+- ev-001052
+- ev-001053
+- ev-001054
+- ev-001055
+- ev-001056
+- ev-001057
+- ev-001058
+- ev-001059
+- ev-001060
+- ev-001061
+- ev-001062
+- ev-001063
+- ev-001064
+- ev-001065
+- ev-001066
+- ev-001067
+- ev-001068
+- ev-001069
+- ev-001070
+- ev-001071
+- ev-001072
+- ev-001073
+- ev-001074
+- ev-001075
+- ev-001076
+- ev-001077
+- ev-001078
+- ev-001079
+- ev-001080
+- ev-001081
+- ev-001082
+- ev-001083
+- ev-001084
+- ev-001085
+- ev-001086
+- ev-001087
+- ev-001088
+- ev-001089
+- ev-001090
+- ev-001091
+- ev-001092
+- ev-001093
+- ev-001094
+- ev-001095
+- ev-001096
+- ev-001097
+- ev-001098
+- ev-001099
+- ev-001100
+- ev-001101
+- ev-001102
+- ev-001103
+- ev-001104
+- ev-001105
+- ev-001106
+- ev-001107
+- ev-001108
+- ev-001109
+- ev-001110
+- ev-001111
+- ev-001112
+- ev-001113
+- ev-001114
+- ev-001115
+- ev-001116
+- ev-001117
+- ev-001118
+- ev-001119
+- ev-001120
+- ev-001121
+- ev-001122
+- ev-001123
+- ev-001124
+- ev-001125
+- ev-001126
+- ev-001127
+- ev-001128
+- ev-001129
+- ev-001130
+- ev-001131
+- ev-001132
+- ev-001133
+- ev-001134
+- ev-001135
+- ev-001136
+- ev-001137
+- ev-001138
+- ev-001139
+confidence: 0.55
+review_status: needs_review
+```

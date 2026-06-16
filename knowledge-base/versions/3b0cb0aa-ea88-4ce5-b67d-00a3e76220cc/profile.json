@@ -1,0 +1,270 @@
+{
+  "record_count": 2659,
+  "unique_id_count": 2659,
+  "empty_category_or_path": [
+    {
+      "unit_id": "148-1-1-6",
+      "unit_key": "3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:148-1-1-6",
+      "line": 1686,
+      "source_quote": "Namo Namo tassa bhagavato arahato sammāsambuddhassa ",
+      "target_quote": "礼敬那位世尊、阿拉汉、完全自我觉悟者。"
+    }
+  ],
+  "source_length": {
+    "average": 86.05,
+    "median": 64,
+    "max": 1447
+  },
+  "target_length": {
+    "average": 35.55,
+    "median": 27,
+    "max": 359
+  },
+  "top_categories": [
+    {
+      "value": "sutta > aṭṭhakathā > khuddakanikāya",
+      "count": 478
+    },
+    {
+      "value": "ṭīkā > vinaya > khuddasikkhā",
+      "count": 295
+    },
+    {
+      "value": "añña > ṭīkā > visuddhimagga",
+      "count": 253
+    },
+    {
+      "value": "sutta > mūla > pāḷi",
+      "count": 195
+    },
+    {
+      "value": "sutta > aṭṭhakathā > dīghanikāya",
+      "count": 164
+    },
+    {
+      "value": "sutta > khuddakanikāya > mūla",
+      "count": 131
+    },
+    {
+      "value": "añña > aṭṭhakathā > visuddhimagga",
+      "count": 122
+    },
+    {
+      "value": "sutta > aṭṭhakathā > aṅguttaranikāya",
+      "count": 108
+    },
+    {
+      "value": "ṭīkā > dīpanī > vinaya",
+      "count": 96
+    },
+    {
+      "value": "ṭīkā > sutta > dīghanikāya",
+      "count": 73
+    },
+    {
+      "value": "vinaya > mūla > pāḷi",
+      "count": 59
+    },
+    {
+      "value": "vinaya > aṭṭhakathā > samantapāsādikā",
+      "count": 54
+    },
+    {
+      "value": "ṭīkā > sutta > majjhimanikāya",
+      "count": 49
+    },
+    {
+      "value": "abhidhamma > aṭṭhakathā > vibhaṅga",
+      "count": 48
+    },
+    {
+      "value": "añña > leḍī sayādo > abhidhamma",
+      "count": 41
+    },
+    {
+      "value": "abhidhamma > paṭṭhāna > mūla",
+      "count": 38
+    },
+    {
+      "value": "abhidhamma > aṭṭhakathā > dhātukathā",
+      "count": 36
+    },
+    {
+      "value": "sutta > aṭṭhakathā > papañcasūdanī",
+      "count": 36
+    },
+    {
+      "value": "abhidhamma > aṭṭhakathā > dhammasaṅgaṇī",
+      "count": 35
+    },
+    {
+      "value": "ṭīkā > sutta > saṃyuttanikāya",
+      "count": 34
+    }
+  ],
+  "top_paths": [
+    {
+      "value": "khuddasikkhā > Khuddasikkhā-purāṇaṭīkā",
+      "count": 156
+    },
+    {
+      "value": "visuddhimagga-mahāṭīkā > Visuddhimagga-mahāṭīkā(Paṭhamo bhāgo)",
+      "count": 133
+    },
+    {
+      "value": "sumaṅgalavilāsinī > (DN) Mahāvaggaṭṭhakathā",
+      "count": 130
+    },
+    {
+      "value": "visuddhimagga-mahāṭīkā > Visuddhimagga-mahāṭīkā(Dutiyo bhāgo)",
+      "count": 116
+    },
+    {
+      "value": "khuddasikkhā > Khuddasikkhā-abhinavaṭīkā",
+      "count": 108
+    },
+    {
+      "value": "dhammapada-aṭṭhakathā > Dhammapada-aṭṭhakathā",
+      "count": 96
+    },
+    {
+      "value": "visuddhimagga > Visuddhimaggo(Paṭhamo bhāgo)",
+      "count": 75
+    },
+    {
+      "value": "mahāniddesa-aṭṭhakathā > Mahāniddesa-aṭṭhakathā",
+      "count": 71
+    },
+    {
+      "value": "jātaka-aṭṭhakathā > Jātaka-aṭṭhakathā(Dutiyo bhāgo)",
+      "count": 61
+    },
+    {
+      "value": "sāratthadīpanī-ṭīkā > (SAD) Mahāvagga-ṭīkā",
+      "count": 59
+    },
+    {
+      "value": "līnatthappakāsanā > (DN)Mahāvaggaṭīkā",
+      "count": 52
+    },
+    {
+      "value": "suttanipāta-aṭṭhakathā > Suttanipāta-aṭṭhakathā",
+      "count": 49
+    },
+    {
+      "value": "vibhaṅga-aṭṭhakathā > Vibhaṅga-aṭṭhakathā",
+      "count": 48
+    },
+    {
+      "value": "visuddhimagga > Visuddhimaggo(Dutiyo bhāgo)",
+      "count": 47
+    },
+    {
+      "value": "paṭisambhidāmagga-aṭṭhakathā > Paṭisambhidāmagga-aṭṭhakathā",
+      "count": 45
+    },
+    {
+      "value": "khuddakapāṭha-aṭṭhakathā > Khuddakapāṭha-aṭṭhakathā",
+      "count": 44
+    },
+    {
+      "value": "suttanipātapāḷi > Suttanipātapāḷi",
+      "count": 41
+    },
+    {
+      "value": "saṃyuttanikāyapāḷi > (SN)Mahāvaggo",
+      "count": 39
+    },
+    {
+      "value": "paṭṭhānapāḷi > Paṭṭhānapāḷi(Paṭhamo bhāgo)",
+      "count": 38
+    },
+    {
+      "value": "samantapāsādikā > Pārājikakaṇḍa-aṭṭhakathā",
+      "count": 38
+    }
+  ],
+  "source_signals": {
+    "paccayo": 47,
+    "vuccati": 29,
+    "nāma": 108,
+    "vā": 166,
+    "absolutive_tvā": 368,
+    "ti_or_iti": 1097
+  },
+  "target_signals": {
+    "parenthetical_pali": 205,
+    "square_bracket_supplement": 142,
+    "newline": 390
+  },
+  "chinese_markers": [
+    {
+      "value": "以",
+      "count": 466
+    },
+    {
+      "value": "被",
+      "count": 248
+    },
+    {
+      "value": "即",
+      "count": 239
+    },
+    {
+      "value": "应",
+      "count": 191
+    },
+    {
+      "value": "这里",
+      "count": 152
+    },
+    {
+      "value": "或",
+      "count": 126
+    },
+    {
+      "value": "义",
+      "count": 123
+    },
+    {
+      "value": "因此",
+      "count": 89
+    },
+    {
+      "value": "由于",
+      "count": 76
+    },
+    {
+      "value": "称为",
+      "count": 59
+    },
+    {
+      "value": "所谓",
+      "count": 46
+    },
+    {
+      "value": "其中",
+      "count": 35
+    },
+    {
+      "value": "名为",
+      "count": 31
+    },
+    {
+      "value": "故为",
+      "count": 24
+    },
+    {
+      "value": "根据",
+      "count": 24
+    },
+    {
+      "value": "如是",
+      "count": 7
+    },
+    {
+      "value": "后缀",
+      "count": 5
+    }
+  ]
+}

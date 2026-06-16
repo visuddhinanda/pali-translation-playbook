@@ -5,7 +5,7 @@ source_language: "pi"
 target_language: "zh"
 record_count: 2659
 translator: "胜嗣Jinadāyāda"
-review_status: "pilot"
+review_status: "machine_generated_full_draft"
 raw_schema:
   fields:
     - "id"
@@ -29,7 +29,17 @@ style_profile:
 statistics:
   multiline_translation_count: 390
   parenthetical_translation_count: 709
+  parenthetical_pali_candidate_count: 205
   bracketed_translation_count: 142
   average_source_length_chars: 86.0
   average_target_length_chars: 35.6
-
+derived_outputs:
+  chunk_count: 156
+  terminology_entries: 273
+  collocation_entries: 5
+  sentence_pattern_entries: 5
+  style_observation_entries: 3
+  strategy_entries: 4
+  evidence_rows: 1876
+  markdown_yaml_entries: 290
+  generated_by: "scripts/build_version_kb.py"

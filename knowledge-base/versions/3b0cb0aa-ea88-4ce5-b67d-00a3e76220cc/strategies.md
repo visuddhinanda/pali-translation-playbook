@@ -1,69 +1,106 @@
 # 翻译策略倾向
 
-## 总体策略
+本文件记录该版本由全量扫描支持的翻译策略候选。正式条目使用 `## + yaml` 格式。
 
-该版本不是纯直译，也不是纯意译。它更接近“解释性直译”：尽量保留巴利结构，同时通过中文补足语义、语法和词源关系。
+## 摘要索引
 
-## 策略一：保留巴利原词
+| ID | Name | Definition | Confidence | Status |
+| --- | --- | --- | --- | --- |
+| strategy-explanatory-literal | 解释性直译 | 保留巴利结构和关键词，同时补出语法、词源或隐含关系。 | 0.75 | machine_generated |
+| strategy-pali-retention | 保留巴利原词 | 在中文译名或解释后用括号保留巴利词形。 | 0.75 | machine_generated |
+| strategy-bracketed-expansion | 方括号增补 | 用方括号标出译者补足、推测或解释性成分。 | 0.7 | machine_generated |
+| strategy-linebreak-decomposition | 换行拆解 | 用换行拆分多重词源、并列义项或复杂说明。 | 0.7 | machine_generated |
 
-使用场景：
+## 条目
 
-- 词源解释；
-- 专名、地名、物名；
-- 暂无稳定汉译的术语；
-- 需要让读者看到原词的地方。
+## strategy-explanatory-literal
 
-风险：
+```yaml
+id: strategy-explanatory-literal
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: strategy
+name: 解释性直译
+description: 保留巴利结构和关键词，同时补出语法、词源或隐含关系。
+definition: 保留巴利结构和关键词，同时补出语法、词源或隐含关系。
+when_used:
+- 词源解释
+- 语法说明
+- 术语定义
+- 长注释句
+risks:
+- 译文包含解释性增补，不能全部视为原文逐词对应。
+related_entry_ids:
+- syntax-etymological-explanation
+- syntax-definition-vuccati-nama
+evidence: []
+confidence: 0.75
+review_status: machine_generated
+```
 
-- 汉语可读性降低；
-- 普通检索会混入大量拉丁字母词；
-- 同一词可能出现原词保留和汉译并存。
+## strategy-pali-retention
 
-## 策略二：解释性增补
+```yaml
+id: strategy-pali-retention
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: strategy
+name: 保留巴利原词
+description: 在中文译名或解释后用括号保留巴利词形。
+definition: 在中文译名或解释后用括号保留巴利词形。
+when_used:
+- 术语未稳定
+- 词源解释
+- 专名或物名
+- 需要可追溯性
+risks:
+- 降低汉语自然度，增加检索噪声。
+related_entry_ids:
+- style-parenthetical-pali
+evidence: []
+confidence: 0.75
+review_status: machine_generated
+```
 
-使用场景：
+## strategy-bracketed-expansion
 
-- 巴利原文省略主语；
-- 复合词关系需要展开；
-- 注释书词源解释需要说明；
-- 格关系需要显化为中文关系词。
+```yaml
+id: strategy-bracketed-expansion
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: strategy
+name: 方括号增补
+description: 用方括号标出译者补足、推测或解释性成分。
+definition: 用方括号标出译者补足、推测或解释性成分。
+when_used:
+- 原文省略主体
+- 需要补足语法关系
+- 译者提示不确定内容
+risks:
+- 方括号内容不能直接等同于原文。
+related_entry_ids:
+- style-bracket-supplement
+evidence: []
+confidence: 0.7
+review_status: machine_generated
+```
 
-风险：
+## strategy-linebreak-decomposition
 
-- 增补内容可能带有译者判断；
-- 需要区分原文直译和译者补足；
-- RAG 生成时不能把补足内容全部当成原文信息。
-
-## 策略三：术语化翻译
-
-使用场景：
-
-- 阿毗达摩术语；
-- 佛教教理分类；
-- 缘起、心识、戒律等技术语境。
-
-例子：
-
-- `ārammaṇapaccaya` -> `所缘缘`
-- `cakkhuviññāṇadhātu` -> `眼识界`
-
-风险：
-
-- 传统术语对现代读者不透明；
-- 不同版本可能使用不同术语体系；
-- 需要跨版本比较确认稳定性。
-
-## 策略四：换行拆解复杂结构
-
-使用场景：
-
-- 多重词源；
-- 多个 `vā` 并列解释；
-- 长注释句；
-- 语法例句逐项说明。
-
-风险：
-
-- 换行既可能表示格式，也可能表示语义层级；
-- 程序清洗时不能直接丢弃。
-
+```yaml
+id: strategy-linebreak-decomposition
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: strategy
+name: 换行拆解
+description: 用换行拆分多重词源、并列义项或复杂说明。
+definition: 用换行拆分多重词源、并列义项或复杂说明。
+when_used:
+- 多个 vā 并列
+- 长词源解释
+- 语法例句逐项说明
+risks:
+- 清洗文本时不能直接丢弃换行。
+related_entry_ids:
+- style-newline-decomposition
+- syntax-va-alternative
+evidence: []
+confidence: 0.7
+review_status: machine_generated
+```
