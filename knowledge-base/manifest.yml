@@ -1,0 +1,13 @@
+schema_version: "0.1"
+source_directory: "translations"
+notes:
+  - "Derived knowledge base. Raw JSONL files are not modified."
+versions:
+  - version_id: "3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc"
+    source_file: "translations/3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc.jsonl"
+    display_name: "胜嗣Jinadāyāda"
+    source_language: "pi"
+    target_language: "zh"
+    kb_path: "knowledge-base/versions/3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc"
+    status: "pilot"
+

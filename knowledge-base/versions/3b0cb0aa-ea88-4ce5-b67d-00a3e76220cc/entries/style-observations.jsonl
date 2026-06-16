@@ -1,0 +1,3 @@
+{"id":"style-explanatory-density","version_id":"3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc","type":"style_observation","dimension":"explanatory_density","observation":"该版本常用解释性连接词显化定义、因果、词源和语法关系。","signals":["即","因此","由于","称为","所谓","故为"],"evidence":[],"confidence":0.7,"review_status":"pilot"}
+{"id":"style-parenthetical-pali","version_id":"3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc","type":"style_observation","dimension":"pali_retention","observation":"该版本经常在中文译文中用括号保留巴利词形。","signals":["target_contains_pali_parentheses"],"evidence":[{"unit_id":"9-555-2-11","unit_key":"3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-555-2-11","source_quote":"vedeho","target_quote":"勤学者(vedeha)"}],"confidence":0.75,"review_status":"pilot"}
+
