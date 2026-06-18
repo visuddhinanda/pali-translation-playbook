@@ -1,13 +1,19 @@
-schema_version: "0.1"
-source_directory: "translations"
+schema_version: '0.1'
+source_directory: translations
 notes:
-  - "Derived knowledge base. Raw JSONL files are not modified."
+- Derived knowledge base. Raw JSONL files are not modified.
 versions:
-  - version_id: "3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc"
-    source_file: "translations/3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc.jsonl"
-    display_name: "胜嗣Jinadāyāda"
-    source_language: "pi"
-    target_language: "zh"
-    kb_path: "knowledge-base/versions/3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc"
-    status: "pilot"
-
+- version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+  source_file: translations/3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc.jsonl
+  display_name: 胜嗣Jinadāyāda
+  source_language: pi
+  target_language: zh
+  kb_path: knowledge-base/versions/3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+  status: pilot
+- version_id: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43
+  source_file: translations/e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43.jsonl
+  display_name: 初译·高级班内部讨论
+  source_language: pi
+  target_language: zh-Hans
+  kb_path: knowledge-base/versions/e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43
+  status: machine_generated_full_draft

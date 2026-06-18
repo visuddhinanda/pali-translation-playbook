@@ -19,6 +19,8 @@ Markdown section + fenced YAML block
 - Markdown 表格只作为摘要索引，不作为主编辑格式。
 - `entries/*.jsonl` 是机器导出结果，可以由 Markdown 中的 YAML 块生成。
 
+例外：`style-guide.md` 可以是自然语言研究报告，不强制包含 YAML 块。对应机器数据应保存在 `entries/style-observations.jsonl`。
+
 ## 为什么不使用表格作为主格式
 
 表格适合快速浏览，但不适合作为主数据：

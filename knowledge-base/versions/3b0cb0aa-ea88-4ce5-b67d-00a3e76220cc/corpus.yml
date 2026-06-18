@@ -41,5 +41,7 @@ derived_outputs:
   style_observation_entries: 3
   strategy_entries: 4
   evidence_rows: 1876
-  markdown_yaml_entries: 290
+  markdown_yaml_entries: 287
+  style_markdown_format: "natural_language"
+  style_prompt: "style-prompt.md"
   generated_by: "scripts/build_version_kb.py"

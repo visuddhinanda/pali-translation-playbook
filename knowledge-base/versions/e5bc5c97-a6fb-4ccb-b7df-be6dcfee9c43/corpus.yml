@@ -1,0 +1,43 @@
+version_id: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43
+display_name: 初译·高级班内部讨论
+source_file: translations/e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43.jsonl
+source_language: pi
+target_language: zh-Hans
+record_count: 13006
+translator: 初译·高级班内部讨论
+review_status: machine_generated_full_draft
+raw_schema:
+  fields:
+  - id
+  - original
+  - translation
+  - category
+  - path
+observed_quality:
+  valid_jsonl: true
+  unique_ids_within_version: true
+  empty_category_path_records: []
+style_profile:
+  summary: 解释性、讨论型，常保留巴利词形、补足隐含关系并拆分复杂说明。
+  literalness: medium
+  explanatory_density: high
+  pali_retention: high
+  bracketed_supplements: high
+  line_break_usage: high
+statistics:
+  multiline_translation_count: 1699
+  parenthetical_pali_candidate_count: 2732
+  bracketed_translation_count: 3001
+  average_source_length_chars: 92.89
+  average_target_length_chars: 48.12
+derived_outputs:
+  chunk_count: 191
+  terminology_entries: 4039
+  collocation_entries: 4
+  sentence_pattern_entries: 4
+  style_observation_entries: 3
+  strategy_entries: 4
+  evidence_rows: 16861
+  style_markdown_format: natural_language
+  style_prompt: style-prompt.md
+  generated_by: scripts/build_version_kb.py

@@ -67,6 +67,12 @@ Candidate signals:
 - common Pali constructions such as absolutives, participles, compounds, passives, and formulas;
 - genre-specific terminology in `category` and `path`.
 
+For first-pass collocation discovery, do not constrain the prompt to a short list
+of known expressions. The agent should ask the model to discover the most frequent
+and most stable collocations in the chunk, then rank candidates with evidence.
+Known expressions such as `paccayo`, `vuccati`, `nāma`, or `vā` are valid only for
+second-pass validation after open discovery has produced candidates.
+
 Useful comparison modes:
 
 - within one corpus across many contexts;
@@ -110,6 +116,32 @@ expected_output:
     counter_examples:
     recommended_translation:
     confidence:
+```
+
+Open collocation discovery prompt shape:
+
+```yaml
+task: "discover_collocations_open"
+instruction:
+  - "Do not search only for pre-listed expressions."
+  - "Find recurring Pali-Chinese fixed pairings, formulaic phrases, doctrinal combinations, idioms, and repeated translation moves."
+  - "Rank candidates by frequency, stability across contexts, and usefulness for future translation."
+input:
+  chunk_examples:
+    - unit_key:
+      original:
+      translation:
+      category:
+      path:
+expected_output:
+  collocation_candidates:
+    - source_pattern:
+      translation_pattern:
+      occurrence_count_in_chunk:
+      examples:
+      variant_translations:
+      conditions:
+      confidence:
 ```
 
 ## Step 4: Cluster Similar Rules

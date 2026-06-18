@@ -19,6 +19,8 @@
 - `chunk-plan.md`: 按上下文预算生成的分块计划。
 - `profile.json`: 机器可读统计画像。
 - `entries/*.jsonl`: 机器可读知识条目和证据。
+- `style-guide.md`: 给人类阅读的自然语言风格报告。
+- `style-prompt.md`: 给大模型翻译时使用的风格提示词。
 
 这个版本适合作为“学习型/分析型翻译”的样本。译文经常保留巴利词形、补出隐含关系，并用括号或方括号标记解释性信息。
 
@@ -42,6 +44,7 @@
 
 - `corpus.yml`: 版本元数据。
 - `style-guide.md`: 语言风格画像。
+- `style-prompt.md`: LLM 翻译风格提示词。
 - `terminology.md`: 术语和翻译用词。
 - `collocations.md`: 固定搭配和公式表达。
 - `sentence-patterns.md`: 特殊句式处理。

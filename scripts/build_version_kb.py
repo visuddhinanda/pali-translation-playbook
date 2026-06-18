@@ -127,6 +127,34 @@ def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
             handle.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\n")
 
 
+def read_version_metadata(source_file: Path) -> dict[str, str]:
+    version_id = source_file.stem
+    metadata = {
+        "version_id": version_id,
+        "display_name": version_id,
+        "target_language": "zh",
+        "source_language": "pi",
+        "source_file": str(source_file),
+    }
+    index_path = source_file.parent / "index.md"
+    if not index_path.exists():
+        return metadata
+
+    current_id = None
+    for raw_line in index_path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if line.startswith("# "):
+            current_id = line[2:].strip()
+            continue
+        if current_id != version_id:
+            continue
+        if line.startswith("- 版本名称："):
+            metadata["display_name"] = line.split("：", 1)[1].strip()
+        elif line.startswith("- 语言："):
+            metadata["target_language"] = line.split("：", 1)[1].strip()
+    return metadata
+
+
 def load_records(source_file: Path) -> list[dict[str, Any]]:
     version_id = source_file.stem
     records = []
@@ -362,6 +390,8 @@ def collect_collocations(records: list[dict[str, Any]], evidence_rows: list[dict
     entries = []
     for entry_id, meta in definitions.items():
         matched = grouped[entry_id]
+        if not matched:
+            continue
         evidence_ids = [
             add_evidence(evidence_rows, [entry_id], record, f"匹配固定搭配 `{meta['source_pattern']}`。", "collocation")
             for record in matched
@@ -424,7 +454,8 @@ def collect_sentence_patterns(records: list[dict[str, Any]], evidence_rows: list
     entries = []
     for entry_id, meta in definitions.items():
         matched = []
-        for source_id in meta.pop("source_ids"):
+        source_ids = meta["source_ids"]
+        for source_id in source_ids:
             matched.extend(grouped[source_id])
         seen = set()
         unique_matched = []
@@ -432,16 +463,19 @@ def collect_sentence_patterns(records: list[dict[str, Any]], evidence_rows: list
             if record["_unit_key"] not in seen:
                 seen.add(record["_unit_key"])
                 unique_matched.append(record)
+        if not unique_matched:
+            continue
         evidence_ids = [
             add_evidence(evidence_rows, [entry_id], record, f"匹配句式 `{meta['source_pattern']}`。", "sentence_pattern")
             for record in unique_matched
         ]
+        public_meta = {key: value for key, value in meta.items() if key != "source_ids"}
         entries.append(
             {
                 "id": entry_id,
                 "version_id": records[0]["_unit_key"].split(":", 1)[0],
                 "type": "sentence_pattern",
-                **meta,
+                **public_meta,
                 "occurrence_count": len(unique_matched),
                 "evidence_ids": evidence_ids,
                 "evidence_sample": [unit_ref(record, [entry_id]) for record in unique_matched[:8]],
@@ -533,6 +567,30 @@ def collect_style_and_strategy(records: list[dict[str, Any]], evidence_rows: lis
         },
     ]
     return style_entries, strategy_entries
+
+
+def attach_strategy_evidence(
+    strategy_entries: list[dict[str, Any]],
+    evidence_sources: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    source_by_id = {entry["id"]: entry for entry in evidence_sources}
+    attached = []
+    for strategy in strategy_entries:
+        related_ids = [entry_id for entry_id in strategy["related_entry_ids"] if entry_id in source_by_id]
+        evidence_ids = []
+        evidence_sample = []
+        for entry_id in related_ids:
+            source = source_by_id[entry_id]
+            evidence_ids.extend(source.get("evidence_ids", [])[:3])
+            evidence_sample.extend(source.get("evidence_sample", [])[:3])
+        if not evidence_sample:
+            continue
+        strategy = dict(strategy)
+        strategy["related_entry_ids"] = related_ids
+        strategy["evidence_ids"] = evidence_ids
+        strategy["evidence_sample"] = evidence_sample[:8]
+        attached.append(strategy)
+    return attached
 
 
 def markdown_table(rows: list[dict[str, Any]], columns: list[tuple[str, str]]) -> str:
@@ -643,7 +701,8 @@ def strategy_md_entry(item: dict[str, Any]) -> dict[str, Any]:
         "when_used": item["when_used"],
         "risks": item["risks"],
         "related_entry_ids": item["related_entry_ids"],
-        "evidence": [],
+        "evidence": item.get("evidence_sample", []),
+        "evidence_ids": item.get("evidence_ids", []),
         "confidence": item["confidence"],
         "review_status": item["review_status"],
     }
@@ -652,6 +711,7 @@ def strategy_md_entry(item: dict[str, Any]) -> dict[str, Any]:
 def write_markdown_files(
     kb_dir: Path,
     source_file: Path,
+    metadata: dict[str, str],
     profile: dict[str, Any],
     chunk_plan: list[dict[str, Any]],
     terminology: list[dict[str, Any]],
@@ -661,12 +721,22 @@ def write_markdown_files(
     strategy_entries: list[dict[str, Any]],
 ) -> None:
     version_id = source_file.stem
+    version_name = metadata["display_name"]
     top_terms = sorted(terminology, key=lambda item: (-item["occurrence_count"], item["pali"]))[:50]
     chunk_summary = {
         "chunk_count": len(chunk_plan),
         "max_estimated_tokens": max((chunk["estimated_tokens"] for chunk in chunk_plan), default=0),
         "largest_chunk_id": max(chunk_plan, key=lambda chunk: chunk["estimated_tokens"])["chunk_id"] if chunk_plan else None,
     }
+    target_signals = profile["target_signals"]
+    source_signals = profile["source_signals"]
+    record_count = profile["record_count"]
+    source_average = profile["source_length"]["average"]
+    target_average = profile["target_length"]["average"]
+    parenthetical_count = target_signals.get("parenthetical_pali", 0)
+    bracket_count = target_signals.get("square_bracket_supplement", 0)
+    newline_count = target_signals.get("newline", 0)
+    tvā_count = source_signals.get("absolutive_tvā", 0)
 
     (kb_dir / "analysis-report.md").write_text(
         "\n".join(
@@ -850,9 +920,13 @@ def write_markdown_files(
             [
                 "# 语言风格画像",
                 "",
+                "本文是供人工阅读和修订的自然语言风格报告。机器可读的风格条目保存在 `entries/style-observations.jsonl`，不要从本文解析结构化数据。",
+                "",
                 "## 总体判断",
                 "",
-                "该版本整体呈现解释性、学习型翻译风格：保留巴利词形、显化定义关系、用方括号补足信息，并用换行拆分复杂解释。",
+                f"`{version_name}` 版本整体呈现解释性、讨论型、学习型翻译风格。译文经常不仅给出中文结果，还保留术语线索、补出语法关系，并在必要处显示译者对原文结构的理解过程。这个版本适合研究“学习共同体如何处理巴利注释文本”，也适合作为 LLM 识别翻译决策、术语保留和解释性增补的语料。",
+                "",
+                f"从全量 `{record_count}` 条记录看，该版本巴利原文平均长度为 `{source_average}` 个字符，中文译文平均长度为 `{target_average}` 个字符。长度关系只能说明整体压缩或扩展趋势，不能直接判断翻译质量；真正有分析价值的是术语保留、方括号补足、换行拆解、定义公式和并列解释等可证据化信号。",
                 "",
                 "## 可量化信号",
                 "",
@@ -864,15 +938,182 @@ def write_markdown_files(
                     [("Dimension", "dimension"), ("Observation", "observation"), ("Count", "count")],
                 ),
                 "",
-                "## 风险",
+                "## 巴利词形保留",
+                "",
+                f"全量扫描发现 `{parenthetical_count}` 条译文含有括号中的巴利形式，并抽取出 `{len(terminology)}` 个术语候选。这类处理常见于三种情况：",
+                "",
+                "第一，译者给出中文解释后保留巴利原词，便于读者回查原文。",
+                "",
+                "第二，译者在语法术语、教理术语、专名、地名、物名或不易定译的词上保留巴利形式，降低误读风险。",
+                "",
+                "第三，译者在讨论型译文中把巴利词作为解释对象，而不是完全转化为中文译名。",
+                "",
+                "这种风格对术语抽取很有价值，但也带来一个问题：括号前面的中文不一定都是稳定译词，有时只是解释性短语。因此 `terminology.md` 中的中文词边界需要人工复核。",
+                "",
+                "## 方括号补足",
+                "",
+                f"该版本有 `{bracket_count}` 条译文含方括号。方括号通常表示译者补足、解释、不确定判断或语法成分显化。",
+                "",
+                "方括号内容不能简单等同于巴利原文的直接译文。建立知识库时，应把这类内容视为 translator supplement，即“译者增补信息”。对于 RAG 或 LLM 提示词，这类内容很有价值，因为它揭示了译者如何补足隐含结构；但在严格对齐时，应与正文译文分层保存。",
+                "",
+                "## 换行拆解",
+                "",
+                f"该版本有 `{newline_count}` 条译文含换行。换行多用于拆分复杂解释，尤其是词源说明、多个 `vā` 并列解释、长句中的义项分解或讨论式补注。这种换行不是纯排版噪声，而可能表示译者对并列解释层次的理解。",
+                "",
+                "因此，后续清洗数据时不要无条件删除换行。更好的做法是保留原始换行，同时在派生字段中提供 normalized text。对于句式分析，换行可以作为识别“并列解释”“词源分解”“多义项列举”的信号。",
+                "",
+                "## 解释性连接词",
+                "",
+                "该版本常用解释性连接词来显化巴利原文关系。高频中文标记包括“以”“被”“即”“应”“这里”“或”“义”“因此”“由于”“称为”“所谓”“名为”“故为”等。",
+                "",
+                "这些词反映出该版本的翻译目标并非完全自然化，而是倾向于把注释关系说清楚。例如 `vuccati` 常译为“称为、所谓、被称为、所说、为”；`nāma` 常译为“名为、所谓、即、是说、就是”；`paccayo` 在当前证据中主要落入阿毗达摩缘法或条件关系语境，译为“缘、为缘”。这种区分对翻译规则抽取非常重要，不能只按巴利词面合并。",
+                "",
+                "## 术语风格",
+                "",
+                "该版本在教理和阿毗达摩语境中倾向使用传统佛教汉语术语，例如“所缘缘”“因缘”“眼识界”等。同时，在尚未稳定汉译或带有词源说明的词上，译者会保留巴利原词。整体策略可以概括为：教理术语尽量术语化，词源分析尽量可追溯。",
+                "",
+                f"这种风格适合建立版本内术语表，但不宜直接推出跨版本标准译法。不同版本可能更偏流畅汉语、传统佛典译语或现代解释语；本版本的术语记录应先作为 `{version_name}` 版本用词习惯保存。",
+                "",
+                "## 句法风格",
+                "",
+                "译者经常把巴利句法关系转成显性的中文关系词。例如工具格、原因关系、处所关系、定义关系、并列解释等，常通过“以、由于、在、即、所谓、或”等表达。该版本尤其适合分析注释书中的定义句、词源句和并列解释句。",
+                "",
+                f"不过，形式信号不能直接等同于翻译规则。例如 `-tvā/-tvāna` 绝对分词候选有 `{tvā_count}` 条，但很多译文未必明确译成“之后、先、以……方式”。因此这类条目目前只能作为候选集合，需要人工筛选后再总结具体翻译技巧。",
+                "",
+                "## 风险与使用建议",
                 "",
                 "- 括号和方括号内容应与正文译文分层处理。",
                 "- 换行可能表示语义层级，不应在清洗时无条件删除。",
                 "- 自动抽取的中文词边界需要人工校订。",
+                "- 不要只根据巴利词面建立规则，应同时检查中文译法和上下文语境。",
+                "- `style-guide.md` 是人工阅读文件；机器读取应使用 `entries/style-observations.jsonl`。",
                 "",
-                "## 条目",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+    (kb_dir / "style-prompt.md").write_text(
+        "\n".join(
+            [
+                "# 翻译风格提示词",
                 "",
-                "\n\n".join(md_entry(style_md_entry(item), title=item["id"]) for item in style_entries),
+                f"用途：将本文件作为大模型翻译巴利语到中文时的风格约束，使输出尽量接近 `{version_name}` 版本。",
+                "范围：适用于注释书、语法书、词源解释、阿毗达摩和教理说明类文本。",
+                "注意：本文件是给 LLM 使用的操作性提示词，不是研究报告。研究说明见 `style-guide.md`。",
+                "",
+                "## 角色与目标",
+                "",
+                "你是一名巴利语到中文的学习型、解释型译者。翻译目标不是只生成流畅中文，而是尽量保留原文的术语、句法关系、词源分析和注释结构，使读者能看出巴利原文如何被理解。",
+                "",
+                "输出应接近以下风格：",
+                "",
+                "- 解释性强；",
+                "- 保留重要巴利词形；",
+                "- 显化定义、因果、处所、工具、并列等关系；",
+                "- 对隐含成分可用方括号补足；",
+                "- 对复杂词源或并列解释可换行拆分；",
+                "- 教理术语尽量使用稳定佛教汉语。",
+                "",
+                "## 总体翻译原则",
+                "",
+                "1. 优先准确表达巴利原文结构，不要过度文学化。",
+                "2. 对术语、词源、语法分析要保持可追溯性。",
+                "3. 如果中文直译不自然，可以适度解释，但不要隐藏原文结构。",
+                "4. 对原文未明说但中文需要补出的内容，用方括号表示。",
+                "5. 如果一个巴利词在不同语境中有不同译法，按语境处理，不要机械统一。",
+                "",
+                "## 巴利词形保留",
+                "",
+                "重要术语、语法标签、词源分析对象、专名、地名、物名或不易定译的词，可以保留巴利原词。",
+                "",
+                "推荐格式：",
+                "",
+                "```text",
+                "中文译名(巴利词)",
+                "```",
+                "",
+                "示例风格：",
+                "",
+                "```text",
+                "勤学者(vedeha)",
+                "第三变格(tatiyāvibhatti)",
+                "茧丝(koseyya)",
+                "```",
+                "",
+                "## 方括号补足",
+                "",
+                "当中文需要补出原文隐含的主体、对象、关系、语境或译者说明时，使用方括号。",
+                "",
+                "推荐用法：",
+                "",
+                "```text",
+                "[很多人]也说...",
+                "通往[涅槃]的...",
+                "[额外]有[字母]...",
+                "```",
+                "",
+                "方括号表示补足或解释，不表示原文逐词直译。",
+                "",
+                "## 换行拆分",
+                "",
+                "遇到多重词源解释、多个 `vā` 并列解释、长串义项、语法例句或复杂注释，可以用换行拆分。换行用于显示解释层次，不只是排版。",
+                "",
+                "## 常见公式处理",
+                "",
+                "### `vuccati`",
+                "",
+                "根据语境译为：`称为`、`所谓`、`被称为`、`所说`、`为`。",
+                "",
+                "### `nāma`",
+                "",
+                "根据语境译为：`名为`、`所谓`、`即`、`是说`、`就是`。",
+                "",
+                "### `vā`",
+                "",
+                "通常显化为 `或`、`或者`。如果是多个并列解释，也可以用换行拆分。",
+                "",
+                "### `paccayo / paccaya`",
+                "",
+                "必须按语境区分：",
+                "",
+                "```text",
+                "词源或语法派生语境：后缀",
+                "阿毗达摩缘法或条件关系语境：缘 / 为缘 / 以X缘为缘",
+                "```",
+                "",
+                "## 教理与阿毗达摩术语",
+                "",
+                "在教理、阿毗达摩、心识、缘法、界、处等语境中，优先使用传统佛教汉语术语。",
+                "",
+                "示例：",
+                "",
+                "```text",
+                "ārammaṇapaccaya -> 所缘缘",
+                "cakkhuviññāṇadhātu -> 眼识界",
+                "hetupaccaya -> 因缘",
+                "```",
+                "",
+                "## 句法关系显化",
+                "",
+                "巴利语中的格关系、因果关系、处所关系、工具关系、定义关系、并列关系，在中文中应尽量显化。常用中文关系词包括：`以`、`由于`、`在`、`即`、`所谓`、`称为`、`或`、`因此`、`故为`。",
+                "",
+                "## 绝对分词与分词结构",
+                "",
+                "遇到 `-tvā`、`-tvāna` 等形式时，不要机械套用固定译法。根据上下文判断为：`...之后`、`先...再...`、`以...方式`、`由于...`、`在...之后`。如果中文不需要显式译出，也可以自然处理，但要保留动作关系。",
+                "",
+                "## 输出风格限制",
+                "",
+                "避免：",
+                "",
+                "- 过度文学化；",
+                "- 删除巴利术语线索；",
+                "- 把所有解释压缩成一句流畅中文；",
+                "- 把方括号补足混同为原文直译；",
+                "- 机械统一多义词译法；",
+                "- 忽略注释书中的定义、词源和并列解释结构。",
+                "",
+                "优先：清楚、可追溯、解释性、术语一致、结构透明。",
                 "",
             ]
         ),
@@ -912,6 +1153,211 @@ def write_markdown_files(
     )
 
 
+def update_manifest(manifest_path: Path, metadata: dict[str, str], kb_dir: Path, status: str = "machine_generated_full_draft") -> None:
+    if manifest_path.exists():
+        manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8")) or {}
+    else:
+        manifest = {
+            "schema_version": "0.1",
+            "source_directory": "translations",
+            "notes": ["Derived knowledge base. Raw JSONL files are not modified."],
+            "versions": [],
+        }
+
+    versions = manifest.setdefault("versions", [])
+    entry = {
+        "version_id": metadata["version_id"],
+        "source_file": metadata["source_file"],
+        "display_name": metadata["display_name"],
+        "source_language": metadata["source_language"],
+        "target_language": metadata["target_language"],
+        "kb_path": str(kb_dir),
+        "status": status,
+    }
+    replaced = False
+    for index, existing in enumerate(versions):
+        if existing.get("version_id") == metadata["version_id"]:
+            versions[index] = entry
+            replaced = True
+            break
+    if not replaced:
+        versions.append(entry)
+
+    manifest_path.write_text(yaml.safe_dump(manifest, allow_unicode=True, sort_keys=False), encoding="utf-8")
+
+
+def write_version_metadata_files(
+    kb_dir: Path,
+    source_file: Path,
+    metadata: dict[str, str],
+    profile: dict[str, Any],
+    chunk_plan: list[dict[str, Any]],
+    terminology: list[dict[str, Any]],
+    collocations: list[dict[str, Any]],
+    sentence_patterns: list[dict[str, Any]],
+    style_entries: list[dict[str, Any]],
+    strategy_entries: list[dict[str, Any]],
+    evidence_rows: list[dict[str, Any]],
+) -> None:
+    version_id = metadata["version_id"]
+    version_name = metadata["display_name"]
+    empty_records = profile["empty_category_or_path"]
+    style_summary = "解释性、讨论型，常保留巴利词形、补足隐含关系并拆分复杂说明。"
+
+    corpus = {
+        "version_id": version_id,
+        "display_name": version_name,
+        "source_file": metadata["source_file"],
+        "source_language": metadata["source_language"],
+        "target_language": metadata["target_language"],
+        "record_count": profile["record_count"],
+        "translator": version_name,
+        "review_status": "machine_generated_full_draft",
+        "raw_schema": {"fields": ["id", "original", "translation", "category", "path"]},
+        "observed_quality": {
+            "valid_jsonl": True,
+            "unique_ids_within_version": profile["record_count"] == profile["unique_id_count"],
+            "empty_category_path_records": [
+                {"line": item["line"], "unit_id": item["unit_id"]}
+                for item in empty_records
+            ],
+        },
+        "style_profile": {
+            "summary": style_summary,
+            "literalness": "medium",
+            "explanatory_density": "high",
+            "pali_retention": "high" if profile["target_signals"].get("parenthetical_pali", 0) > 500 else "medium",
+            "bracketed_supplements": "high" if profile["target_signals"].get("square_bracket_supplement", 0) > 500 else "medium",
+            "line_break_usage": "high" if profile["target_signals"].get("newline", 0) > 1000 else "medium",
+        },
+        "statistics": {
+            "multiline_translation_count": profile["target_signals"].get("newline", 0),
+            "parenthetical_pali_candidate_count": profile["target_signals"].get("parenthetical_pali", 0),
+            "bracketed_translation_count": profile["target_signals"].get("square_bracket_supplement", 0),
+            "average_source_length_chars": profile["source_length"]["average"],
+            "average_target_length_chars": profile["target_length"]["average"],
+        },
+        "derived_outputs": {
+            "chunk_count": len(chunk_plan),
+            "terminology_entries": len(terminology),
+            "collocation_entries": len(collocations),
+            "sentence_pattern_entries": len(sentence_patterns),
+            "style_observation_entries": len(style_entries),
+            "strategy_entries": len(strategy_entries),
+            "evidence_rows": len(evidence_rows),
+            "style_markdown_format": "natural_language",
+            "style_prompt": "style-prompt.md",
+            "generated_by": "scripts/build_version_kb.py",
+        },
+    }
+    (kb_dir / "corpus.yml").write_text(yaml.safe_dump(corpus, allow_unicode=True, sort_keys=False), encoding="utf-8")
+
+    data_notes = [
+        "- 本版本 JSONL 全部可解析。",
+        f"- `id` 在本文件内{'唯一' if corpus['observed_quality']['unique_ids_within_version'] else '存在重复'}。",
+    ]
+    if empty_records:
+        data_notes.append("- 存在 `category` 或 `path` 为空的记录，详见 `corpus.yml`。")
+    else:
+        data_notes.append("- 未发现 `category` 或 `path` 为空的记录。")
+
+    (kb_dir / "README.md").write_text(
+        "\n".join(
+            [
+                f"# {version_name} 版本知识库",
+                "",
+                "## 基本信息",
+                "",
+                f"- version id: `{version_id}`",
+                f"- version name: `{version_name}`",
+                f"- source file: `{metadata['source_file']}`",
+                f"- source language: `{metadata['source_language']}`",
+                f"- target language: `{metadata['target_language']}`",
+                f"- records: `{profile['record_count']}`",
+                "",
+                "## 当前状态",
+                "",
+                "本版本已经按大文件工作流完成一次全量机器辅助分析。结果是可审阅初稿，不是人工定稿。",
+                "",
+                "主要输出：",
+                "",
+                "- `analysis-report.md`: 全量统计画像。",
+                "- `chunk-plan.md`: 按上下文预算生成的分块计划。",
+                "- `profile.json`: 机器可读统计画像。",
+                "- `entries/*.jsonl`: 机器可读知识条目和证据。",
+                "- `style-guide.md`: 给人类阅读的自然语言风格报告。",
+                "- `style-prompt.md`: 给大模型翻译时使用的风格提示词。",
+                "",
+                "初步观察：",
+                "",
+                f"- 该版本包含 `{profile['record_count']}` 条翻译单元，生成 `{len(chunk_plan)}` 个预算内 chunk。",
+                f"- 抽取 `{len(terminology)}` 个术语候选、`{len(collocations)}` 类固定搭配、`{len(sentence_patterns)}` 类句式候选。",
+                f"- 生成 `{len(evidence_rows)}` 条证据记录，知识条目均保留可追溯 `unit_key`。",
+                "- 该版本适合作为讨论型、学习型翻译风格样本，但术语边界仍需人工复核。",
+                "",
+                "## 数据注意事项",
+                "",
+                *data_notes,
+                "- 当前条目由脚本全量扫描生成，需要人工复核。",
+                "- `terminology` 条目的中文词边界为机器抽取，尤其需要人工校订。",
+                "",
+                "## 文件说明",
+                "",
+                "- `corpus.yml`: 版本元数据。",
+                "- `style-guide.md`: 语言风格画像。",
+                "- `style-prompt.md`: LLM 翻译风格提示词。",
+                "- `terminology.md`: 术语和翻译用词。",
+                "- `collocations.md`: 固定搭配和公式表达。",
+                "- `sentence-patterns.md`: 特殊句式处理。",
+                "- `strategies.md`: 翻译策略倾向。",
+                "- `notes.md`: 研究笔记和待复核问题。",
+                "- `entries/`: 程序读取的 JSONL 条目。",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+    (kb_dir / "notes.md").write_text(
+        "\n".join(
+            [
+                "# 研究笔记",
+                "",
+                "## 本轮处理范围",
+                "",
+                "本版本按大文件工作流处理：先统计画像，再按 `path` 分块，随后抽取术语、固定搭配、句式、风格和策略候选。",
+                "",
+                "生成结果：",
+                "",
+                f"- `chunk-plan.md`: `{len(chunk_plan)}` 个预算内 chunk。",
+                f"- `entries/terminology.jsonl`: `{len(terminology)}` 个术语候选。",
+                f"- `entries/collocations.jsonl`: `{len(collocations)}` 类固定搭配。",
+                f"- `entries/sentence-patterns.jsonl`: `{len(sentence_patterns)}` 类句式候选。",
+                f"- `entries/style-observations.jsonl`: `{len(style_entries)}` 类风格观察。",
+                f"- `entries/strategies.jsonl`: `{len(strategy_entries)}` 类策略。",
+                f"- `entries/evidence.jsonl`: `{len(evidence_rows)}` 条证据。",
+                "- `style-guide.md`: 自然语言风格报告，不含 YAML 条目块。",
+                "- `entries/reviewed-from-md.jsonl`: 从 Markdown YAML 块导出的机器可读条目。",
+                "",
+                "## 后续应重点复核",
+                "",
+                "- `terminology` 的中文词边界由脚本从括号前缀抽取，需人工校订。",
+                "- 括号内容不一定都是稳定术语，可能是语法说明、专名、英文或临时注释。",
+                "- 方括号、脚注和讨论性补充应与正文译文分层处理。",
+                "- `vā`、`nāma`、`vuccati` 等公式条目需继续检查上下文，避免只按词面归类。",
+                "- 绝对分词结构目前是候选集合，不能直接当作确认规则使用。",
+                "- 后续扩展应每次只审一个类别，例如术语、固定搭配或特殊句式。",
+                "",
+                "## 大文件处理原则",
+                "",
+                "详细原则见 `docs/large-file-workflow.md`。执行时 LLM 每次接收的数据量应控制在模型最大上下文约 20% 以内；实际原文数据建议控制在 15%，其余空间留给任务说明和输出。",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build a machine-generated version KB draft.")
     parser.add_argument("source_file", type=Path)
@@ -921,6 +1367,7 @@ def main() -> None:
     args = parser.parse_args()
 
     records = load_records(args.source_file)
+    metadata = read_version_metadata(args.source_file)
     entries_dir = args.kb_dir / "entries"
     entries_dir.mkdir(parents=True, exist_ok=True)
 
@@ -933,6 +1380,7 @@ def main() -> None:
     collocations = collect_collocations(records, evidence_rows)
     sentence_patterns = collect_sentence_patterns(records, evidence_rows)
     style_entries, strategy_entries = collect_style_and_strategy(records, evidence_rows)
+    strategy_entries = attach_strategy_evidence(strategy_entries, [*collocations, *sentence_patterns, *style_entries])
 
     json_dump(args.kb_dir / "profile.json", profile)
     write_jsonl(entries_dir / "chunk-plan.jsonl", chunk_plan)
@@ -945,6 +1393,7 @@ def main() -> None:
     write_markdown_files(
         args.kb_dir,
         args.source_file,
+        metadata,
         profile,
         chunk_plan,
         terminology,
@@ -953,6 +1402,20 @@ def main() -> None:
         style_entries,
         strategy_entries,
     )
+    write_version_metadata_files(
+        args.kb_dir,
+        args.source_file,
+        metadata,
+        profile,
+        chunk_plan,
+        terminology,
+        collocations,
+        sentence_patterns,
+        style_entries,
+        strategy_entries,
+        evidence_rows,
+    )
+    update_manifest(args.kb_dir.parent.parent / "manifest.yml", metadata, args.kb_dir)
 
     print(json.dumps(
         {

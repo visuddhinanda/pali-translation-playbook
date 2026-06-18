@@ -54,6 +54,8 @@ instruction_and_output_budget = N * 0.05
 5. 按信号过滤，例如只分析含 `paccayo`、`vuccati`、`nāma`、`vā` 的记录。
 6. 若仍超预算，再按行号范围切小块。
 
+注意：第 5 条只适用于复核某个已知信号或验证既有规则，不适用于首次抽取固定搭配。固定搭配的首次发现必须使用开放式分析，不能在提示词中预先限定 `paccayo`、`vuccati`、`nāma`、`vā` 等少数搭配，否则输出会退化为“已知规则复查”，无法发现该版本真正高频或有特色的搭配。
+
 ## 单次 LLM 任务粒度
 
 每次只做一种任务：
@@ -67,6 +69,35 @@ instruction_and_output_budget = N * 0.05
 - 冲突和变体合并。
 
 不要在同一个大 chunk 中同时要求完整分析风格、术语、搭配、句式和策略。
+
+## 固定搭配抽取规则
+
+固定搭配抽取分为两个阶段，不能混用。
+
+第一阶段是开放式发现。LLM 接收预算内 chunk 后，应从该 chunk 中自行寻找重复出现或高度相似的 Pali 片段、汉译表达、公式句、术语组合、注释书套语和特殊译法。提示词只能说明“寻找高频固定搭配和可复用翻译模式”，不能列出希望模型寻找的具体搭配。输出应按出现频次、跨上下文稳定性、译法一致性和语言学价值排序，并为每个候选提供 `unit_key` 证据。
+
+第二阶段才是定向复核。只有当开放式阶段已经产生候选后，才能针对某个候选搭配继续追问，例如检查 `paccayo` 是否分为“后缀”和“缘”，或检查 `vā` 是否稳定译为“或/或者/换行并列”。定向复核不得替代开放式发现。
+
+如果一个 10,000 行以上的版本只抽出与小版本相同数量的固定搭配，应视为抽取方法异常，而不是语料确实没有更多搭配。此时应记录为 `needs_open_discovery_rerun`，并重新按 chunk 做开放式搭配发现。
+
+开放式固定搭配抽取的输出建议至少包含：
+
+```yaml
+id:
+source_pattern:
+translation_pattern:
+collocation_type:
+occurrence_count_in_chunk:
+evidence:
+  - unit_key:
+    source_quote:
+    target_quote:
+variant_translations:
+conditions:
+notes:
+confidence:
+review_status: machine_generated
+```
 
 ## 中间结果要求
 
@@ -127,4 +158,3 @@ variants:
 3. 只处理 1 到 3 个 chunk，人工确认条目格式后再扩大范围。
 
 这可以避免模型上下文过大、抽取目标过宽、证据链丢失三个常见问题。
-

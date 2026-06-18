@@ -14,7 +14,8 @@
 - `entries/style-observations.jsonl`: 3 类风格观察。
 - `entries/strategies.jsonl`: 4 类策略。
 - `entries/evidence.jsonl`: 1876 条证据。
-- `entries/reviewed-from-md.jsonl`: 290 条从 Markdown YAML 块导出的条目。
+- `style-guide.md`: 自然语言风格报告，不含 YAML 条目块。
+- `entries/reviewed-from-md.jsonl`: 287 条从 Markdown YAML 块导出的条目，不包含 `style-guide.md`。
 
 ## 后续应重点复核
 

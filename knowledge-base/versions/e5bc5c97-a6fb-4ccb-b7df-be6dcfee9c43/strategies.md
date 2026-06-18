@@ -1,0 +1,279 @@
+# 翻译策略倾向
+
+本文件记录该版本由全量扫描支持的翻译策略候选。正式条目使用 `## + yaml` 格式。
+
+## 摘要索引
+
+| ID | Name | Definition | Confidence | Status |
+| --- | --- | --- | --- | --- |
+| strategy-explanatory-literal | 解释性直译 | 保留巴利结构和关键词，同时补出语法、词源或隐含关系。 | 0.75 | machine_generated |
+| strategy-pali-retention | 保留巴利原词 | 在中文译名或解释后用括号保留巴利词形。 | 0.75 | machine_generated |
+| strategy-bracketed-expansion | 方括号增补 | 用方括号标出译者补足、推测或解释性成分。 | 0.7 | machine_generated |
+| strategy-linebreak-decomposition | 换行拆解 | 用换行拆分多重词源、并列义项或复杂说明。 | 0.7 | machine_generated |
+
+## 条目
+
+## strategy-explanatory-literal
+
+```yaml
+id: strategy-explanatory-literal
+version_id: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43
+type: strategy
+name: 解释性直译
+description: 保留巴利结构和关键词，同时补出语法、词源或隐含关系。
+definition: 保留巴利结构和关键词，同时补出语法、词源或隐含关系。
+when_used:
+- 词源解释
+- 语法说明
+- 术语定义
+- 长注释句
+risks:
+- 译文包含解释性增补，不能全部视为原文逐词对应。
+related_entry_ids:
+- syntax-definition-vuccati-nama
+evidence:
+- unit_id: 16-3253-17-28
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:16-3253-17-28
+  line: 30
+  source_quote: 'Kaṃ vuccati sukhaṃ, taṃ rundhati vibādhati kāruṇikaṃ na sukhāpetītipi
+    karuṇā. '
+  target_quote: '凡某种[法]被称为乐，即阻止、妨碍该[法]而不让心怀悲悯者快乐，故亦名为 悲悯
+
+    。'
+- unit_id: 64-141-37-53
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:64-141-37-53
+  line: 84
+  source_quote: 'Tañhi yo naṃ pāti rakkhati, taṃ mokkheti mocayati āpāyikādīhi dukkhehi,
+    tasmā pātimokkhan ti vuccati. '
+  target_quote: 此[戒]能让持守、守护者从[四]恶趣之苦解脱，故称为 巴帝摩卡。
+- unit_id: 64-143-7-17
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:64-143-7-17
+  line: 93
+  source_quote: 'Kāyiko vītikkamo vācasiko vītikkamo kāyikavācasiko vītikkamo, ayaṃ
+    vuccati anācāro. '
+  target_quote: 身违犯、语违犯、身语违犯，这称为不正当的行为。
+evidence_ids:
+- ev-006411
+- ev-006412
+- ev-006413
+confidence: 0.75
+review_status: machine_generated
+```
+
+## strategy-pali-retention
+
+```yaml
+id: strategy-pali-retention
+version_id: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43
+type: strategy
+name: 保留巴利原词
+description: 在中文译名或解释后用括号保留巴利词形。
+definition: 在中文译名或解释后用括号保留巴利词形。
+when_used:
+- 术语未稳定
+- 词源解释
+- 专名或物名
+- 需要可追溯性
+risks:
+- 降低汉语自然度，增加检索噪声。
+related_entry_ids:
+- style-parenthetical-pali
+evidence:
+- unit_id: 9-54-73-81
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:9-54-73-81
+  line: 2
+  source_quote: 'Yakkha pūjāyaṃ, yakkhīyate pūjīyateti yakkho, kuverādiko. '
+  target_quote: 被祭祀者表达为祭祀，应被祭祀，应被供奉，因此为 被祭祀者，如：俱吠罗，统治北方的神(kuvera)等。
+- unit_id: 9-54-82-88
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:9-54-82-88
+  line: 3
+  source_quote: 'Rakkhanti attānaṃ etasmāti rakkhaso, vibhīsaṇādi. '
+  target_quote: '保护自己所远离的，故为
+
+    罗刹，vībhīsana天神。
+
+    非人(amanussa)'
+- unit_id: 9-499-31-58
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:9-499-31-58
+  line: 7
+  source_quote: 'Kaṃ sukhaṃ rundhatīti karuṇā, rudhi āvaraṇe, dha ssa ṇo, atha vā
+    karonti attānamadhīnametāyāti karuṇā, yu, ā, karuṇā, sā eva kāruññaṃ. '
+  target_quote: '“阻止（rundhati）某种（ka） 快乐”为 悲悯(karuṇā)
+
+    ，[词根] rudhi
+
+    是关闭屏蔽之义+[把其中的音节] dha
+
+    变为 ṇa
+
+    ；又或“完成（karonti）自己与他人的连接[所要凭借的]”名为悲悯
+
+    ，[词根kara]+yu（到达、产生）+ā（阴性名词）= 悲悯，其（中性变体）即为 kāruñña
+
+    。'
+evidence_ids:
+- ev-009430
+- ev-009431
+- ev-009432
+confidence: 0.75
+review_status: machine_generated
+```
+
+## strategy-bracketed-expansion
+
+```yaml
+id: strategy-bracketed-expansion
+version_id: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43
+type: strategy
+name: 方括号增补
+description: 用方括号标出译者补足、推测或解释性成分。
+definition: 用方括号标出译者补足、推测或解释性成分。
+when_used:
+- 原文省略主体
+- 需要补足语法关系
+- 译者提示不确定内容
+risks:
+- 方括号内容不能直接等同于原文。
+related_entry_ids:
+- style-bracket-supplement
+evidence:
+- unit_id: 9-499-31-58
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:9-499-31-58
+  line: 7
+  source_quote: 'Kaṃ sukhaṃ rundhatīti karuṇā, rudhi āvaraṇe, dha ssa ṇo, atha vā
+    karonti attānamadhīnametāyāti karuṇā, yu, ā, karuṇā, sā eva kāruññaṃ. '
+  target_quote: '“阻止（rundhati）某种（ka） 快乐”为 悲悯(karuṇā)
+
+    ，[词根] rudhi
+
+    是关闭屏蔽之义+[把其中的音节] dha
+
+    变为 ṇa
+
+    ；又或“完成（karonti）自己与他人的连接[所要凭借的]”名为悲悯
+
+    ，[词根kara]+yu（到达、产生）+ā（阴性名词）= 悲悯，其（中性变体）即为 kāruñña
+
+    。'
+- unit_id: 9-501-41-51
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:9-501-41-51
+  line: 9
+  source_quote: 'Mida snehe, mijjati sinehatīti mettā, ta, ā. '
+  target_quote: '[词根] mida
+
+    为爱[之义]，因此“亲近，喜爱”名为 mettā
+
+    =mida（爱）+ta（产生）+ā（阴性名词）'
+- unit_id: 16-2439-71-90
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:16-2439-71-90
+  line: 24
+  source_quote: 'Tathā hi yakkhopi sattopi devopi sakkopi khīṇāsavopi yakkhoyeva nāma,
+    mahānubhāvatāya yakkhiyati saraṇagatehi janehi nānāpaccayehi nānābalīhi ca pūjiyatīti
+    yakkho. '
+  target_quote: 同样地，被祭祀者、有情、神(deva)、萨卡天帝、漏尽者皆名为被祭祀者，应被大功德者祭祀祭奠，[展开来说]应被去到庇护所的人们种种因素、种种能力来祭祀祭奠，[此即]被祭祀者。
+evidence_ids:
+- ev-012162
+- ev-012163
+- ev-012164
+confidence: 0.7
+review_status: machine_generated
+```
+
+## strategy-linebreak-decomposition
+
+```yaml
+id: strategy-linebreak-decomposition
+version_id: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43
+type: strategy
+name: 换行拆解
+description: 用换行拆分多重词源、并列义项或复杂说明。
+definition: 用换行拆分多重词源、并列义项或复杂说明。
+when_used:
+- 多个 vā 并列
+- 长词源解释
+- 语法例句逐项说明
+risks:
+- 清洗文本时不能直接丢弃换行。
+related_entry_ids:
+- style-newline-decomposition
+- syntax-va-alternative
+evidence:
+- unit_id: 9-54-82-88
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:9-54-82-88
+  line: 3
+  source_quote: 'Rakkhanti attānaṃ etasmāti rakkhaso, vibhīsaṇādi. '
+  target_quote: '保护自己所远离的，故为
+
+    罗刹，vībhīsana天神。
+
+    非人(amanussa)'
+- unit_id: 9-54-92-124
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:9-54-92-124
+  line: 4
+  source_quote: 'Pisitaṃ maṃsaṃ asati bhakkhatīti pisāco, sakuni sakuntiādiko kuverānucaro,
+    yadādinā pisitassa pibhāvo, asa ssa ca sācā desabhāvo[ pāṇini6.3.109; moggallānapañcikā1.47]. '
+  target_quote: '吃肉pisita，故为啖肉灵，
+
+    俱吠罗，统治北方的神的追随者，
+
+    pi取pisita(肉)的含义，
+
+    sāca取asa（吃）的含义'
+- unit_id: 9-499-31-58
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:9-499-31-58
+  line: 7
+  source_quote: 'Kaṃ sukhaṃ rundhatīti karuṇā, rudhi āvaraṇe, dha ssa ṇo, atha vā
+    karonti attānamadhīnametāyāti karuṇā, yu, ā, karuṇā, sā eva kāruññaṃ. '
+  target_quote: '“阻止（rundhati）某种（ka） 快乐”为 悲悯(karuṇā)
+
+    ，[词根] rudhi
+
+    是关闭屏蔽之义+[把其中的音节] dha
+
+    变为 ṇa
+
+    ；又或“完成（karonti）自己与他人的连接[所要凭借的]”名为悲悯
+
+    ，[词根kara]+yu（到达、产生）+ā（阴性名词）= 悲悯，其（中性变体）即为 kāruñña
+
+    。'
+- unit_id: 9-499-31-58
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:9-499-31-58
+  line: 7
+  source_quote: 'Kaṃ sukhaṃ rundhatīti karuṇā, rudhi āvaraṇe, dha ssa ṇo, atha vā
+    karonti attānamadhīnametāyāti karuṇā, yu, ā, karuṇā, sā eva kāruññaṃ. '
+  target_quote: '“阻止（rundhati）某种（ka） 快乐”为 悲悯(karuṇā)
+
+    ，[词根] rudhi
+
+    是关闭屏蔽之义+[把其中的音节] dha
+
+    变为 ṇa
+
+    ；又或“完成（karonti）自己与他人的连接[所要凭借的]”名为悲悯
+
+    ，[词根kara]+yu（到达、产生）+ā（阴性名词）= 悲悯，其（中性变体）即为 kāruñña
+
+    。'
+- unit_id: 9-501-56-64
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:9-501-56-64
+  line: 11
+  source_quote: 'Atha vā mitte bhavā mettā, metti ca. '
+  target_quote: '又或，友谊为mettā和metti
+
+    。'
+- unit_id: 16-2439-46-56
+  unit_key: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43:16-2439-46-56
+  line: 22
+  source_quote: Sabbepi vā sattā‘‘ yakkhā’’ ti vuccanti.
+  target_quote: 或者所有的有情皆可称为“被祭祀者”。
+evidence_ids:
+- ev-015163
+- ev-015164
+- ev-015165
+- ev-006851
+- ev-006852
+- ev-006853
+confidence: 0.7
+review_status: machine_generated
+```

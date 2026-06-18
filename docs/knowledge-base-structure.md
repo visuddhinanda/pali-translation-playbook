@@ -164,7 +164,9 @@ review_status: "draft"
 
 ### `style-guide.md`
 
-记录该版本的语言风格。建议分为：
+记录该版本的语言风格。该文件推荐写成自然语言研究报告，不强制使用 YAML 条目块。机器可读风格观察放在 `entries/style-observations.jsonl`。
+
+建议分为：
 
 - 总体风格：直译、意译、讲解式、古典汉译、现代汉语等；
 - 句法风格：长句处理、短句拆分、因果关系显化；
@@ -173,7 +175,7 @@ review_status: "draft"
 - 标点风格：分号、顿号、破折号、换行；
 - 风格风险：可能导致的误读或检索噪声。
 
-对应机器条目放在 `entries/style-observations.jsonl`。
+对应机器条目放在 `entries/style-observations.jsonl`。程序应读取 JSONL，不应从 `style-guide.md` 中抽取结构化数据。
 
 ### `terminology.md`
 
@@ -212,6 +214,8 @@ review_status: "human_reviewed"
 
 对应机器条目放在 `entries/collocations.jsonl`。
 正式条目同样采用 `## 条目标题 + YAML 块`，表格只作为自动摘要。
+
+固定搭配的首次抽取必须是开放式发现，不应在提示词中预先限定少数已知搭配。LLM 应在每个 chunk 中自行找出高频、稳定、可复用的 Pali-Chinese 搭配，并按证据排序。`paccayo`、`vuccati`、`nāma`、`vā` 等已知公式只能作为第二阶段复核对象，不能作为第一阶段抽取范围。如果大版本只得到与小版本相同数量的固定搭配，应标记为抽取不足并重跑开放式发现。
 
 ### `sentence-patterns.md`
 
@@ -459,7 +463,7 @@ strategies:
 2. 建立该版本的 `corpus.yml`。
 3. 抽样分析语言风格，写入 `style-guide.md`。
 4. 抽取高频术语，写入 `terminology.md` 和 `entries/terminology.jsonl`。
-5. 抽取固定搭配，写入 `collocations.md`。
+5. 开放式抽取固定搭配，写入 `collocations.md`；不要只复核预设搭配。
 6. 抽取特殊句式，写入 `sentence-patterns.md`。
 7. 总结该版本策略偏好，写入 `strategies.md`。
 
