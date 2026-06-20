@@ -1,0 +1,400 @@
+# 翻译策略倾向
+
+本文件由开放式固定搭配、开放式特殊句式和风格观察综合生成。它不以少数预设公式作为策略范围，而是把全量发现的候选归纳为可人工复核的策略假设。
+
+## 摘要索引
+
+| ID | Name | Related Entries | Evidence |
+| --- | --- | ---: | ---: |
+| strategy-open-frequency-first | 高频证据优先 | 8 | 8 |
+| strategy-open-explanatory-citation | 解释与引文显化 | 3 | 8 |
+| strategy-open-decomposition | 长句拆解与补足 | 3 | 8 |
+| strategy-open-relation-explicitation | 关系词显化 | 7 | 8 |
+| strategy-open-verbal-relation | 动作关系处理 | 2 | 8 |
+
+## 条目
+
+## strategy-open-frequency-first
+
+```yaml
+id: strategy-open-frequency-first
+version_id: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0
+type: strategy
+name: 高频证据优先
+description: 先从全量语料中发现高频、跨 chunk 重复的搭配和句法信号，再由人工筛选为稳定规则。
+definition: 先从全量语料中发现高频、跨 chunk 重复的搭配和句法信号，再由人工筛选为稳定规则。
+when_used:
+- 固定搭配抽取
+- 版本内风格画像
+- RAG 候选知识生成
+risks:
+- 高频不等于高价值，可能混入泛化词、引用缩写或格式噪声。
+related_entry_ids:
+- open-collocation-sattha-224cb6ad
+- open-collocation-bhante-dd737d96
+- open-collocation-vatva-0347ed0a
+- open-collocation-gantva-dd1d4763
+- open-collocation-ti-vatva-c68e6f1b
+- open-collocation-disva-0dd06cbf
+- open-collocation-ti-aha-79ad5cc1
+- open-collocation-atha-nam-aeb5e6db
+evidence:
+- unit_id: 122-14-2-7
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-14-2-7
+  line: 6
+  source_quote: Sampattasaddhammapado , satthā dhammapadaṃ subhaṃ.
+  target_quote: 成就正法文，导师法句美。
+- unit_id: 122-46-2-20
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-46-2-20
+  line: 43
+  source_quote: Tasmiṃ samaye satthā pavattitavaradhammacakko anupubbenāgantvā anāthapiṇḍikena
+    mahāseṭṭhinā catupaṇṇāsakoṭidhanaṃ vissajjetvā kārite jetavanamahāvihāre viharati
+    mahājanaṃ saggamagge ca mokkhamagge ca patiṭṭhāpayamāno.
+  target_quote: 那时导师已转起殊胜的法轮，次第到达了由给孤独大富翁(anāthapiṇḍika mahāseṭṭhi)施舍五亿四千万钱财所建造的揭德林大寺，并于居住期间令大众住立于天界之道和解脱之道上。
+- unit_id: 122-46-117-124
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-46-117-124
+  line: 49
+  source_quote: Tesu anāthapiṇḍikena ekadivasampi satthā pañhaṃ na pucchitapubbo.
+  target_quote: 在他们（给孤独大富翁和维沙卡）中，给孤独大富翁[任何]一天都没有问过导师问题。
+- unit_id: 122-46-153-164
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-46-153-164
+  line: 51
+  source_quote: Satthā pana tasmiṃ nisinnamatteyeva‘‘ ayaṃ seṭṭhi maṃ arakkhitabbaṭṭhāne
+    rakkhati.
+  target_quote: 正当他坐着时，导师则[想]：“这位富翁在不需要保护之处保护我。
+- unit_id: 122-48-2-25
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-48-2-25
+  line: 58
+  source_quote: Buddhā ca nāma dhammaṃ desentā saraṇasīlapabbajjādīnaṃ upanissayaṃ
+    oloketvā ajjhāsayavasena dhammaṃ desenti, tasmā taṃ divasaṃ satthā tassa upanissayaṃ
+    oloketvā dhammaṃ desento anupubbikathaṃ kathesi.
+  target_quote: 而诸佛开示佛法时[都是]观察了[听众的]皈依、持戒、出家等强依止后，根据意乐开示佛法，因此那天导师观察了他（大护）的强依止后在说法时开示了次第论。
+- unit_id: 122-48-84-87
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-48-84-87
+  line: 63
+  source_quote: Atha naṃ satthā–
+  target_quote: 那时导师问他道：
+- unit_id: 122-51-129-135
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-51-129-135
+  line: 82
+  source_quote: Athassa satthā yāva arahattaṃ kammaṭṭhānaṃ kathesi.
+  target_quote: 于是导师为他开示了直到阿拉汉的业处。
+- unit_id: 122-113-27-73
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-113-27-73
+  line: 363
+  source_quote: Satthā taṃ disvā tassa antogehā nīharitvā tattha nipajjāpitabhāvaṃ
+    ñatvā‘‘ atthi nu kho mayhaṃ ettha gatapaccayena attho’’ ti upadhārento idaṃ addasa–
+    ayaṃ māṇavo mayi cittaṃ pasādetvā kālaṃ katvā tāvatiṃsadevaloke tiṃs…
+  target_quote: 导师看到他后，知道他被从家中挪出来躺在那里。“是否会因为我前往该处的缘而有利益呢？” 如此观察时看到：“这位青年会在对我心生净信后去世，投生到三十三天有三十由旬的黄金宫殿中，并有一千个天女围绕。婆罗门把他火化后会哭着在坟场徘徊。
+confidence: 0.72
+review_status: machine_generated
+discovery_method: open_synthesis
+```
+
+## strategy-open-explanatory-citation
+
+```yaml
+id: strategy-open-explanatory-citation
+version_id: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0
+type: strategy
+name: 解释与引文显化
+description: 对引文、设问、词义解释和定义公式，倾向用引号、冒号、所谓、意思是、说等方式显化原文的解释结构。
+definition: 对引文、设问、词义解释和定义公式，倾向用引号、冒号、所谓、意思是、说等方式显化原文的解释结构。
+when_used:
+- 注释书解释
+- 词义训释
+- 经论引文
+- 设问回答
+risks:
+- 引号内内容、译者补足和原文引文需要分层保存。
+related_entry_ids:
+- open-syntax-quoted-text-ti-fa894249
+- open-syntax-iti-gloss-b181fd91
+- open-syntax-question-explanation-52d70666
+evidence:
+- unit_id: 122-42-2-12
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-42-2-12
+  line: 26
+  source_quote: Tato naṃ dukkhamanveti, cakkaṃva vahato padan’’ ti.
+  target_quote: 由此苦随彼，如轮随牛足。”
+- unit_id: 122-44-13-65
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-44-13-65
+  line: 32
+  source_quote: So ekadivasaṃ nhānatitthaṃ nhatvā natvā āgacchanto antarāmagge sampannapattasākhaṃ
+    ekaṃ vanappatiṃ disvā‘‘ ayaṃ mahesakkhāya devatāya pariggahito bhavissatī’’ ti
+    tassa heṭṭhābhāgaṃ sodhāpetvā pākāraparikkhepaṃ kārāpetvā vālukaṃ okirāpetvā dhajapaṭākaṃ
+    ussāpet…
+  target_quote: 一天，他在浴场洗完澡回来的路上看到一棵枝繁叶茂的树王，（心想）这树上一定住有大威力的天神。于是他将树下打扫干净，建了围墙并铺上沙子，还竖了一面旗幡。装饰了树王后合掌说：“如果能获得一个儿子或者女儿，我将向您做大敬奉。”许完愿他就离开了。
+- unit_id: 122-46-56-81
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-46-56-81
+  line: 45
+  source_quote: Anāthapiṇḍikopi visākhāpi mahāupāsikā nibaddhaṃ divasassa dve vāre
+    tathāgatassa upaṭṭhānaṃ gacchanti, gacchantā ca‘‘ daharasāmaṇerā no hatthe olokessantī’’
+    ti tucchahatthā na gatapubbā.
+  target_quote: 给孤独[大富翁]和维沙卡大近事女总是每天两次为前去侍奉如来，当去的时候想“年轻的比库、沙马内勒们将会看着我们的手”，就从未空手而去。
+- unit_id: 122-46-125-152
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-46-125-152
+  line: 50
+  source_quote: So kira‘‘ tathāgato buddhasukhumālo khattiyasukhumālo,‘ bahūpakāro
+    me, gahapatī’ ti mayhaṃ dhammaṃ desento kilameyyā’’ ti satthari adhimattasinehena
+    pañhaṃ na pucchati.
+  target_quote: 据说他[出于]：“如来身为佛陀而娇嫩，身为刹帝利而娇嫩，若[想着]‘[这位]家主对我助益良多’而对我说法会疲倦”，由于对导师强烈的敬爱而没有问过问题。
+- unit_id: 122-46-153-164
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-46-153-164
+  line: 51
+  source_quote: Satthā pana tasmiṃ nisinnamatteyeva‘‘ ayaṃ seṭṭhi maṃ arakkhitabbaṭṭhāne
+    rakkhati.
+  target_quote: 正当他坐着时，导师则[想]：“这位富翁在不需要保护之处保护我。
+- unit_id: 122-46-186-196
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-46-186-196
+  line: 53
+  source_quote: Esa maṃ arakkhitabbaṭṭhāne rakkhatī’’ ti ekaṃ dhammadesanaṃ kathetiyeva.
+  target_quote: 他在不需要保护之处保护我。”于是（佛陀）就作了一场佛法开示。
+- unit_id: 122-47-39-76
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-47-39-76
+  line: 57
+  source_quote: Athekadivasaṃ mahāpālo ariyasāvake gandhamālādihatthe vihāraṃ gacchante
+    disvā‘‘ ayaṃ mahājano kuhiṃ gacchatī’’ ti pucchitvā‘‘ dhammassavanāyā’’ ti sutvā‘‘
+    ahampi gamissāmī’’ ti gantvā satthāraṃ vanditvā parisapariyante nisīdi.
+  target_quote: 当时有一天，大护（mahāpāla）看到那些圣弟子们手里拿着香和花前去寺院，问道：“这一大群人是去哪里呢？”听到“去听闻佛法”后，就说“我也要去。”去到后礼敬了导师，接着在听众的外围坐下。
+- unit_id: 122-48-50-76
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-48-50-76
+  line: 61
+  source_quote: ‘‘ paralokaṃ gacchantaṃ puttadhītaro vā bhātaro vā bhogā vā nānugacchanti,
+    sarīrampi attanā saddhiṃ na gacchati, kiṃ me gharāvāsena pabbajissāmī’’ ti.
+  target_quote: “儿女、兄弟、财产都不会跟着去往来世者而去，连身体也不会同自己一起去，住在家里对我又有何益？我要出家！”
+confidence: 0.72
+review_status: machine_generated
+discovery_method: open_synthesis
+```
+
+## strategy-open-decomposition
+
+```yaml
+id: strategy-open-decomposition
+version_id: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0
+type: strategy
+name: 长句拆解与补足
+description: 遇到长句、多层注释或隐含关系时，用换行、方括号、分句和补足语把结构展开。
+definition: 遇到长句、多层注释或隐含关系时，用换行、方括号、分句和补足语把结构展开。
+when_used:
+- 长复句
+- 多重并列
+- 隐含主宾语
+- 术语说明
+risks:
+- 补足内容不能直接当作原文逐词对应。
+related_entry_ids:
+- open-syntax-bracketed-supplement-syntax-550f5a6c
+- open-syntax-long-sentence-decomposition-da6644d0
+- open-syntax-newline-decomposition-syntax-585a7090
+evidence:
+- unit_id: 122-45-65-68
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-45-65-68
+  line: 41
+  source_quote: Aparabhāge mātāpitaro kālamakaṃsu.
+  target_quote: 后来[他们的]父母迎来了死亡，
+- unit_id: 122-46-21-55
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-46-21-55
+  line: 44
+  source_quote: Tathāgato hi mātipakkhato asītiyā, pitipakkhato asītiyāti dveasītiñātikulasahassehi
+    kārite nigrodhamahāvihāre ekameva vassāvāsaṃ vasi, anāthapiṇḍikena kārite jetavanamahāvihāre
+    ekūnavīsativassāni, visākhāya sattavīsatikoṭidhanapariccāgena kārite pubbārāme
+    cha…
+  target_quote: 如来在由他父方八万和母方八万如此共十六万亲族家庭共同建立的榕树大寺只度过了一个雨安居，而在由给孤独[大富翁]所建的揭德林大寺度过了十九个雨安居，在由维沙卡施舍两亿七千万钱财所建造的东园度过了六个雨安居，如此出于这两家[会有]许多功德果报，[佛陀]依于沙瓦提城度过了二十五个雨安居。
+- unit_id: 122-46-56-81
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-46-56-81
+  line: 45
+  source_quote: Anāthapiṇḍikopi visākhāpi mahāupāsikā nibaddhaṃ divasassa dve vāre
+    tathāgatassa upaṭṭhānaṃ gacchanti, gacchantā ca‘‘ daharasāmaṇerā no hatthe olokessantī’’
+    ti tucchahatthā na gatapubbā.
+  target_quote: 给孤独[大富翁]和维沙卡大近事女总是每天两次为前去侍奉如来，当去的时候想“年轻的比库、沙马内勒们将会看着我们的手”，就从未空手而去。
+- unit_id: 122-46-107-116
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-46-107-116
+  line: 48
+  source_quote: Annapānabhesajjesu yo yaṃ icchati, tassa taṃ yathicchitameva sampajjati.
+  target_quote: 无论哪位[比库]需要食物、饮料、药物中的任何物品，其所需之物都会如所需充分提供。
+- unit_id: 122-46-117-124
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-46-117-124
+  line: 49
+  source_quote: Tesu anāthapiṇḍikena ekadivasampi satthā pañhaṃ na pucchitapubbo.
+  target_quote: 在他们（给孤独大富翁和维沙卡）中，给孤独大富翁[任何]一天都没有问过导师问题。
+- unit_id: 122-46-125-152
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-46-125-152
+  line: 50
+  source_quote: So kira‘‘ tathāgato buddhasukhumālo khattiyasukhumālo,‘ bahūpakāro
+    me, gahapatī’ ti mayhaṃ dhammaṃ desento kilameyyā’’ ti satthari adhimattasinehena
+    pañhaṃ na pucchati.
+  target_quote: 据说他[出于]：“如来身为佛陀而娇嫩，身为刹帝利而娇嫩，若[想着]‘[这位]家主对我助益良多’而对我说法会疲倦”，由于对导师强烈的敬爱而没有问过问题。
+- unit_id: 122-46-153-164
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-46-153-164
+  line: 51
+  source_quote: Satthā pana tasmiṃ nisinnamatteyeva‘‘ ayaṃ seṭṭhi maṃ arakkhitabbaṭṭhāne
+    rakkhati.
+  target_quote: 正当他坐着时，导师则[想]：“这位富翁在不需要保护之处保护我。
+- unit_id: 122-48-2-25
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-48-2-25
+  line: 58
+  source_quote: Buddhā ca nāma dhammaṃ desentā saraṇasīlapabbajjādīnaṃ upanissayaṃ
+    oloketvā ajjhāsayavasena dhammaṃ desenti, tasmā taṃ divasaṃ satthā tassa upanissayaṃ
+    oloketvā dhammaṃ desento anupubbikathaṃ kathesi.
+  target_quote: 而诸佛开示佛法时[都是]观察了[听众的]皈依、持戒、出家等强依止后，根据意乐开示佛法，因此那天导师观察了他（大护）的强依止后在说法时开示了次第论。
+confidence: 0.72
+review_status: machine_generated
+discovery_method: open_synthesis
+```
+
+## strategy-open-relation-explicitation
+
+```yaml
+id: strategy-open-relation-explicitation
+version_id: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0
+type: strategy
+name: 关系词显化
+description: 把条件、原因、方式、处所、并列、选择和对应关系转成中文关系词或语序结构。
+definition: 把条件、原因、方式、处所、并列、选择和对应关系转成中文关系词或语序结构。
+when_used:
+- 条件句
+- 原因句
+- X-vasena
+- yathā/tathā
+- ya-/ta- 对应
+- 多项并列
+risks:
+- 同一巴利形式在不同上下文中可能需要不同中文关系词。
+related_entry_ids:
+- open-syntax-alternative-series-18071276
+- open-syntax-conditional-clause-848b81ac
+- open-syntax-coordinated-series-9a122f4e
+- open-syntax-relative-correlative-56a796f6
+- open-syntax-cause-reason-relation-43b7ef06
+- open-syntax-yatha-tatha-correlative-73c1c803
+- open-syntax-vasena-relation-202efe52
+evidence:
+- unit_id: 122-41-2-10
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-41-2-10
+  line: 25
+  source_quote: Manasā ce paduṭṭhena, bhāsati vā karoti vā;
+  target_quote: 若以染污意，或语或行动；
+- unit_id: 122-44-13-65
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-44-13-65
+  line: 32
+  source_quote: So ekadivasaṃ nhānatitthaṃ nhatvā natvā āgacchanto antarāmagge sampannapattasākhaṃ
+    ekaṃ vanappatiṃ disvā‘‘ ayaṃ mahesakkhāya devatāya pariggahito bhavissatī’’ ti
+    tassa heṭṭhābhāgaṃ sodhāpetvā pākāraparikkhepaṃ kārāpetvā vālukaṃ okirāpetvā dhajapaṭākaṃ
+    ussāpet…
+  target_quote: 一天，他在浴场洗完澡回来的路上看到一棵枝繁叶茂的树王，（心想）这树上一定住有大威力的天神。于是他将树下打扫干净，建了围墙并铺上沙子，还竖了一面旗幡。装饰了树王后合掌说：“如果能获得一个儿子或者女儿，我将向您做大敬奉。”许完愿他就离开了。
+- unit_id: 122-48-50-76
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-48-50-76
+  line: 61
+  source_quote: ‘‘ paralokaṃ gacchantaṃ puttadhītaro vā bhātaro vā bhogā vā nānugacchanti,
+    sarīrampi attanā saddhiṃ na gacchati, kiṃ me gharāvāsena pabbajissāmī’’ ti.
+  target_quote: “儿女、兄弟、财产都不会跟着去往来世者而去，连身体也不会同自己一起去，住在家里对我又有何益？我要出家！”
+- unit_id: 122-51-63-105
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-51-63-105
+  line: 80
+  source_quote: ‘‘ Attano paññānurūpena ekaṃ vā dve vā nikāye sakalaṃ vā pana tepiṭakaṃ
+    buddhavacanaṃ uggaṇhitvā tassa dhāraṇaṃ, kathanaṃ, vācananti idaṃ ganthadhuraṃ
+    nāma, sallahukavuttino pana pantasenāsanābhiratassa attabhāve khayavayaṃ paṭṭhapetvā
+    sātaccakiriyavasena vip…
+  target_quote: “依据自己的智慧学得的一部、两部或整个三藏佛语，对此忆持、宣说、令诵，这称为教理义务。生活简朴并乐于偏远坐卧处[的比库]于自体建立坏灭（想）后，持恒培育观智后证得阿拉汉（果），这称为观禅义务。”
+- unit_id: 122-54-406-427
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-54-406-427
+  line: 126
+  source_quote: Tasmā te cakkhūni nassantu vā bhijjantu vā, buddhasāsanameva dhārehi,
+    mā cakkhūnī’’ ti bhūtakāyaṃ ovadanto imā gāthāyo abhāsi–
+  target_quote: 因此，就让你的双眼毁掉或者迸裂吧，你只要保持佛陀的教法而不是双眼。”教诫完（依于四大）种而成的身体，他诵出了这些偈颂：
+- unit_id: 122-105-19-59
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-105-19-59
+  line: 319
+  source_quote: Yathā hi bahūsu ekato gāmaghātādīni kammāni karontesu‘‘ ko etesaṃ
+    pubbaṅgamo’’ ti vutte yo nesaṃ paccayo hoti, yaṃ nissāya te taṃ kammaṃ karonti,
+    so datto vā mitto vā tesaṃ pubbaṅgamoti vuccati, evaṃsampadamidaṃ veditabbaṃ.
+  target_quote: 正如当很多人一起造做劫掠村庄等的业时，如果问“谁是他们先行者？”，那么何人是他们的缘，依靠何人他们造了这个业，无论那人是愚人或是朋友，都被称为“他们的先行者”，当了知如是达成的此（譬喻本体——意先行）。
+- unit_id: 122-106-81-109
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-106-81-109
+  line: 330
+  source_quote: Evaṃ manasā ce paduṭṭhena, bhāsati vā karoti vā so bhāsamāno catubbidhaṃ
+    vacīduccaritameva bhāsati, karonto tividhaṃ kāyaduccaritameva karoti, abhāsanto
+    akaronto tāya abhijjhādīhi paduṭṭhamānasatāya tividhaṃ manoduccaritaṃ pūreti.
+  target_quote: 如是，若以染污意，或语或行动，当他说时只说四种语恶行，行动时只做三种身恶行，既不说也不做时，因被贪婪等所染污之意而盈满三种意恶行。
+- unit_id: 122-112-150-158
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-112-150-158
+  line: 355
+  source_quote: Athassa te yaṃ vā taṃ vā rukkhatacādiṃ ācikkhanti.
+  target_quote: 当时医生们告诉他模棱两可的树皮等（药）。
+confidence: 0.72
+review_status: machine_generated
+discovery_method: open_synthesis
+```
+
+## strategy-open-verbal-relation
+
+```yaml
+id: strategy-open-verbal-relation
+version_id: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0
+type: strategy
+name: 动作关系处理
+description: 对绝对分词、义务式或可行性形式，按上下文处理为先后、方式、原因、应当、可知等关系。
+definition: 对绝对分词、义务式或可行性形式，按上下文处理为先后、方式、原因、应当、可知等关系。
+when_used:
+- -tvā/-tvāna
+- -tabba
+- -anīya
+- 动作串联
+- 说明性指令
+risks:
+- 形式信号只能生成候选，不能机械套用固定译法。
+related_entry_ids:
+- open-syntax-absolutive-sequence-4e2ef2a0
+- open-syntax-gerundive-obligation-fcba4188
+evidence:
+- unit_id: 122-10-2-8
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-10-2-8
+  line: 3
+  source_quote: Tassa pāde namassitvā, sambuddhassa sirīmato;
+  target_quote: 顶礼彼正觉，具福者之足；
+- unit_id: 122-11-2-8
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-11-2-8
+  line: 4
+  source_quote: Saddhammañcassa pūjetvā, katvā saṅghassa cañjaliṃ.
+  target_quote: 我亦敬正法，合掌向僧团。
+- unit_id: 122-31-2-7
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-31-2-7
+  line: 17
+  source_quote: Pahāyāropayitvāna , tantibhāsaṃ manoramaṃ;
+  target_quote: 精简增加后，圣典语悦意。
+- unit_id: 122-34-2-9
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-34-2-9
+  line: 19
+  source_quote: Kevalaṃ taṃ vibhāvetvā, sesaṃ tameva atthato;
+  target_quote: 我皆阐明彼，依义释其余。
+- unit_id: 122-44-13-65
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-44-13-65
+  line: 32
+  source_quote: So ekadivasaṃ nhānatitthaṃ nhatvā natvā āgacchanto antarāmagge sampannapattasākhaṃ
+    ekaṃ vanappatiṃ disvā‘‘ ayaṃ mahesakkhāya devatāya pariggahito bhavissatī’’ ti
+    tassa heṭṭhābhāgaṃ sodhāpetvā pākāraparikkhepaṃ kārāpetvā vālukaṃ okirāpetvā dhajapaṭākaṃ
+    ussāpet…
+  target_quote: 一天，他在浴场洗完澡回来的路上看到一棵枝繁叶茂的树王，（心想）这树上一定住有大威力的天神。于是他将树下打扫干净，建了围墙并铺上沙子，还竖了一面旗幡。装饰了树王后合掌说：“如果能获得一个儿子或者女儿，我将向您做大敬奉。”许完愿他就离开了。
+- unit_id: 122-45-10-17
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-45-10-17
+  line: 34
+  source_quote: Sā gabbhassa patiṭṭhitabhāvaṃ ñatvā tassa ārocesi.
+  target_quote: 妻子知道自己怀上以后就告诉了他，
+- unit_id: 122-45-49-59
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-45-49-59
+  line: 39
+  source_quote: Tassa {cūḷapālo}ti nāmaṃ katvā itarassa {mahāpālo}ti nāmaṃ akāsi.
+  target_quote: 就给他取名为**“小护(cūḷapāla)”，另一个则叫“大护”**。
+- unit_id: 122-46-2-20
+  unit_key: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0:122-46-2-20
+  line: 43
+  source_quote: Tasmiṃ samaye satthā pavattitavaradhammacakko anupubbenāgantvā anāthapiṇḍikena
+    mahāseṭṭhinā catupaṇṇāsakoṭidhanaṃ vissajjetvā kārite jetavanamahāvihāre viharati
+    mahājanaṃ saggamagge ca mokkhamagge ca patiṭṭhāpayamāno.
+  target_quote: 那时导师已转起殊胜的法轮，次第到达了由给孤独大富翁(anāthapiṇḍika mahāseṭṭhi)施舍五亿四千万钱财所建造的揭德林大寺，并于居住期间令大众住立于天界之道和解脱之道上。
+confidence: 0.72
+review_status: machine_generated
+discovery_method: open_synthesis
+```

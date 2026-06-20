@@ -1,0 +1,47 @@
+version_id: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0
+display_name: 法句义注中译组——一校
+source_file: translations/5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0.jsonl
+source_language: pi
+target_language: zh
+record_count: 8650
+translator: 法句义注中译组——一校
+review_status: machine_generated_full_draft
+raw_schema:
+  fields:
+  - id
+  - original
+  - translation
+  - category
+  - path
+observed_quality:
+  valid_jsonl: true
+  unique_ids_within_version: true
+  empty_category_path_records: []
+style_profile:
+  summary: 解释性、讨论型，常保留巴利词形、补足隐含关系并拆分复杂说明。
+  literalness: medium
+  explanatory_density: high
+  pali_retention: high
+  bracketed_supplements: high
+  line_break_usage: medium
+statistics:
+  multiline_translation_count: 595
+  parenthetical_pali_candidate_count: 865
+  bracketed_translation_count: 1602
+  average_source_length_chars: 91.69
+  average_target_length_chars: 33.55
+derived_outputs:
+  chunk_count: 55
+  terminology_entries: 1077
+  collocation_entries: 200
+  sentence_pattern_entries: 18
+  style_observation_entries: 3
+  strategy_entries: 5
+  evidence_rows: 7869
+  style_markdown_format: natural_language
+  style_prompt: style-prompt.md
+  generated_by: scripts/build_version_kb.py
+  markdown_yaml_entries: 1300
+  collocation_discovery: open_default
+  sentence_pattern_discovery: open_default
+  strategy_discovery: open_synthesis

@@ -1,74 +1,116 @@
-# 特殊句式翻译技巧
+# 开放式特殊句式翻译技巧候选
 
-本文件记录全量扫描得到的句式候选。正式条目使用 `## + yaml` 格式。`needs_review` 表示仅由形式信号检测，需人工确认。
+本文件按开放式句法信号生成：不限定某几个既有规则，而是从全量语料中寻找可复用的句法处理方式。结果是机器候选，供人工筛选、合并和改写。
+
+- source file: `translations/3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc.jsonl`
+- chunk count: `156`
+- candidate count: `16`
+- review status: `machine_generated`
 
 ## 摘要索引
 
-| ID | Category | Source | Target | Count | Status |
-| --- | --- | --- | --- | --- | --- |
-| syntax-etymological-explanation | etymological_explanation | root/word + meaning + derived form + paccayo | 词根义 + 派生解释 + 后缀说明 | 2 | machine_generated |
-| syntax-paccaya-condition-formula | conditional_relation_formula | X-paccayena paccayo / X paccayo | 以X缘为缘 / X为缘 | 44 | machine_generated |
-| syntax-definition-vuccati-nama | definition_formula | X vuccati / X nāma | 称为 / 所谓 / 名为 / 即 | 81 | machine_generated |
-| syntax-va-alternative | alternative_explanation | X vā Y | X，或Y / 换行并列 | 121 | machine_generated |
-| syntax-absolutive-tva-candidate | absolutive_construction_candidate | verb-tvā / verb-tvāna | 候选集合，未确认固定译法 | 368 | needs_review |
+| ID | Category | Source Pattern | Translation Pattern | Count | Chunks |
+| --- | --- | --- | --- | ---: | ---: |
+| open-syntax-iti-gloss-b181fd91 | gloss_or_definition | X-ti / X ti + explanation | 不 / 以 / 说 / 无 / 如 / 时 | 1301 | 129 |
+| open-syntax-quoted-text-ti-fa894249 | quotation_or_citation | quoted text + ti / iti | 说 / 不 / 以 / 时 / 如 / 和 | 433 | 90 |
+| open-syntax-newline-decomposition-syntax-585a7090 | decomposition | complex source + target line breaks | 不 / 以 / 说 / 无 / 时 / 如 | 390 | 82 |
+| open-syntax-absolutive-sequence-4e2ef2a0 | absolutive_or_converb | verb-tvā / verb-tvāna | 不 / 以 / 说 / 时 / 和 / 如 | 367 | 85 |
+| open-syntax-negative-clause-81fab4d0 | negation | na / no / natthi / mā + predicate | 不 / 以 / 说 / 如 / 无 / 没有 | 348 | 79 |
+| open-syntax-long-sentence-decomposition-da6644d0 | long_sentence | long multi-clause sentence | 不 / 以 / 说 / 和 / 时 / 无 | 276 | 78 |
+| open-syntax-locative-topic-01bea915 | locative_topic | ettha / tattha / idha | 不 / 以 / 说 / 如 / 时 / 和 | 217 | 70 |
+| open-syntax-gerundive-obligation-fcba4188 | gerundive_or_obligation | -tabba / -anīya forms | 应 / 时 / 说 / 不 / 以 / 和 | 157 | 61 |
+| open-syntax-bracketed-supplement-syntax-550f5a6c | supplemented_syntax | implicit source relation + bracketed target supplement | 说 / 时 / 不 / 以 / 如 / 无 | 141 | 56 |
+| open-syntax-alternative-series-18071276 | alternative_or_variant | X vā Y vā | 或 / 不 / 以 / 如 / 说 / 和 | 91 | 34 |
+| open-syntax-coordinated-series-9a122f4e | coordination | X ca Y ca | 不 / 以 / 和 / 无 / 与 / 如 | 75 | 35 |
+| open-syntax-relative-correlative-56a796f6 | relative_correlative | ya-/yo- relative + ta-/so- correlative | 说 / 不 / 以 / 无 / 与 / 时 | 69 | 34 |
+| open-syntax-simile-comparison-800fcd10 | simile | viya / iva / seyyathāpi | 如 / 不 / 以 / 时 / 说 / 无 | 63 | 29 |
+| open-syntax-question-explanation-52d70666 | question_or_problem | interrogative + explanatory answer | ？ / 不 / 说 / 没有 / 如 / 时 | 53 | 26 |
+| open-syntax-conditional-clause-848b81ac | conditional | sace / ce / yadi + clause | 如 / 如果 / 不 / 以 / 说 / 时 | 41 | 15 |
+| open-syntax-vasena-relation-202efe52 | relation_by_mode | X-vasena | 以 / 不 / 如 / 时 / 依 / 和 | 20 | 12 |
 
 ## 条目
 
-## syntax-etymological-explanation
+## open-syntax-iti-gloss-b181fd91
 
 ```yaml
-id: syntax-etymological-explanation
+id: open-syntax-iti-gloss-b181fd91
 version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
 type: sentence_pattern
-name: etymological_explanation
-description: 将巴利词源分析拆成中文解释单元，并保留关键巴利形式。
-grammar_category: etymological_explanation
-source_pattern: root/word + meaning + derived form + paccayo
-translation_pattern: 词根义 + 派生解释 + 后缀说明
-technique: 将巴利词源分析拆成中文解释单元，并保留关键巴利形式。
-occurrence_count: 2
+name: gloss_or_definition
+description: 把被解释词、引文或定义对象显化为冒号、引号、所谓、意思是。
+grammar_category: gloss_or_definition
+source_pattern: X-ti / X ti + explanation
+translation_pattern: 不 / 以 / 说 / 无 / 如 / 时
+technique: 把被解释词、引文或定义对象显化为冒号、引号、所谓、意思是。
+occurrence_count: 1301
+chunk_count: 129
+top_chunks:
+- chunk_id: chunk-0115
+  count: 85
+- chunk_id: chunk-0053
+  count: 83
+- chunk_id: chunk-0154
+  count: 71
+- chunk_id: chunk-0052
+  count: 58
+- chunk_id: chunk-0151
+  count: 48
+- chunk_id: chunk-0027
+  count: 47
+- chunk_id: chunk-0153
+  count: 40
+- chunk_id: chunk-0042
+  count: 35
 evidence:
+- unit_id: 9-49-68-76
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-49-68-76
+  line: 1
+  source_quote: Nibbhayaṭṭhena khemaṃ, khayanti vā etena rāgaggiādayoti khemaṃ.
+  target_quote: 以无畏之义为安心，或以其耗尽爱欲之火等，为安心。
 - unit_id: 9-95-6-16
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-95-6-16
   line: 2
-  source_quote: 'Sinā soceyye, sināti soceti deveti sineru, eru paccayo. '
+  source_quote: Sinā soceyye, sināti soceti deveti sineru, eru paccayo.
   target_quote: sinā，泪洗，洗涤、忧伤、悲泣为须弥山，eru为后缀。
 - unit_id: 9-95-17-30
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-95-17-30
   line: 3
-  source_quote: 'Mī hiṃsāyaṃ, mināti hiṃsati sabbe pabbate attano uccataraṭṭhenāti
-    meru, ru paccayo. '
+  source_quote: Mī hiṃsāyaṃ, mināti hiṃsati sabbe pabbate attano uccataraṭṭhenāti
+    meru, ru paccayo.
   target_quote: '“mī”，有伤害，丈量，压倒性，在众山中其自身更高，而成为压迫“meru”，ru
 
     是后缀。'
-evidence_ids:
-- ev-000524
-- ev-000525
-confidence: 0.7
-review_status: machine_generated
-```
+- unit_id: 9-555-2-11
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-555-2-11
+  line: 6
+  source_quote: 183. Vedena paññāya īhanti etthāti vedeho.
+  target_quote: 那里他们敏而勤学吠陀，而成为勤学者(vedeha)。
+- unit_id: 9-555-12-26
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-555-12-26
+  line: 7
+  source_quote: So eva videho, imaṃ dīpamupādāya sineruno pubbadisābhāgattā pubbo
+    ca so videho ceti pubbavideho.
+  target_quote: 就这样（上述）的videha，相关的这座大陆由于地处须弥山的东部，结合东和videha而称为东勤学大陆。
+- unit_id: 9-556-45-76
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-45-76
+  line: 8
+  source_quote: Kuṃ pāpaṃ rundhatīti kuru, khattiyakumārā, tesaṃ nivāso kurū, paccayalopato
+    na vuddhi, sabbatrevaṃ[ pāṇini1.2.524.2.81 suttesu passitabbaṃ].
+  target_quote: 阻隔恶劣为止恶，王公贵族王子们居住处为止恶，因为省略后缀而不扩词，一切处都这样。
+- unit_id: 9-556-90-101
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-90-101
+  line: 9
+  source_quote: Magena saddhiṃ dhāvantīti magadhā, kvi, maṃsesu gijjhantīti vā magadhā.
+  target_quote: '与鹿一起奔跑，为magadhā，
 
-## syntax-paccaya-condition-formula
-
-```yaml
-id: syntax-paccaya-condition-formula
-version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
-type: sentence_pattern
-name: conditional_relation_formula
-description: 在阿毗达摩或因缘说明中，将 paccaya/paccayo 译为缘，并显化为条件关系。
-grammar_category: conditional_relation_formula
-source_pattern: X-paccayena paccayo / X paccayo
-translation_pattern: 以X缘为缘 / X为缘
-technique: 在阿毗达摩或因缘说明中，将 paccaya/paccayo 译为缘，并显化为条件关系。
-occurrence_count: 44
-evidence:
+    在肉方面有渴望的，为magadhā。'
 - unit_id: 9-556-122-177
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-122-177
   line: 10
   source_quote: Kala sadde, iṅga paccayo, kaliṅgā , tesaṃ nivāso kaliṅgā, uttarāpatho[‘‘
     jagannāthā pubbabhāge kaṇhātīrantaraṃ sive kaliṅgadeso saṃvutto’’ ityuttadese(
     thomanidhi)], kaliṃ gaṇhantīti vā kaliṅgā, kvi, kalaṃ madhurasaddaṃ gāyantītivā
-    kaliṅgā, assittaṃ, kena sukh…
+    kaliṅgā, assittaṃ, kena suk…
   target_quote: 'kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]；
 
     困苦（kali）的获取（gaha）故为 音缘国，达成；
@@ -76,289 +118,188 @@ evidence:
     将甜美的声音（kala）唱（ge）出来故为 音缘国，其[额外]有[字母]“i”；
 
     能通过任何（ka）快乐来促成（liṅga）故为 音缘国，liṅga意为是促成，daṇḍaka为词根(dhātu2)。'
-- unit_id: 44-219-20-28
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:44-219-20-28
-  line: 94
-  source_quote: 'Ārammaṇapaccayoti– rūpārammaṇaṃ cakkhuviññāṇadhātuyā taṃsampayuttakānañca
-    dhammānaṃ ārammaṇapaccayena paccayo. '
-  target_quote: “所缘缘”： 色处对眼识界及其相应诸法以所缘缘为缘。
-- unit_id: 44-219-48-58
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:44-219-48-58
-  line: 95
-  source_quote: 'Rūpāyatanaṃ saddāyatanaṃ gandhāyatanaṃ rasāyatanaṃ phoṭṭhabbāyatanaṃ
-    manodhātuyā taṃsampayuttakānañca dhammānaṃ ārammaṇapaccayena paccayo. '
-  target_quote: 色处、声处、香处、味处、触处对意界及其连带的诸法以所缘缘为缘。
-- unit_id: 67-1301-28-35
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:67-1301-28-35
-  line: 442
-  source_quote: 'Bījādiko asādhāraṇo hetu, bhūtasalilādiko sādhāraṇo paccayo. '
-  target_quote: 种子一样的独有的为因，作物、水分等一样的共通的为缘。
-- unit_id: 81-10-2-23
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:81-10-2-23
-  line: 502
-  source_quote: '1. {Hetupaccayo}ti – hetū hetusampayuttakānaṃ dhammānaṃ taṃsamuṭṭhānānañca
-    rūpānaṃ hetupaccayena paccayo[ paccayoti( syā.)]. '
-  target_quote: “因缘”：诸原因对原因相应诸法及其一同兴起的那些色以因缘为缘。
-- unit_id: 81-11-2-14
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:81-11-2-14
-  line: 503
-  source_quote: '2. {Ārammaṇapaccayo}ti– rūpāyatanaṃ cakkhuviññāṇadhātuyā taṃsampayuttakānañca
-    dhammānaṃ ārammaṇapaccayena paccayo. '
-  target_quote: “所缘缘”： 色处对眼识界及其相应诸法以所缘缘为缘。
-- unit_id: 81-11-15-23
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:81-11-15-23
-  line: 504
-  source_quote: 'Saddāyatanaṃ sotaviññāṇadhātuyā taṃsampayuttakānañca dhammānaṃ ārammaṇapaccayena
-    paccayo. '
-  target_quote: 声处对sotaviññāṇadhātu及其相应诸法以所缘缘为缘。
-- unit_id: 81-11-24-30
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:81-11-24-30
-  line: 505
-  source_quote: 'Gandhāyatanaṃ ghānaviññāṇadhātuyā taṃsampayuttakānañca dhammānaṃ
-    ārammaṇapaccayena paccayo. '
-  target_quote: 香处对ghānaviññāṇadhātu及其相应诸法以所缘缘为缘。
-evidence_ids:
-- ev-000526
-- ev-000527
-- ev-000528
-- ev-000529
-- ev-000530
-- ev-000531
-- ev-000532
-- ev-000533
-- ev-000534
-- ev-000535
-- ev-000536
-- ev-000537
-- ev-000538
-- ev-000539
-- ev-000540
-- ev-000541
-- ev-000542
-- ev-000543
-- ev-000544
-- ev-000545
-- ev-000546
-- ev-000547
-- ev-000548
-- ev-000549
-- ev-000550
-- ev-000551
-- ev-000552
-- ev-000553
-- ev-000554
-- ev-000555
-- ev-000556
-- ev-000557
-- ev-000558
-- ev-000559
-- ev-000560
-- ev-000561
-- ev-000562
-- ev-000563
-- ev-000564
-- ev-000565
-- ev-000566
-- ev-000567
-- ev-000568
-- ev-000569
-confidence: 0.7
+variant_translations:
+- 以无畏之义为安心，或以其耗尽爱欲之火等，为安心。
+- sinā，泪洗，洗涤、忧伤、悲泣为须弥山，eru为后缀。
+- “mī”，有伤害，丈量，压倒性，在众山中其自身更高，而成为压迫“meru”，ru 是后缀。
+- 那里他们敏而勤学吠陀，而成为勤学者(vedeha)。
+- 就这样（上述）的videha，相关的这座大陆由于地处须弥山的东部，结合东和videha而称为东勤学大陆。
+- 阻隔恶劣为止恶，王公贵族王子们居住处为止恶，因为省略后缀而不扩词，一切处都这样。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
 review_status: machine_generated
+discovery_method: open_syntactic_signal
 ```
 
-## syntax-definition-vuccati-nama
+## open-syntax-quoted-text-ti-fa894249
 
 ```yaml
-id: syntax-definition-vuccati-nama
+id: open-syntax-quoted-text-ti-fa894249
 version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
 type: sentence_pattern
-name: definition_formula
-description: 把巴利定义公式转成中文命名或说明句。
-grammar_category: definition_formula
-source_pattern: X vuccati / X nāma
-translation_pattern: 称为 / 所谓 / 名为 / 即
-technique: 把巴利定义公式转成中文命名或说明句。
-occurrence_count: 81
+name: quotation_or_citation
+description: 将引文或被解释词显化为中文引号、冒号或引用句。
+grammar_category: quotation_or_citation
+source_pattern: quoted text + ti / iti
+translation_pattern: 说 / 不 / 以 / 时 / 如 / 和
+technique: 将引文或被解释词显化为中文引号、冒号或引用句。
+occurrence_count: 433
+chunk_count: 90
+top_chunks:
+- chunk_id: chunk-0053
+  count: 38
+- chunk_id: chunk-0042
+  count: 24
+- chunk_id: chunk-0115
+  count: 22
+- chunk_id: chunk-0154
+  count: 20
+- chunk_id: chunk-0144
+  count: 20
+- chunk_id: chunk-0153
+  count: 17
+- chunk_id: chunk-0027
+  count: 15
+- chunk_id: chunk-0151
+  count: 13
 evidence:
-- unit_id: 23-449-60-66
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-449-60-66
-  line: 52
-  source_quote: 'Etthaca appaṭipattīti kalyāṇapakkhe aññāṇameva vuccati. '
-  target_quote: 再者，这里所说的不行道就是为了善（而表现出的）无知。
-- unit_id: 64-184-24-50
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-184-24-50
-  line: 97
-  source_quote: 'Yathā hi muggesu paccamānesu kocideva na paccati, avasesā paccanti,
-    evaṃ yassa puggalassa vacane kiñcideva saccaṃ hoti, sesaṃ alīkaṃ, ayaṃ puggalo
-    muggasūpyoti vuccati. '
-  target_quote: 就好比在煮过的绿豆中，有些没煮熟，其余的则熟了，同样的，在这种人的话中，有些是真的，其余的却是假的，这样的人称为豆汤者。
-- unit_id: 65-1499-150-160
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-1499-150-160
-  line: 201
-  source_quote: 'Rittatāyeva tucchato appakattā vā, appakampi hi loke tucchanti vuccati. '
-  target_quote: '就因为rittatā而作为tuccha，
+- unit_id: 9-556-122-177
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-122-177
+  line: 10
+  source_quote: Kala sadde, iṅga paccayo, kaliṅgā , tesaṃ nivāso kaliṅgā, uttarāpatho[‘‘
+    jagannāthā pubbabhāge kaṇhātīrantaraṃ sive kaliṅgadeso saṃvutto’’ ityuttadese(
+    thomanidhi)], kaliṃ gaṇhantīti vā kaliṅgā, kvi, kalaṃ madhurasaddaṃ gāyantītivā
+    kaliṅgā, assittaṃ, kena suk…
+  target_quote: 'kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]；
 
-    因为微小而作为tuccha，
+    困苦（kali）的获取（gaha）故为 音缘国，达成；
 
-    确实，微小在世间也被称为tuccha。'
-- unit_id: 66-295-41-44
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-295-41-44
-  line: 235
-  source_quote: 'Tilapiṭṭhaṃ vuccati palalaṃ. '
-  target_quote: 芝麻碎，所谓的芝麻酱/粉。
-- unit_id: 67-1291-41-49
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:67-1291-41-49
-  line: 393
-  source_quote: 'Ñāṇañhi visayasabhāvaṃ ogāhetvā vavatthāne khamati sahatīti khantīti
-    vuccati. '
-  target_quote: 具体来说，智慧地投入到被观察目标的本质上之后就可以在辨识中做到忍耐，这样的克服被称为耐受。
-- unit_id: 67-1291-54-61
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:67-1291-54-61
-  line: 395
-  source_quote: So hi sammādiṭṭhiādisammattañceva anivattidhammatāya niyāmo cāti vuccati.
-  target_quote: 确实，被称为那（正确性的定则）不仅有正见等的正确性，还以不退转的法性而成为定则。
-- unit_id: 67-1590-13-25
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:67-1590-13-25
-  line: 460
-  source_quote: 'So hi jhānasinehena vipassanāya asiniddhabhāvato sukkhā lūkhā vipassanā
-    etassāti {sukkhavipassako}ti vuccati. '
-  target_quote: 因为观没有禅那的滋润的顺滑，他的观是干且涩，这样的人为干观者。
-- unit_id: 73-2130-9-32
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:73-2130-9-32
-  line: 473
-  source_quote: 'Ye te puggalā assaddhā dussīlā appassutā maccharino duppaññā, yā
-    tesaṃ sevanā nisevanā saṃsevanā bhajanā sambhajanā bhatti sambhatti taṃsampavaṅkatā–
-    ayaṃ vuccati pāpamittatā. '
-  target_quote: '那些无信(assaddha)，恶戒，寡闻(appassuta)，吝啬(macchariya)，劣慧(duppaññā)，与这样的人亲近、结交、共处——
+    将甜美的声音（kala）唱（ge）出来故为 音缘国，其[额外]有[字母]“i”；
 
-    此即所说的恶友。'
-evidence_ids:
-- ev-000570
-- ev-000571
-- ev-000572
-- ev-000573
-- ev-000574
-- ev-000575
-- ev-000576
-- ev-000577
-- ev-000578
-- ev-000579
-- ev-000580
-- ev-000581
-- ev-000582
-- ev-000583
-- ev-000584
-- ev-000585
-- ev-000586
-- ev-000587
-- ev-000588
-- ev-000589
-- ev-000590
-- ev-000591
-- ev-000592
-- ev-000593
-- ev-000594
-- ev-000595
-- ev-000596
-- ev-000597
-- ev-000598
-- ev-000599
-- ev-000600
-- ev-000601
-- ev-000602
-- ev-000603
-- ev-000604
-- ev-000605
-- ev-000606
-- ev-000607
-- ev-000608
-- ev-000609
-- ev-000610
-- ev-000611
-- ev-000612
-- ev-000613
-- ev-000614
-- ev-000615
-- ev-000616
-- ev-000617
-- ev-000618
-- ev-000619
-- ev-000620
-- ev-000621
-- ev-000622
-- ev-000623
-- ev-000624
-- ev-000625
-- ev-000626
-- ev-000627
-- ev-000628
-- ev-000629
-- ev-000630
-- ev-000631
-- ev-000632
-- ev-000633
-- ev-000634
-- ev-000635
-- ev-000636
-- ev-000637
-- ev-000638
-- ev-000639
-- ev-000640
-- ev-000641
-- ev-000642
-- ev-000643
-- ev-000644
-- ev-000645
-- ev-000646
-- ev-000647
-- ev-000648
-- ev-000649
-- ev-000650
-confidence: 0.7
+    能通过任何（ka）快乐来促成（liṅga）故为 音缘国，liṅga意为是促成，daṇḍaka为词根(dhātu2)。'
+- unit_id: 9-821-125-144
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-821-125-144
+  line: 16
+  source_quote: Koseyyameva dhotaṃ paṭṭuṇṇaṃ nāma, vuttañca‘‘ paṭṭuṇṇaṃ dhotakoseyyan’’
+    ti[ amara16.113].
+  target_quote: 將茧丝(koseyya)洗淨名為paṭṭuṇṇa，或者說“paṭṭuṇṇa即洗乾淨的茧丝”。
+- unit_id: 16-2663-62-77
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:16-2663-62-77
+  line: 50
+  source_quote: Ettha sikkhā nirutti kappa byākaraṇa jotisattha chandovicitivasena
+    manto‘‘ chaḷaṅgo’’ ti veditabbo.
+  target_quote: 这里学，辞源， 劫，byākaraṇa，jotisattha，manto这六个部分组成。
+- unit_id: 16-2663-78-88
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:16-2663-78-88
+  line: 51
+  source_quote: Etāni eva cha‘‘ vedaṅgānī’’ ti vuccanti.
+  target_quote: 这些就是被成为六种吠陀的成份(vedaṅga)。
+- unit_id: 24-32-399-409
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:24-32-399-409
+  line: 82
+  source_quote: ‘‘ Āsayo’’ ti citta santāne adhisayito icchāviseso.
+  target_quote: '倾向：
+
+    居住在心相序中的特定愿求。'
+- unit_id: 24-242-214-225
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:24-242-214-225
+  line: 84
+  source_quote: ‘‘ Oḷārikānaṃ’’ ti idaṃ pakatiyā oḷārika sabhāvatāya vuttaṃ.
+  target_quote: “粗糙的”，此就粗糙的天然本性而言。
+- unit_id: 24-266-383-398
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:24-266-383-398
+  line: 87
+  source_quote: ‘‘ Yaṃ niccameva vaṭṭatī’’ ti yaṃ pāṇātipāta virati sīlaṃ niccameva
+    rakkhituṃ vaṭṭati.
+  target_quote: 那日常(持守)是合适的，离杀生戒就是适合日常持守的。
+- unit_id: 24-266-425-442
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:24-266-425-442
+  line: 89
+  source_quote: ‘‘ Yaṃ niccampi vaṭṭatī’’ ti pakati gahaṭṭhānaṃ yaṃ vikāla bhojanādi
+    virati sīlaṃ niccampi vaṭṭati.
+  target_quote: '那日常(持守)也是合适的，
+
+    离非时食(vikālabhojana)等戒对在家居士来说日常持守自然是合适的。'
+variant_translations:
+- kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]； 困苦（kali）的获取（gaha）故为
+  音缘国，达成；…
+- 將茧丝(koseyya)洗淨名為paṭṭuṇṇa，或者說“paṭṭuṇṇa即洗乾淨的茧丝”。
+- 这里学，辞源， 劫，byākaraṇa，jotisattha，manto这六个部分组成。
+- 这些就是被成为六种吠陀的成份(vedaṅga)。
+- 倾向： 居住在心相序中的特定愿求。
+- “粗糙的”，此就粗糙的天然本性而言。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
 review_status: machine_generated
+discovery_method: open_syntactic_signal
 ```
 
-## syntax-va-alternative
+## open-syntax-newline-decomposition-syntax-585a7090
 
 ```yaml
-id: syntax-va-alternative
+id: open-syntax-newline-decomposition-syntax-585a7090
 version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
 type: sentence_pattern
-name: alternative_explanation
-description: 用“或”显化并列解释关系，必要时换行拆分。
-grammar_category: alternative_explanation
-source_pattern: X vā Y
-translation_pattern: X，或Y / 换行并列
-technique: 用“或”显化并列解释关系，必要时换行拆分。
-occurrence_count: 121
+name: decomposition
+description: 用换行拆解并列、长句、偈颂或注释层次。
+grammar_category: decomposition
+source_pattern: complex source + target line breaks
+translation_pattern: 不 / 以 / 说 / 无 / 时 / 如
+technique: 用换行拆解并列、长句、偈颂或注释层次。
+occurrence_count: 390
+chunk_count: 82
+top_chunks:
+- chunk_id: chunk-0115
+  count: 23
+- chunk_id: chunk-0042
+  count: 19
+- chunk_id: chunk-0154
+  count: 18
+- chunk_id: chunk-0151
+  count: 17
+- chunk_id: chunk-0153
+  count: 17
+- chunk_id: chunk-0118
+  count: 17
+- chunk_id: chunk-0045
+  count: 17
+- chunk_id: chunk-0027
+  count: 15
 evidence:
-- unit_id: 9-49-68-76
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-49-68-76
-  line: 1
-  source_quote: 'Nibbhayaṭṭhena khemaṃ, khayanti vā etena rāgaggiādayoti khemaṃ. '
-  target_quote: 以无畏之义为安心，或以其耗尽爱欲之火等，为安心。
+- unit_id: 9-95-17-30
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-95-17-30
+  line: 3
+  source_quote: Mī hiṃsāyaṃ, mināti hiṃsati sabbe pabbate attano uccataraṭṭhenāti
+    meru, ru paccayo.
+  target_quote: '“mī”，有伤害，丈量，压倒性，在众山中其自身更高，而成为压迫“meru”，ru
+
+    是后缀。'
 - unit_id: 9-112-49-59
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-112-49-59
   line: 5
-  source_quote: 'Virūpāni akkhīni yassa virūpakkho, vividhasaṇṭhānāni akkhīni yassa
-    vā virūpakkho. '
+  source_quote: Virūpāni akkhīni yassa virūpakkho, vividhasaṇṭhānāni akkhīni yassa
+    vā virūpakkho.
   target_quote: '他的眼睛丑陋为异眸，
 
     或他的眼睛形态各异为异眸。'
 - unit_id: 9-556-90-101
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-90-101
   line: 9
-  source_quote: 'Magena saddhiṃ dhāvantīti magadhā, kvi, maṃsesu gijjhantīti vā magadhā. '
+  source_quote: Magena saddhiṃ dhāvantīti magadhā, kvi, maṃsesu gijjhantīti vā magadhā.
   target_quote: '与鹿一起奔跑，为magadhā，
 
     在肉方面有渴望的，为magadhā。'
 - unit_id: 9-556-122-177
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-122-177
   line: 10
-  source_quote: …iṅgā, uttarāpatho[‘‘ jagannāthā pubbabhāge kaṇhātīrantaraṃ sive kaliṅgadeso
-    saṃvutto’’ ityuttadese( thomanidhi)], kaliṃ gaṇhantīti vā kaliṅgā, kvi, kalaṃ
-    madhurasaddaṃ gāyantītivā kaliṅgā, assittaṃ, kena sukhena liṅgantīti vā kaliṅgā,
-    liṅga gamanattho daṇḍako…
+  source_quote: Kala sadde, iṅga paccayo, kaliṅgā , tesaṃ nivāso kaliṅgā, uttarāpatho[‘‘
+    jagannāthā pubbabhāge kaṇhātīrantaraṃ sive kaliṅgadeso saṃvutto’’ ityuttadese(
+    thomanidhi)], kaliṃ gaṇhantīti vā kaliṅgā, kvi, kalaṃ madhurasaddaṃ gāyantītivā
+    kaliṅgā, assittaṃ, kena suk…
   target_quote: 'kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]；
 
     困苦（kali）的获取（gaha）故为 音缘国，达成；
@@ -369,176 +310,91 @@ evidence:
 - unit_id: 9-556-219-228
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-219-228
   line: 11
-  source_quote: 'Gaṃ pathaviṃ dhārentīti gandhārā, kittigandhena arantīti vā gandhārā. '
+  source_quote: Gaṃ pathaviṃ dhārentīti gandhārā, kittigandhena arantīti vā gandhārā.
   target_quote: '持有行走的大地，为gandhāra，
 
     或因声名流芳而到达，为gandhāra。'
-- unit_id: 9-557-10-19
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-557-10-19
-  line: 12
-  source_quote: 'Visiṭṭhāni dehāni yesaṃ videhā, pubbavidehadīpato āgatattā vā videhā. '
-  target_quote: 身躯卓越而称为videha，或者因为来自东勤学大陆而称为videha。
+- unit_id: 9-593-168-194
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-593-168-194
+  line: 13
+  source_quote: Takka ūhe, ūho ūnapūraṇaṃ, takkanaṃ takko, so sīlaṃ sabhāvo yattha
+    sā takkasīlā, yo hi purisakārena ūno, so tattha gantvā tamūnaṃ pūretīti.
+  target_quote: 'takka思考的意思，思考即补充不足，
+
+    思考补充不足的动作即takka，
+
+    在思惯这个城市有思考的习惯，'
 - unit_id: 9-594-38-54
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-594-38-54
   line: 14
-  source_quote: 'Indaṃ paramissariyabhāvaṃ pāpuṇanti etthāti indapattaṃ, indo vā sakko
-    devarājā, so patto etthāti indapattaṃ. '
+  source_quote: Indaṃ paramissariyabhāvaṃ pāpuṇanti etthāti indapattaṃ, indo vā sakko
+    devarājā, so patto etthāti indapattaṃ.
   target_quote: '获得支配他人的权利之地，为帝·印达，
 
     天帝即萨卡天帝天帝到来的地方，为帝·印达。'
-- unit_id: 24-266-443-463
-  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:24-266-443-463
-  line: 90
-  source_quote: '‘‘ Aniccampi vaṭṭatī’’ ti samādāna divasaṃ atikkamitvā vikāla bhojanādiṃ
-    karontassa vītikkama dosovā duccarita doso vā natthīti adhippāyo. '
-  target_quote: '非日常(持守)也是合适的，
+- unit_id: 14-1934-2-14
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:14-1934-2-14
+  line: 19
+  source_quote: Samaṇassa cīvaraṃ dadāti, samaṇassa rocate saccaṃ, devadattassa suvaṇṇacchattaṃ
+    dhārayate yaññadatto.
+  target_quote: '把衣给到沙门；
 
-    过午之后进行非时食的违犯的过患并不是不善行的过失。'
-evidence_ids:
-- ev-000651
-- ev-000652
-- ev-000653
-- ev-000654
-- ev-000655
-- ev-000656
-- ev-000657
-- ev-000658
-- ev-000659
-- ev-000660
-- ev-000661
-- ev-000662
-- ev-000663
-- ev-000664
-- ev-000665
-- ev-000666
-- ev-000667
-- ev-000668
-- ev-000669
-- ev-000670
-- ev-000671
-- ev-000672
-- ev-000673
-- ev-000674
-- ev-000675
-- ev-000676
-- ev-000677
-- ev-000678
-- ev-000679
-- ev-000680
-- ev-000681
-- ev-000682
-- ev-000683
-- ev-000684
-- ev-000685
-- ev-000686
-- ev-000687
-- ev-000688
-- ev-000689
-- ev-000690
-- ev-000691
-- ev-000692
-- ev-000693
-- ev-000694
-- ev-000695
-- ev-000696
-- ev-000697
-- ev-000698
-- ev-000699
-- ev-000700
-- ev-000701
-- ev-000702
-- ev-000703
-- ev-000704
-- ev-000705
-- ev-000706
-- ev-000707
-- ev-000708
-- ev-000709
-- ev-000710
-- ev-000711
-- ev-000712
-- ev-000713
-- ev-000714
-- ev-000715
-- ev-000716
-- ev-000717
-- ev-000718
-- ev-000719
-- ev-000720
-- ev-000721
-- ev-000722
-- ev-000723
-- ev-000724
-- ev-000725
-- ev-000726
-- ev-000727
-- ev-000728
-- ev-000729
-- ev-000730
-- ev-000731
-- ev-000732
-- ev-000733
-- ev-000734
-- ev-000735
-- ev-000736
-- ev-000737
-- ev-000738
-- ev-000739
-- ev-000740
-- ev-000741
-- ev-000742
-- ev-000743
-- ev-000744
-- ev-000745
-- ev-000746
-- ev-000747
-- ev-000748
-- ev-000749
-- ev-000750
-- ev-000751
-- ev-000752
-- ev-000753
-- ev-000754
-- ev-000755
-- ev-000756
-- ev-000757
-- ev-000758
-- ev-000759
-- ev-000760
-- ev-000761
-- ev-000762
-- ev-000763
-- ev-000764
-- ev-000765
-- ev-000766
-- ev-000767
-- ev-000768
-- ev-000769
-- ev-000770
-- ev-000771
-confidence: 0.7
+    对沙门来说，现实是值得高兴的；
+
+    yaññadatta为天赐撑起黄金的伞盖。'
+variant_translations:
+- “mī”，有伤害，丈量，压倒性，在众山中其自身更高，而成为压迫“meru”，ru 是后缀。
+- 他的眼睛丑陋为异眸， 或他的眼睛形态各异为异眸。
+- 与鹿一起奔跑，为magadhā， 在肉方面有渴望的，为magadhā。
+- kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]； 困苦（kali）的获取（gaha）故为
+  音缘国，达成；…
+- 持有行走的大地，为gandhāra， 或因声名流芳而到达，为gandhāra。
+- takka思考的意思，思考即补充不足， 思考补充不足的动作即takka， 在思惯这个城市有思考的习惯，
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
 review_status: machine_generated
+discovery_method: open_syntactic_signal
 ```
 
-## syntax-absolutive-tva-candidate
+## open-syntax-absolutive-sequence-4e2ef2a0
 
 ```yaml
-id: syntax-absolutive-tva-candidate
+id: open-syntax-absolutive-sequence-4e2ef2a0
 version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
 type: sentence_pattern
-name: absolutive_construction_candidate
-description: 仅按 -tvā/-tvāna 形式自动检测；该条目用于人工筛选，不作为翻译规则。
-grammar_category: absolutive_construction_candidate
+name: absolutive_or_converb
+description: 把先行动作、方式、原因或条件关系译成后、而、以、通过等。
+grammar_category: absolutive_or_converb
 source_pattern: verb-tvā / verb-tvāna
-translation_pattern: 候选集合，未确认固定译法
-technique: 仅按 -tvā/-tvāna 形式自动检测；该条目用于人工筛选，不作为翻译规则。
-occurrence_count: 368
+translation_pattern: 不 / 以 / 说 / 时 / 和 / 如
+technique: 把先行动作、方式、原因或条件关系译成后、而、以、通过等。
+occurrence_count: 367
+chunk_count: 85
+top_chunks:
+- chunk_id: chunk-0042
+  count: 27
+- chunk_id: chunk-0053
+  count: 27
+- chunk_id: chunk-0115
+  count: 26
+- chunk_id: chunk-0027
+  count: 26
+- chunk_id: chunk-0151
+  count: 14
+- chunk_id: chunk-0040
+  count: 14
+- chunk_id: chunk-0052
+  count: 14
+- chunk_id: chunk-0049
+  count: 13
 evidence:
 - unit_id: 9-593-168-194
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-593-168-194
   line: 13
-  source_quote: 'Takka ūhe, ūho ūnapūraṇaṃ, takkanaṃ takko, so sīlaṃ sabhāvo yattha
-    sā takkasīlā, yo hi purisakārena ūno, so tattha gantvā tamūnaṃ pūretīti. '
+  source_quote: Takka ūhe, ūho ūnapūraṇaṃ, takkanaṃ takko, so sīlaṃ sabhāvo yattha
+    sā takkasīlā, yo hi purisakārena ūno, so tattha gantvā tamūnaṃ pūretīti.
   target_quote: 'takka思考的意思，思考即补充不足，
 
     思考补充不足的动作即takka，
@@ -547,8 +403,8 @@ evidence:
 - unit_id: 23-449-67-88
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-449-67-88
   line: 53
-  source_quote: 'Micchāpaṭipattīti pāpapakkhe micchāñāṇameva vuccatīti, tathā hi pāpapakkhaṃ
-    patvā pañcadhammā ñāṇagatikā honti moho, lobho, diṭṭhi, vitakko, vicāroti. '
+  source_quote: Micchāpaṭipattīti pāpapakkhe micchāñāṇameva vuccatīti, tathā hi pāpapakkhaṃ
+    patvā pañcadhammā ñāṇagatikā honti moho, lobho, diṭṭhi, vitakko, vicāroti.
   target_quote: '所说的邪行道：即为了恶（而生起的）邪智，
 
     这样确实达到恶的一面之后有五种与智慧类似的法——痴，贪，成见，贯注，徘徊。'
@@ -558,412 +414,1320 @@ evidence:
   source_quote: Pamādapakkhe patitvā vissaṭṭhajjhānānaṃ tatoyevaca appahīnehi orambhāviya
     saṃyojanehi heṭṭhabhāgaṃ ākaḍḍhita mānasānaṃ kāmabhave uppajjamānānaṃ tesaṃ thapetvā
     tihetu kukkaṭṭhabhūtaṃ upacārajjhānacetanaṃ aññaṃ dubbalakammaṃ okāsaṃ nalabhatīti
-    vuttaṃ tathā {kāma…
+    vuttaṃ tathā {kām…
   target_quote: 当堕入放逸的一面时，当放弃禅那被下分结(orambhāgiyasaṃyojana)向下拉的心并出现在欲有时，作为殊胜三因的接近禅定的思，不会给其他弱业机会，而说是欲界三因。
 - unit_id: 23-980-32-42
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-980-32-42
   line: 73
-  source_quote: 'Sayaṃ balavatarassapi sato paṭisandhiṃ adatvā dubbalassa kammantarassa
-    upatthambhane kāraṇaṃ natthīti. '
+  source_quote: Sayaṃ balavatarassapi sato paṭisandhiṃ adatvā dubbalassa kammantarassa
+    upatthambhane kāraṇaṃ natthīti.
   target_quote: '由于无法给出比自己更强的结生，
 
     因此在弱的业力的支持下不会有（强力结生的）因存在。'
 - unit_id: 24-266-443-463
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:24-266-443-463
   line: 90
-  source_quote: '‘‘ Aniccampi vaṭṭatī’’ ti samādāna divasaṃ atikkamitvā vikāla bhojanādiṃ
-    karontassa vītikkama dosovā duccarita doso vā natthīti adhippāyo. '
+  source_quote: ‘‘ Aniccampi vaṭṭatī’’ ti samādāna divasaṃ atikkamitvā vikāla bhojanādiṃ
+    karontassa vītikkama dosovā duccarita doso vā natthīti adhippāyo.
   target_quote: '非日常(持守)也是合适的，
 
     过午之后进行非时食的违犯的过患并不是不善行的过失。'
 - unit_id: 64-705-85-111
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-705-85-111
   line: 111
-  source_quote: 'Thero sabbaṃ hunti paṭibāhitvā‘‘ āvuso, tayā paṭhamaṃ kathito eva
+  source_quote: Thero sabbaṃ hunti paṭibāhitvā‘‘ āvuso, tayā paṭhamaṃ kathito eva
     ācariyamaggo, ācariyamukhato pana anuggahitattā‘ evaṃ ācariyā vadantī’ ti saṇṭhātuṃ
-    nāsakkhi. '
+    nāsakkhi.
   target_quote: '长老都用“哼”来质疑，然后对他说：
 
     “朋友，第一次你所说的是老师们的论调，然而因为你不是从阿阇梨之口学得的，所以你无法确定‘老师们是这么说的’。'
 - unit_id: 64-1653-69-74
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1653-69-74
   line: 135
-  source_quote: 'Tasmā ete dose vajjetvā gaṇetabbaṃ. '
+  source_quote: Tasmā ete dose vajjetvā gaṇetabbaṃ.
   target_quote: 因此应该避免这些过失来数（出入息）。
 - unit_id: 64-1654-9-21
   unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1654-9-21
   line: 137
-  source_quote: 'Dhaññamāpako hi nāḷiṃ pūretvā‘‘ ekan’’ ti vatvā okirati. '
+  source_quote: Dhaññamāpako hi nāḷiṃ pūretvā‘‘ ekan’’ ti vatvā okirati.
   target_quote: 量谷者会在装满量米用的筒子后，唸“一”然后倒出（谷粒）。
-evidence_ids:
-- ev-000772
-- ev-000773
-- ev-000774
-- ev-000775
-- ev-000776
-- ev-000777
-- ev-000778
-- ev-000779
-- ev-000780
-- ev-000781
-- ev-000782
-- ev-000783
-- ev-000784
-- ev-000785
-- ev-000786
-- ev-000787
-- ev-000788
-- ev-000789
-- ev-000790
-- ev-000791
-- ev-000792
-- ev-000793
-- ev-000794
-- ev-000795
-- ev-000796
-- ev-000797
-- ev-000798
-- ev-000799
-- ev-000800
-- ev-000801
-- ev-000802
-- ev-000803
-- ev-000804
-- ev-000805
-- ev-000806
-- ev-000807
-- ev-000808
-- ev-000809
-- ev-000810
-- ev-000811
-- ev-000812
-- ev-000813
-- ev-000814
-- ev-000815
-- ev-000816
-- ev-000817
-- ev-000818
-- ev-000819
-- ev-000820
-- ev-000821
-- ev-000822
-- ev-000823
-- ev-000824
-- ev-000825
-- ev-000826
-- ev-000827
-- ev-000828
-- ev-000829
-- ev-000830
-- ev-000831
-- ev-000832
-- ev-000833
-- ev-000834
-- ev-000835
-- ev-000836
-- ev-000837
-- ev-000838
-- ev-000839
-- ev-000840
-- ev-000841
-- ev-000842
-- ev-000843
-- ev-000844
-- ev-000845
-- ev-000846
-- ev-000847
-- ev-000848
-- ev-000849
-- ev-000850
-- ev-000851
-- ev-000852
-- ev-000853
-- ev-000854
-- ev-000855
-- ev-000856
-- ev-000857
-- ev-000858
-- ev-000859
-- ev-000860
-- ev-000861
-- ev-000862
-- ev-000863
-- ev-000864
-- ev-000865
-- ev-000866
-- ev-000867
-- ev-000868
-- ev-000869
-- ev-000870
-- ev-000871
-- ev-000872
-- ev-000873
-- ev-000874
-- ev-000875
-- ev-000876
-- ev-000877
-- ev-000878
-- ev-000879
-- ev-000880
-- ev-000881
-- ev-000882
-- ev-000883
-- ev-000884
-- ev-000885
-- ev-000886
-- ev-000887
-- ev-000888
-- ev-000889
-- ev-000890
-- ev-000891
-- ev-000892
-- ev-000893
-- ev-000894
-- ev-000895
-- ev-000896
-- ev-000897
-- ev-000898
-- ev-000899
-- ev-000900
-- ev-000901
-- ev-000902
-- ev-000903
-- ev-000904
-- ev-000905
-- ev-000906
-- ev-000907
-- ev-000908
-- ev-000909
-- ev-000910
-- ev-000911
-- ev-000912
-- ev-000913
-- ev-000914
-- ev-000915
-- ev-000916
-- ev-000917
-- ev-000918
-- ev-000919
-- ev-000920
-- ev-000921
-- ev-000922
-- ev-000923
-- ev-000924
-- ev-000925
-- ev-000926
-- ev-000927
-- ev-000928
-- ev-000929
-- ev-000930
-- ev-000931
-- ev-000932
-- ev-000933
-- ev-000934
-- ev-000935
-- ev-000936
-- ev-000937
-- ev-000938
-- ev-000939
-- ev-000940
-- ev-000941
-- ev-000942
-- ev-000943
-- ev-000944
-- ev-000945
-- ev-000946
-- ev-000947
-- ev-000948
-- ev-000949
-- ev-000950
-- ev-000951
-- ev-000952
-- ev-000953
-- ev-000954
-- ev-000955
-- ev-000956
-- ev-000957
-- ev-000958
-- ev-000959
-- ev-000960
-- ev-000961
-- ev-000962
-- ev-000963
-- ev-000964
-- ev-000965
-- ev-000966
-- ev-000967
-- ev-000968
-- ev-000969
-- ev-000970
-- ev-000971
-- ev-000972
-- ev-000973
-- ev-000974
-- ev-000975
-- ev-000976
-- ev-000977
-- ev-000978
-- ev-000979
-- ev-000980
-- ev-000981
-- ev-000982
-- ev-000983
-- ev-000984
-- ev-000985
-- ev-000986
-- ev-000987
-- ev-000988
-- ev-000989
-- ev-000990
-- ev-000991
-- ev-000992
-- ev-000993
-- ev-000994
-- ev-000995
-- ev-000996
-- ev-000997
-- ev-000998
-- ev-000999
-- ev-001000
-- ev-001001
-- ev-001002
-- ev-001003
-- ev-001004
-- ev-001005
-- ev-001006
-- ev-001007
-- ev-001008
-- ev-001009
-- ev-001010
-- ev-001011
-- ev-001012
-- ev-001013
-- ev-001014
-- ev-001015
-- ev-001016
-- ev-001017
-- ev-001018
-- ev-001019
-- ev-001020
-- ev-001021
-- ev-001022
-- ev-001023
-- ev-001024
-- ev-001025
-- ev-001026
-- ev-001027
-- ev-001028
-- ev-001029
-- ev-001030
-- ev-001031
-- ev-001032
-- ev-001033
-- ev-001034
-- ev-001035
-- ev-001036
-- ev-001037
-- ev-001038
-- ev-001039
-- ev-001040
-- ev-001041
-- ev-001042
-- ev-001043
-- ev-001044
-- ev-001045
-- ev-001046
-- ev-001047
-- ev-001048
-- ev-001049
-- ev-001050
-- ev-001051
-- ev-001052
-- ev-001053
-- ev-001054
-- ev-001055
-- ev-001056
-- ev-001057
-- ev-001058
-- ev-001059
-- ev-001060
-- ev-001061
-- ev-001062
-- ev-001063
-- ev-001064
-- ev-001065
-- ev-001066
-- ev-001067
-- ev-001068
-- ev-001069
-- ev-001070
-- ev-001071
-- ev-001072
-- ev-001073
-- ev-001074
-- ev-001075
-- ev-001076
-- ev-001077
-- ev-001078
-- ev-001079
-- ev-001080
-- ev-001081
-- ev-001082
-- ev-001083
-- ev-001084
-- ev-001085
-- ev-001086
-- ev-001087
-- ev-001088
-- ev-001089
-- ev-001090
-- ev-001091
-- ev-001092
-- ev-001093
-- ev-001094
-- ev-001095
-- ev-001096
-- ev-001097
-- ev-001098
-- ev-001099
-- ev-001100
-- ev-001101
-- ev-001102
-- ev-001103
-- ev-001104
-- ev-001105
-- ev-001106
-- ev-001107
-- ev-001108
-- ev-001109
-- ev-001110
-- ev-001111
-- ev-001112
-- ev-001113
-- ev-001114
-- ev-001115
-- ev-001116
-- ev-001117
-- ev-001118
-- ev-001119
-- ev-001120
-- ev-001121
-- ev-001122
-- ev-001123
-- ev-001124
-- ev-001125
-- ev-001126
-- ev-001127
-- ev-001128
-- ev-001129
-- ev-001130
-- ev-001131
-- ev-001132
-- ev-001133
-- ev-001134
-- ev-001135
-- ev-001136
-- ev-001137
-- ev-001138
-- ev-001139
-confidence: 0.55
-review_status: needs_review
+variant_translations:
+- takka思考的意思，思考即补充不足， 思考补充不足的动作即takka， 在思惯这个城市有思考的习惯，
+- 所说的邪行道：即为了恶（而生起的）邪智， 这样确实达到恶的一面之后有五种与智慧类似的法——痴，贪，成见，贯注，徘徊。
+- 当堕入放逸的一面时，当放弃禅那被下分结(orambhāgiyasaṃyojana)向下拉的心并出现在欲有时，作为殊胜三因的接近禅定的思，不会给其他弱业机会，而说是欲界三因。
+- 由于无法给出比自己更强的结生， 因此在弱的业力的支持下不会有（强力结生的）因存在。
+- 非日常(持守)也是合适的， 过午之后进行非时食的违犯的过患并不是不善行的过失。
+- 长老都用“哼”来质疑，然后对他说： “朋友，第一次你所说的是老师们的论调，然而因为你不是从阿阇梨之口学得的，所以你无法确定‘老师们是这么说的’。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-negative-clause-81fab4d0
+
+```yaml
+id: open-syntax-negative-clause-81fab4d0
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: negation
+description: 把否定结构译为不、没有、不能、无等。
+grammar_category: negation
+source_pattern: na / no / natthi / mā + predicate
+translation_pattern: 不 / 以 / 说 / 如 / 无 / 没有
+technique: 把否定结构译为不、没有、不能、无等。
+occurrence_count: 348
+chunk_count: 79
+top_chunks:
+- chunk_id: chunk-0053
+  count: 32
+- chunk_id: chunk-0115
+  count: 26
+- chunk_id: chunk-0119
+  count: 15
+- chunk_id: chunk-0151
+  count: 13
+- chunk_id: chunk-0042
+  count: 13
+- chunk_id: chunk-0027
+  count: 13
+- chunk_id: chunk-0052
+  count: 13
+- chunk_id: chunk-0144
+  count: 13
+evidence:
+- unit_id: 9-556-45-76
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-45-76
+  line: 8
+  source_quote: Kuṃ pāpaṃ rundhatīti kuru, khattiyakumārā, tesaṃ nivāso kurū, paccayalopato
+    na vuddhi, sabbatrevaṃ[ pāṇini1.2.524.2.81 suttesu passitabbaṃ].
+  target_quote: 阻隔恶劣为止恶，王公贵族王子们居住处为止恶，因为省略后缀而不扩词，一切处都这样。
+- unit_id: 16-1221-34-41
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:16-1221-34-41
+  line: 47
+  source_quote: Ettha ca natthi pāyo vuddhi etthāti apāyo.
+  target_quote: “绝境”，在这里没有出路，没有增长。
+- unit_id: 23-784-75-89
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-784-75-89
+  line: 57
+  source_quote: Athavā, oḷārikānaṃ pañcannaṃ saṃyojanānaṃ pahīnattā natthi cittassa
+    vihaññanaṃ samathavipassa nādhammesu avipphārikatāpatti etesanti avihā.
+  target_quote: 或者说，因为舍断了五种粗的结，不再有心的烦躁（vihaññana），并具有不散乱地达到止观法的状态者，为**“aviha”**。
+- unit_id: 23-884-79-84
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-884-79-84
+  line: 63
+  source_quote: Aniccaṃpi vaṭṭati sāvajjaṃ na hoti.
+  target_quote: 非日常(持守)也是合适的，没有过失。
+- unit_id: 23-977-117-127
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-977-117-127
+  line: 65
+  source_quote: Na ca te tāni puna āyūhantīti vuttaṃ heṭṭhimāruppa {vajjitā}ti.
+  target_quote: 同样也不会施行那些（低等的禅那），所以说避开低等的无色。
+- unit_id: 23-977-220-233
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-977-220-233
+  line: 69
+  source_quote: Evaṃsantepi suṭṭhu vikkhambhitanīvaraṇānaṃ tesaṃ appanā pattajjhānavisesena
+    suparibhāvitacittasantānattā jaccandhādivipatti janakaṃ dvihetukomakakammaṃpi
+    okāsaṃ na labhati.
+  target_quote: 倘若如此，对于能够很好镇服遮障的众生来说，通过他们的所达成沉浸的禅那的特质，由于心的相续中有很好的全面训练，故能够导致瞎眼等有缺陷的生命的令生业——低劣的二因业——不会得到(成熟的)机会。
+- unit_id: 23-980-15-24
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-980-15-24
+  line: 71
+  source_quote: Na hi suṭṭhu vikkhambhitanīvaraṇānaṃ appanāvīthiyaṃ pavattaṃ upacārajjhānaṃ
+    tihetukomakaṃnāma sambhavatīti.
+  target_quote: 对于没有很好镇服遮障的众生来说，在appanāvīthi结束后发生的接近禅定确实可能生起低劣的三因业。
+- unit_id: 24-242-226-229
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:24-242-226-229
+  line: 85
+  source_quote: Na sukhumānaṃ atthitāya.
+  target_quote: 不微细的意思。
+variant_translations:
+- 阻隔恶劣为止恶，王公贵族王子们居住处为止恶，因为省略后缀而不扩词，一切处都这样。
+- “绝境”，在这里没有出路，没有增长。
+- 或者说，因为舍断了五种粗的结，不再有心的烦躁（vihaññana），并具有不散乱地达到止观法的状态者，为**“aviha”**。
+- 非日常(持守)也是合适的，没有过失。
+- 同样也不会施行那些（低等的禅那），所以说避开低等的无色。
+- 倘若如此，对于能够很好镇服遮障的众生来说，通过他们的所达成沉浸的禅那的特质，由于心的相续中有很好的全面训练，故能够导致瞎眼等有缺陷的生命的令生业——低劣的二因业——不会得到(成熟的)机会。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-long-sentence-decomposition-da6644d0
+
+```yaml
+id: open-syntax-long-sentence-decomposition-da6644d0
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: long_sentence
+description: 把长句拆为分号、句号、方括号补足或换行结构。
+grammar_category: long_sentence
+source_pattern: long multi-clause sentence
+translation_pattern: 不 / 以 / 说 / 和 / 时 / 无
+technique: 把长句拆为分号、句号、方括号补足或换行结构。
+occurrence_count: 276
+chunk_count: 78
+top_chunks:
+- chunk_id: chunk-0115
+  count: 23
+- chunk_id: chunk-0042
+  count: 17
+- chunk_id: chunk-0066
+  count: 16
+- chunk_id: chunk-0053
+  count: 16
+- chunk_id: chunk-0049
+  count: 10
+- chunk_id: chunk-0027
+  count: 10
+- chunk_id: chunk-0111
+  count: 9
+- chunk_id: chunk-0151
+  count: 8
+evidence:
+- unit_id: 9-556-45-76
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-45-76
+  line: 8
+  source_quote: Kuṃ pāpaṃ rundhatīti kuru, khattiyakumārā, tesaṃ nivāso kurū, paccayalopato
+    na vuddhi, sabbatrevaṃ[ pāṇini1.2.524.2.81 suttesu passitabbaṃ].
+  target_quote: 阻隔恶劣为止恶，王公贵族王子们居住处为止恶，因为省略后缀而不扩词，一切处都这样。
+- unit_id: 9-556-122-177
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-122-177
+  line: 10
+  source_quote: Kala sadde, iṅga paccayo, kaliṅgā , tesaṃ nivāso kaliṅgā, uttarāpatho[‘‘
+    jagannāthā pubbabhāge kaṇhātīrantaraṃ sive kaliṅgadeso saṃvutto’’ ityuttadese(
+    thomanidhi)], kaliṃ gaṇhantīti vā kaliṅgā, kvi, kalaṃ madhurasaddaṃ gāyantītivā
+    kaliṅgā, assittaṃ, kena suk…
+  target_quote: 'kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]；
+
+    困苦（kali）的获取（gaha）故为 音缘国，达成；
+
+    将甜美的声音（kala）唱（ge）出来故为 音缘国，其[额外]有[字母]“i”；
+
+    能通过任何（ka）快乐来促成（liṅga）故为 音缘国，liṅga意为是促成，daṇḍaka为词根(dhātu2)。'
+- unit_id: 9-593-168-194
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-593-168-194
+  line: 13
+  source_quote: Takka ūhe, ūho ūnapūraṇaṃ, takkanaṃ takko, so sīlaṃ sabhāvo yattha
+    sā takkasīlā, yo hi purisakārena ūno, so tattha gantvā tamūnaṃ pūretīti.
+  target_quote: 'takka思考的意思，思考即补充不足，
+
+    思考补充不足的动作即takka，
+
+    在思惯这个城市有思考的习惯，'
+- unit_id: 9-821-198-221
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-821-198-221
+  line: 18
+  source_quote: Saṇa sadde, kattari a, saṇo nāma thirattaco eko rukkhayoni, yassa
+    tacena kevaṭṭādayo jālādīni karonti, saṇassa vikāro sāṇaṃ, vatthaṃ.
+  target_quote: saṇa這個詞【強化？】a，所謂saṇa即同源樹的韌皮部，漁夫等利用其樹皮可以製作網等，saṇa變麻(sāṇa)，[而成為]布料。
+- unit_id: 14-1939-2-22
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:14-1939-2-22
+  line: 20
+  source_quote: Silāghappayoge tāva– buddhassa silāghate, dhammassa silāghate, saṅghassa
+    silāghate, sakaṃupajjhāyassa silāghate, tava silāghate mama silāghate iccevamādi.
+  target_quote: '与silāgha连用
+
+    给佛点赞，给法点赞，给僧点赞
+
+    给自己的亲教师点赞；
+
+    给你点赞，给我点赞。'
+- unit_id: 14-1944-2-20
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:14-1944-2-20
+  line: 22
+  source_quote: Pihappayoge – buddhassa aññatitthiyā pihayanti, devā dassanakāmā te,
+    yato icchāmi bhaddantassa, samiddhānaṃ pihayanti daliddā iccevamādi.
+  target_quote: '与piha（系的动词）连用——
+
+    外道们对佛陀有向往，
+
+    天神们对你有见的欲望，
+
+    因此我对尊者有愿求，
+
+    穷人们对富人有向往。'
+- unit_id: 14-2012-2-17
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:14-2012-2-17
+  line: 24
+  source_quote: Agginā kuṭiṃ jhāpeti, manasā ce paduṭṭhena, manasā ce pasannena, kāyena
+    kammaṃ karoti.
+  target_quote: '以火来烧kuṭī，
+
+    若以污染之心；
+
+    若以剔透之心；
+
+    以身造业。'
+- unit_id: 14-2015-2-18
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:14-2015-2-18
+  line: 26
+  source_quote: Sahāpi gaggena saṅgho uposathaṃ kareyya, vināpi gaggena, mahatā bhikkhusaṅghena
+    saddhiṃ, sahassena samaṃ mitā.
+  target_quote: '僧团应跟gagga一起做斋戒，
+
+    不跟gagga一起，
+
+    跟大比库僧团同在，
+
+    测量结果跟一千相同，'
+variant_translations:
+- 阻隔恶劣为止恶，王公贵族王子们居住处为止恶，因为省略后缀而不扩词，一切处都这样。
+- kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]； 困苦（kali）的获取（gaha）故为
+  音缘国，达成；…
+- takka思考的意思，思考即补充不足， 思考补充不足的动作即takka， 在思惯这个城市有思考的习惯，
+- saṇa這個詞【強化？】a，所謂saṇa即同源樹的韌皮部，漁夫等利用其樹皮可以製作網等，saṇa變麻(sāṇa)，[而成為]布料。
+- 与silāgha连用 给佛点赞，给法点赞，给僧点赞 给自己的亲教师点赞； 给你点赞，给我点赞。
+- 与piha（系的动词）连用—— 外道们对佛陀有向往， 天神们对你有见的欲望， 因此我对尊者有愿求， 穷人们对富人有向往。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-locative-topic-01bea915
+
+```yaml
+id: open-syntax-locative-topic-01bea915
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: locative_topic
+description: 把处所或论题入口译为在此、此中、其中、这里。
+grammar_category: locative_topic
+source_pattern: ettha / tattha / idha
+translation_pattern: 不 / 以 / 说 / 如 / 时 / 和
+technique: 把处所或论题入口译为在此、此中、其中、这里。
+occurrence_count: 217
+chunk_count: 70
+top_chunks:
+- chunk_id: chunk-0053
+  count: 17
+- chunk_id: chunk-0122
+  count: 13
+- chunk_id: chunk-0115
+  count: 12
+- chunk_id: chunk-0052
+  count: 12
+- chunk_id: chunk-0154
+  count: 9
+- chunk_id: chunk-0156
+  count: 9
+- chunk_id: chunk-0027
+  count: 9
+- chunk_id: chunk-0151
+  count: 7
+evidence:
+- unit_id: 9-593-168-194
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-593-168-194
+  line: 13
+  source_quote: Takka ūhe, ūho ūnapūraṇaṃ, takkanaṃ takko, so sīlaṃ sabhāvo yattha
+    sā takkasīlā, yo hi purisakārena ūno, so tattha gantvā tamūnaṃ pūretīti.
+  target_quote: 'takka思考的意思，思考即补充不足，
+
+    思考补充不足的动作即takka，
+
+    在思惯这个城市有思考的习惯，'
+- unit_id: 16-1221-34-41
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:16-1221-34-41
+  line: 47
+  source_quote: Ettha ca natthi pāyo vuddhi etthāti apāyo.
+  target_quote: “绝境”，在这里没有出路，没有增长。
+- unit_id: 16-2663-62-77
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:16-2663-62-77
+  line: 50
+  source_quote: Ettha sikkhā nirutti kappa byākaraṇa jotisattha chandovicitivasena
+    manto‘‘ chaḷaṅgo’’ ti veditabbo.
+  target_quote: 这里学，辞源， 劫，byākaraṇa，jotisattha，manto这六个部分组成。
+- unit_id: 23-449-95-109
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-449-95-109
+  line: 55
+  source_quote: Tehi pakatiyā viññujātikesu sutapariyattisampannesuca uppannā pāpakriyāsu
+    taṃ taṃ upāyadassanavasena tesaṃ tattha chekabhāvaṃ paṭibalabhāvañca sādhentīti.
+  target_quote: '确实，要知道他们（这六法）在智者和具足博闻与学识的人中发挥作用而出现，
+
+    在恶行中以各种方式来彰显，在其（即恶行）中来达成他们（该六法）的聪明能干的性质。'
+- unit_id: 23-784-66-74
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-784-66-74
+  line: 56
+  source_quote: Tattha pathamabhūmivāsino appakena kālena attano ṭhānaṃ navijahantīti
+    avihā.
+  target_quote: 在这儿，首层的住者片刻不离弃（vijahanti）自己的停留处，为“无损天(aviha)”。
+- unit_id: 64-674-16-32
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-674-16-32
+  line: 105
+  source_quote: Tattha paccanīkasamudācāravasena hānabhāgiyatā, tadanudhammatāya satiyā
+    saṇṭhānavasena ṭhitibhāgiyatā, uparivisesādhigamavasena visesabhāgiyatā, nibbidāsahagatasaññāmanasikārasamudācāravasena
+    nibbedhabhāgiyatā ca veditabbā.
+  target_quote: '这里应知道：
+
+    在反向的习气的作用下是退分的状态，
+
+    在随顺法性之念的坚持力的作用下是住分的状态，
+
+    更高卓越的达成之力的作用下是进分的状态，
+
+    在与倦离一起标记和关注的习惯性表现的作用下是抉择分的状态'
+- unit_id: 64-1652-2-6
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1652-2-6
+  line: 120
+  source_quote: Tattha {gaṇanā}ti gaṇanāyeva.
+  target_quote: 此中（1） 数──算（出入息）。
+- unit_id: 64-1653-2-13
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1653-2-13
+  line: 128
+  source_quote: Tattha iminā ādikammikena kulaputtena paṭhamaṃ gaṇanāya idaṃ kammaṭṭhānaṃ
+    manasi kātabbaṃ .
+  target_quote: '（1） （数） 于此（作意的规定）中初学的善男子第一以数于
+
+    此（安般念）业处而作意。'
+variant_translations:
+- takka思考的意思，思考即补充不足， 思考补充不足的动作即takka， 在思惯这个城市有思考的习惯，
+- “绝境”，在这里没有出路，没有增长。
+- 这里学，辞源， 劫，byākaraṇa，jotisattha，manto这六个部分组成。
+- 确实，要知道他们（这六法）在智者和具足博闻与学识的人中发挥作用而出现， 在恶行中以各种方式来彰显，在其（即恶行）中来达成他们（该六法）的聪明能干的性质。
+- 在这儿，首层的住者片刻不离弃（vijahanti）自己的停留处，为“无损天(aviha)”。
+- 这里应知道： 在反向的习气的作用下是退分的状态， 在随顺法性之念的坚持力的作用下是住分的状态， 更高卓越的达成之力的作用下是进分的状态， 在与倦离一起标记和关注的习惯性表现的作用下是抉择分的状态
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-gerundive-obligation-fcba4188
+
+```yaml
+id: open-syntax-gerundive-obligation-fcba4188
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: gerundive_or_obligation
+description: 把应做、可做、当知、应被理解等义务或可能性显化。
+grammar_category: gerundive_or_obligation
+source_pattern: -tabba / -anīya forms
+translation_pattern: 应 / 时 / 说 / 不 / 以 / 和
+technique: 把应做、可做、当知、应被理解等义务或可能性显化。
+occurrence_count: 157
+chunk_count: 61
+top_chunks:
+- chunk_id: chunk-0151
+  count: 12
+- chunk_id: chunk-0053
+  count: 12
+- chunk_id: chunk-0114
+  count: 9
+- chunk_id: chunk-0052
+  count: 9
+- chunk_id: chunk-0134
+  count: 7
+- chunk_id: chunk-0115
+  count: 7
+- chunk_id: chunk-0109
+  count: 5
+- chunk_id: chunk-0154
+  count: 4
+evidence:
+- unit_id: 9-556-45-76
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-45-76
+  line: 8
+  source_quote: Kuṃ pāpaṃ rundhatīti kuru, khattiyakumārā, tesaṃ nivāso kurū, paccayalopato
+    na vuddhi, sabbatrevaṃ[ pāṇini1.2.524.2.81 suttesu passitabbaṃ].
+  target_quote: 阻隔恶劣为止恶，王公贵族王子们居住处为止恶，因为省略后缀而不扩词，一切处都这样。
+- unit_id: 16-1221-42-51
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:16-1221-42-51
+  line: 48
+  source_quote: Atha vā pana ayato sukhato apetoti apāyo tipi nibbacanīyaṃ.
+  target_quote: 在词源学方面亦为：离收入与快乐而去，为**“绝境”**。
+- unit_id: 16-2663-62-77
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:16-2663-62-77
+  line: 50
+  source_quote: Ettha sikkhā nirutti kappa byākaraṇa jotisattha chandovicitivasena
+    manto‘‘ chaḷaṅgo’’ ti veditabbo.
+  target_quote: 这里学，辞源， 劫，byākaraṇa，jotisattha，manto这六个部分组成。
+- unit_id: 23-977-209-219
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-977-209-219
+  line: 68
+  source_quote: Rūpa lokato cavantānaṃ pana aññaṃ dubbalakammaṃ okāsaṃ nalabhatīti
+    navattabbaṃ.
+  target_quote: 对于从色界死去的众生来说，并不能说说没有生起其他弱的业的机会。
+- unit_id: 41-730-2-13
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:41-730-2-13
+  line: 93
+  source_quote: Svākkhāto bhagavatā dhammo sandiṭṭhiko akāliko ehi passiko opaneyyiko
+    paccattaṃ veditabbo viññūhi–
+  target_quote: 已被世尊说得很好的法是亲见的，是超越时间的，是公开的，是通往[涅槃]的，是可被智者本人所了知的——
+- unit_id: 64-199-44-57
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-199-44-57
+  line: 102
+  source_quote: Yo sarīrābādhacittavikkhepakaro asappāyo utu senāsanapaṭisevanena
+    vinodetabbo hoti, tassa vinodanatthaṃ ekībhāvasukhatthañcāti vuttaṃ hoti.
+  target_quote: 说的是：身体疼痛能造成心分散的身体的不合适、折磨人的季候可通过受用住所而规避，因为规避[季候]而同时获得的出离乐。
+- unit_id: 64-587-44-49
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-587-44-49
+  line: 103
+  source_quote: Amanussānaṃ piyaṃ tilapiṭṭhamāsabhattamacchamaṃsakhīratelaguḷādikhajjabhojjaṃ
+    na sevitabbaṃ.
+  target_quote: 非人们所喜爱的芝麻粉、豆饭、鱼、肉、奶、油、糕块等副食和主食不应食用。
+- unit_id: 64-674-16-32
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-674-16-32
+  line: 105
+  source_quote: Tattha paccanīkasamudācāravasena hānabhāgiyatā, tadanudhammatāya satiyā
+    saṇṭhānavasena ṭhitibhāgiyatā, uparivisesādhigamavasena visesabhāgiyatā, nibbidāsahagatasaññāmanasikārasamudācāravasena
+    nibbedhabhāgiyatā ca veditabbā.
+  target_quote: '这里应知道：
+
+    在反向的习气的作用下是退分的状态，
+
+    在随顺法性之念的坚持力的作用下是住分的状态，
+
+    更高卓越的达成之力的作用下是进分的状态，
+
+    在与倦离一起标记和关注的习惯性表现的作用下是抉择分的状态'
+variant_translations:
+- 阻隔恶劣为止恶，王公贵族王子们居住处为止恶，因为省略后缀而不扩词，一切处都这样。
+- 在词源学方面亦为：离收入与快乐而去，为**“绝境”**。
+- 这里学，辞源， 劫，byākaraṇa，jotisattha，manto这六个部分组成。
+- 对于从色界死去的众生来说，并不能说说没有生起其他弱的业的机会。
+- 已被世尊说得很好的法是亲见的，是超越时间的，是公开的，是通往[涅槃]的，是可被智者本人所了知的——
+- 说的是：身体疼痛能造成心分散的身体的不合适、折磨人的季候可通过受用住所而规避，因为规避[季候]而同时获得的出离乐。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-bracketed-supplement-syntax-550f5a6c
+
+```yaml
+id: open-syntax-bracketed-supplement-syntax-550f5a6c
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: supplemented_syntax
+description: 用方括号补出主语、宾语、语境、逻辑关系或术语说明。
+grammar_category: supplemented_syntax
+source_pattern: implicit source relation + bracketed target supplement
+translation_pattern: 说 / 时 / 不 / 以 / 如 / 无
+technique: 用方括号补出主语、宾语、语境、逻辑关系或术语说明。
+occurrence_count: 141
+chunk_count: 56
+top_chunks:
+- chunk_id: chunk-0115
+  count: 12
+- chunk_id: chunk-0053
+  count: 10
+- chunk_id: chunk-0027
+  count: 9
+- chunk_id: chunk-0114
+  count: 9
+- chunk_id: chunk-0052
+  count: 7
+- chunk_id: chunk-0111
+  count: 6
+- chunk_id: chunk-0098
+  count: 5
+- chunk_id: chunk-0113
+  count: 5
+evidence:
+- unit_id: 9-556-122-177
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-122-177
+  line: 10
+  source_quote: Kala sadde, iṅga paccayo, kaliṅgā , tesaṃ nivāso kaliṅgā, uttarāpatho[‘‘
+    jagannāthā pubbabhāge kaṇhātīrantaraṃ sive kaliṅgadeso saṃvutto’’ ityuttadese(
+    thomanidhi)], kaliṃ gaṇhantīti vā kaliṅgā, kvi, kalaṃ madhurasaddaṃ gāyantītivā
+    kaliṅgā, assittaṃ, kena suk…
+  target_quote: 'kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]；
+
+    困苦（kali）的获取（gaha）故为 音缘国，达成；
+
+    将甜美的声音（kala）唱（ge）出来故为 音缘国，其[额外]有[字母]“i”；
+
+    能通过任何（ka）快乐来促成（liṅga）故为 音缘国，liṅga意为是促成，daṇḍaka为词根(dhātu2)。'
+- unit_id: 9-821-148-153
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-821-148-153
+  line: 17
+  source_quote: Paṭṭuṇṇaraṭṭhe jātattā paṭṭuṇṇan tipi vadanti.
+  target_quote: '[很多人]也說，由於在paṭṭuṇṇaraṭṭha生產而為paṭṭuṇṇa。'
+- unit_id: 9-821-198-221
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-821-198-221
+  line: 18
+  source_quote: Saṇa sadde, kattari a, saṇo nāma thirattaco eko rukkhayoni, yassa
+    tacena kevaṭṭādayo jālādīni karonti, saṇassa vikāro sāṇaṃ, vatthaṃ.
+  target_quote: saṇa這個詞【強化？】a，所謂saṇa即同源樹的韌皮部，漁夫等利用其樹皮可以製作網等，saṇa變麻(sāṇa)，[而成為]布料。
+- unit_id: 14-2070-2-9
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:14-2070-2-9
+  line: 42
+  source_quote: Rudato dārakassa pabbaji, rudantasmiṃ dārake pabbaji.
+  target_quote: '即使孩子在哭第六变格[他]也出家了，
+
+    即使孩子在哭第七变格[他]也出家了。'
+- unit_id: 41-730-2-13
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:41-730-2-13
+  line: 93
+  source_quote: Svākkhāto bhagavatā dhammo sandiṭṭhiko akāliko ehi passiko opaneyyiko
+    paccattaṃ veditabbo viññūhi–
+  target_quote: 已被世尊说得很好的法是亲见的，是超越时间的，是公开的，是通往[涅槃]的，是可被智者本人所了知的——
+- unit_id: 64-199-44-57
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-199-44-57
+  line: 102
+  source_quote: Yo sarīrābādhacittavikkhepakaro asappāyo utu senāsanapaṭisevanena
+    vinodetabbo hoti, tassa vinodanatthaṃ ekībhāvasukhatthañcāti vuttaṃ hoti.
+  target_quote: 说的是：身体疼痛能造成心分散的身体的不合适、折磨人的季候可通过受用住所而规避，因为规避[季候]而同时获得的出离乐。
+- unit_id: 65-1499-241-251
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-1499-241-251
+  line: 214
+  source_quote: Taṇhādiṭṭhiduccaritasaṃkilesānaṃ visayadhammatāya {saṃkilesikadhammato}ti
+    evaṃ pabhedato vuttassa aniccādisammasanassa vasena sammasati.
+  target_quote: '由于渴爱成见不善行（等十种）诸烦恼的[所缘]境法——
+
+    由于saṃkilesikadhamma'
+- unit_id: 66-340-10-27
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-340-10-27
+  line: 253
+  source_quote: '{Avitakkasahagatā}ti‘‘ kathaṃ nu kho me avitakkaṃ jhānaṃ bhaveyyā’’
+    ti evaṃ avitakkārammaṇā avitakkavisayā.'
+  target_quote: 没有贯注伴随，“我的没有贯注的禅那会是怎样的呢？”这样的（那些）没有贯注的目标，（那些）没有贯注的[所缘]境。
+variant_translations:
+- kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]； 困苦（kali）的获取（gaha）故为
+  音缘国，达成；…
+- '[很多人]也說，由於在paṭṭuṇṇaraṭṭha生產而為paṭṭuṇṇa。'
+- saṇa這個詞【強化？】a，所謂saṇa即同源樹的韌皮部，漁夫等利用其樹皮可以製作網等，saṇa變麻(sāṇa)，[而成為]布料。
+- 即使孩子在哭第六变格[他]也出家了， 即使孩子在哭第七变格[他]也出家了。
+- 已被世尊说得很好的法是亲见的，是超越时间的，是公开的，是通往[涅槃]的，是可被智者本人所了知的——
+- 说的是：身体疼痛能造成心分散的身体的不合适、折磨人的季候可通过受用住所而规避，因为规避[季候]而同时获得的出离乐。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.86
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-alternative-series-18071276
+
+```yaml
+id: open-syntax-alternative-series-18071276
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: alternative_or_variant
+description: 把多项替代或并列解释译为或、或者、换行列举。
+grammar_category: alternative_or_variant
+source_pattern: X vā Y vā
+translation_pattern: 或 / 不 / 以 / 如 / 说 / 和
+technique: 把多项替代或并列解释译为或、或者、换行列举。
+occurrence_count: 91
+chunk_count: 34
+top_chunks:
+- chunk_id: chunk-0115
+  count: 10
+- chunk_id: chunk-0053
+  count: 8
+- chunk_id: chunk-0052
+  count: 8
+- chunk_id: chunk-0066
+  count: 7
+- chunk_id: chunk-0021
+  count: 6
+- chunk_id: chunk-0106
+  count: 6
+- chunk_id: chunk-0049
+  count: 4
+- chunk_id: chunk-0150
+  count: 3
+evidence:
+- unit_id: 9-556-122-177
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-556-122-177
+  line: 10
+  source_quote: Kala sadde, iṅga paccayo, kaliṅgā , tesaṃ nivāso kaliṅgā, uttarāpatho[‘‘
+    jagannāthā pubbabhāge kaṇhātīrantaraṃ sive kaliṅgadeso saṃvutto’’ ityuttadese(
+    thomanidhi)], kaliṃ gaṇhantīti vā kaliṅgā, kvi, kalaṃ madhurasaddaṃ gāyantītivā
+    kaliṅgā, assittaṃ, kena suk…
+  target_quote: 'kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]；
+
+    困苦（kali）的获取（gaha）故为 音缘国，达成；
+
+    将甜美的声音（kala）唱（ge）出来故为 音缘国，其[额外]有[字母]“i”；
+
+    能通过任何（ka）快乐来促成（liṅga）故为 音缘国，liṅga意为是促成，daṇḍaka为词根(dhātu2)。'
+- unit_id: 64-184-59-72
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-184-59-72
+  line: 100
+  source_quote: Yo hi kuladārake dhāti viya aṅkena vā khandhena vā paribhaṭati, dhāretīti
+    attho.
+  target_quote: 他好像家庭的乳母/育儿嫂，用腰或背而抱负。
+- unit_id: 64-1974-2-26
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1974-2-26
+  line: 168
+  source_quote: Upekkhāvihārissa pana‘‘ sattā sukhitā vā hontu dukkhato vā vimuccantu,
+    sampattasukhato vā mā vimuccantū’’ ti ābhogābhāvato sukhadukkhādiparamatthagāhavimukhabhāvato
+    avijjamānaggahaṇadukkhaṃ cittaṃ hoti.
+  target_quote: '有趣的是，因为对于舍住(upekkhāvihārī)者来说没有去想“愿众生快乐；愿众生从苦中摆脱，愿众生不失去所得的快乐”，因为摆脱了苦乐等究竟义的想法，
+
+    该心是难以理解那从究竟义上不存在的概念。'
+- unit_id: 65-225-75-86
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-225-75-86
+  line: 178
+  source_quote: So ca jānaṃ vā upavadeyya ajānaṃ vā, ubhayathāpi ariyūpavādova hoti.
+  target_quote: 如果他批评，无论是否知道（圣者的圣境），两种情况都构成错评圣者。
+- unit_id: 65-227-59-70
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-227-59-70
+  line: 179
+  source_quote: Sace disāpakkanto hoti, sayaṃ vā gantvā saddhivihārikādike vā pesetvā
+    khamāpetabbo.
+  target_quote: 如果被谤者已离开到别地方去，则他应自己去或拜托同门等前去（向圣者）求忏悔。
+- unit_id: 65-1499-169-192
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-1499-169-192
+  line: 204
+  source_quote: Pavattidukkhatāya, dukkhassa ca ādīnavatāya ādīnavato, atha vā ādīnaṃ
+    vāti gacchati pavattatīti ādīnavo, kapaṇamanussassetaṃ adhivacanaṃ, khandhāpi
+    ca kapaṇāyevāti ādīnavasadisatāya ādīnavato.
+  target_quote: '由于运转发生之苦状态，由于苦的ādīnavatā，即由于过患
+
+    。
+
+    另一方面：（拆分：）ādīna+va，过得很凄惨，运转得很凄惨，
+
+    就像是孤苦伶仃的人的譬喻，五蕴也是孤苦伶仃，就像其过患，故由于过患。'
+- unit_id: 66-159-128-173
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-159-128-173
+  line: 228
+  source_quote: ‘‘ Cīvaran’’ ti ekavacanaṃ ekattamattaṃ vācakanti adhippāyena‘‘ antaravāsakādīsu
+    yaṃ kiñcī’’ ti vuttaṃ, jātisaddatāya pana tassa pāḷiyaṃ ekavacananti yattakāni
+    cīvarāni yoginā pariharitabbāni, tesaṃ sabbesaṃ ekajjhaṃ gahaṇanti sakkā viññātuṃ,
+    yaṃ {kiñcī}ti vā…
+  target_quote: '（针对）“‘衣’中用单数来表达只有一个”这样的观点
+
+    而说**“下衣等中的任何一种”，
+
+    因为（衣）这个（词）的种类的含义，在圣典原文中用单数，
+
+    所以，不管禅修者保留多少衣，
+
+    他们全部视为一个整体，
+
+    或者说，“任何一种”**也可以是完整包含一切，而不是不确定词。'
+- unit_id: 66-339-79-93
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-339-79-93
+  line: 248
+  source_quote: Evañca katvā‘‘ satiyā vā nikantiyā vā’’ ti vikappavacanañca yuttaṃ
+    hoti.
+  target_quote: 这样做了之后，“念或欲求”这样是与不同想法/安排的言辞相关。
+variant_translations:
+- kala意为声音，iṅga意为缘，[ 音缘国(kaliṅga)王子]他们的住所，即[kaliṅga]]，位于[ 莲雾洲 ]北部地区[的国家]； 困苦（kali）的获取（gaha）故为
+  音缘国，达成；…
+- 他好像家庭的乳母/育儿嫂，用腰或背而抱负。
+- 有趣的是，因为对于舍住(upekkhāvihārī)者来说没有去想“愿众生快乐；愿众生从苦中摆脱，愿众生不失去所得的快乐”，因为摆脱了苦乐等究竟义的想法， 该心是难以理解那从究竟义上不存在的概念。
+- 如果他批评，无论是否知道（圣者的圣境），两种情况都构成错评圣者。
+- 如果被谤者已离开到别地方去，则他应自己去或拜托同门等前去（向圣者）求忏悔。
+- 由于运转发生之苦状态，由于苦的ādīnavatā，即由于过患 。 另一方面：（拆分：）ādīna+va，过得很凄惨，运转得很凄惨， 就像是孤苦伶仃的人的譬喻，五蕴也是孤苦伶仃，就像其过患，故由于过患。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.78
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-coordinated-series-9a122f4e
+
+```yaml
+id: open-syntax-coordinated-series-9a122f4e
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: coordination
+description: 把多项并列译为和、与、以及，或用顿号/换行列举。
+grammar_category: coordination
+source_pattern: X ca Y ca
+translation_pattern: 不 / 以 / 和 / 无 / 与 / 如
+technique: 把多项并列译为和、与、以及，或用顿号/换行列举。
+occurrence_count: 75
+chunk_count: 35
+top_chunks:
+- chunk_id: chunk-0156
+  count: 10
+- chunk_id: chunk-0110
+  count: 6
+- chunk_id: chunk-0151
+  count: 5
+- chunk_id: chunk-0118
+  count: 4
+- chunk_id: chunk-0029
+  count: 3
+- chunk_id: chunk-0115
+  count: 3
+- chunk_id: chunk-0042
+  count: 3
+- chunk_id: chunk-0049
+  count: 3
+evidence:
+- unit_id: 14-2066-2-9
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:14-2066-2-9
+  line: 35
+  source_quote: Niddhāraṇatthe ca chaṭṭhīvibhatti hoti, sattamī ca.
+  target_quote: 在表达范围定语的含义时既可以是第六变格，也可以是第七变格。
+- unit_id: 64-1027-165-197
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1027-165-197
+  line: 115
+  source_quote: Ettāvatā cesa sukhassa ca pahānā dukkhassa ca pahānā pubbeva somanassadomanassānaṃ
+    atthaṅgamā adukkhamasukhaṃ upekkhāsatipārisuddhiṃ catutthaṃ jhānaṃ upasampajja
+    viharati( dī. ni.1.232; dha. sa.165).
+  target_quote: 再者特别地，该禅修者（禅修）至此，因为舍离乐、因为舍离苦、因为之前的悦意和忧心消失而具足不苦不乐的舍念清静的第四禅而住。
+- unit_id: 64-1654-74-84
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1654-74-84
+  line: 141
+  source_quote: Tassa evaṃ gaṇayato nikkhamantā ca pavisantā ca assāsapassāsā pākaṭā
+    honti.
+  target_quote: 如是数出与数入的（瑜伽）者，便得明了出息和入息；
+- unit_id: 64-1655-75-100
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1655-75-100
+  line: 146
+  source_quote: Tatonena‘‘ punappunaṃ sañcarantī’’ ti ñatvā anto ca bahi ca agahetvā
+    dvārappattaṃ dvārappattaṃyeva gahetvā‘‘ eko dve tīṇi cattāri pañca cha.
+  target_quote: 于是，知道“它们一次又一次地进进出出”后，不取内外的气息，只取每个已到达门口(鼻孔)的呼吸，“一，二，三，四，五，六；
+- unit_id: 64-1656-13-27
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1656-13-27
+  line: 150
+  source_quote: Atha nirantaraṃ pavattatīti ñatvā anto ca bahi ca vātaṃ apariggahetvā
+    purimanayeneva vegena vegena gaṇetabbaṃ.
+  target_quote: 他既知“（业处）连续不间断而起”，不取（身体的）内与外之息，仅如前述的方法快快而数（其到达鼻孔之息）因为如果他的心与入息共入内部，
+- unit_id: 64-1656-59-76
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1656-59-76
+  line: 154
+  source_quote: Tena vuttaṃ‘‘ anto ca bahi ca vātaṃ apariggahetvā purimanayeneva vegena
+    vegena gaṇetabban’’ ti.
+  target_quote: 所以说：“不取内与外之息，仅如前述的方法快快而数”。
+- unit_id: 65-1206-11-29
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-1206-11-29
+  line: 186
+  source_quote: Mahāvisayaṃ hi taṃ aṭṭhacittasampayogā, appavisayāni itarāni catucittasampayogā,
+    yebhuyyena ca ālayarāmattā pajāya pākaṭaṃ kāmupādānaṃ, na itarāni.
+  target_quote: '因为与八种心相应，所以那（欲望坚持）为大范围，
+
+    因为与四种心相应，所以其他的（三种取）为小范围。'
+- unit_id: 65-1499-169-192
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-1499-169-192
+  line: 204
+  source_quote: Pavattidukkhatāya, dukkhassa ca ādīnavatāya ādīnavato, atha vā ādīnaṃ
+    vāti gacchati pavattatīti ādīnavo, kapaṇamanussassetaṃ adhivacanaṃ, khandhāpi
+    ca kapaṇāyevāti ādīnavasadisatāya ādīnavato.
+  target_quote: '由于运转发生之苦状态，由于苦的ādīnavatā，即由于过患
+
+    。
+
+    另一方面：（拆分：）ādīna+va，过得很凄惨，运转得很凄惨，
+
+    就像是孤苦伶仃的人的譬喻，五蕴也是孤苦伶仃，就像其过患，故由于过患。'
+variant_translations:
+- 在表达范围定语的含义时既可以是第六变格，也可以是第七变格。
+- 再者特别地，该禅修者（禅修）至此，因为舍离乐、因为舍离苦、因为之前的悦意和忧心消失而具足不苦不乐的舍念清静的第四禅而住。
+- 如是数出与数入的（瑜伽）者，便得明了出息和入息；
+- 于是，知道“它们一次又一次地进进出出”后，不取内外的气息，只取每个已到达门口(鼻孔)的呼吸，“一，二，三，四，五，六；
+- 他既知“（业处）连续不间断而起”，不取（身体的）内与外之息，仅如前述的方法快快而数（其到达鼻孔之息）因为如果他的心与入息共入内部，
+- 所以说：“不取内与外之息，仅如前述的方法快快而数”。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.75
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-relative-correlative-56a796f6
+
+```yaml
+id: open-syntax-relative-correlative-56a796f6
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: relative_correlative
+description: 把关系从句转成汉语的所、凡、若、此/彼对应关系。
+grammar_category: relative_correlative
+source_pattern: ya-/yo- relative + ta-/so- correlative
+translation_pattern: 说 / 不 / 以 / 无 / 与 / 时
+technique: 把关系从句转成汉语的所、凡、若、此/彼对应关系。
+occurrence_count: 69
+chunk_count: 34
+top_chunks:
+- chunk_id: chunk-0073
+  count: 11
+- chunk_id: chunk-0156
+  count: 8
+- chunk_id: chunk-0154
+  count: 3
+- chunk_id: chunk-0065
+  count: 3
+- chunk_id: chunk-0089
+  count: 3
+- chunk_id: chunk-0106
+  count: 3
+- chunk_id: chunk-0053
+  count: 3
+- chunk_id: chunk-0052
+  count: 3
+evidence:
+- unit_id: 9-593-168-194
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:9-593-168-194
+  line: 13
+  source_quote: Takka ūhe, ūho ūnapūraṇaṃ, takkanaṃ takko, so sīlaṃ sabhāvo yattha
+    sā takkasīlā, yo hi purisakārena ūno, so tattha gantvā tamūnaṃ pūretīti.
+  target_quote: 'takka思考的意思，思考即补充不足，
+
+    思考补充不足的动作即takka，
+
+    在思惯这个城市有思考的习惯，'
+- unit_id: 64-199-44-57
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-199-44-57
+  line: 102
+  source_quote: Yo sarīrābādhacittavikkhepakaro asappāyo utu senāsanapaṭisevanena
+    vinodetabbo hoti, tassa vinodanatthaṃ ekībhāvasukhatthañcāti vuttaṃ hoti.
+  target_quote: 说的是：身体疼痛能造成心分散的身体的不合适、折磨人的季候可通过受用住所而规避，因为规避[季候]而同时获得的出离乐。
+- unit_id: 64-1654-43-73
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1654-43-73
+  line: 140
+  source_quote: Evameva imināpi assāsapassāsesu yo upaṭṭhāti, taṃ gahetvā‘‘ ekaṃ ekan’’
+    ti ādiṃ katvā yāva‘‘ dasa dasā’’ ti pavattamānaṃ pavattamānaṃ upalakkhetvāva gaṇetabbaṃ.
+  target_quote: 同样的，在入息与出息之中，哪一个变得明显，就取那个（呼吸），从“一……一……”作为开始，直到“十……十……”，这样来对每每生起的呼吸进行编号，然后数。
+- unit_id: 65-1293-23-36
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-1293-23-36
+  line: 188
+  source_quote: Micchā passanto yo asatipi byāpāre avijjādīnaṃ sabhāvaniyamasiddho
+    hetubhāvo, tassa aggahaṇato akiriyadiṭṭhiṃ upādiyati.
+  target_quote: '错误观察者
+
+    即便在造作的努力不存在时，以无明等的自然规律（依然可以）达成（其结果）——因的性质，
+
+    由于未能把握那（因的性质）而执取无作用见。'
+- unit_id: 66-159-128-173
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-159-128-173
+  line: 228
+  source_quote: ‘‘ Cīvaran’’ ti ekavacanaṃ ekattamattaṃ vācakanti adhippāyena‘‘ antaravāsakādīsu
+    yaṃ kiñcī’’ ti vuttaṃ, jātisaddatāya pana tassa pāḷiyaṃ ekavacananti yattakāni
+    cīvarāni yoginā pariharitabbāni, tesaṃ sabbesaṃ ekajjhaṃ gahaṇanti sakkā viññātuṃ,
+    yaṃ {kiñcī}ti vā…
+  target_quote: '（针对）“‘衣’中用单数来表达只有一个”这样的观点
+
+    而说**“下衣等中的任何一种”，
+
+    因为（衣）这个（词）的种类的含义，在圣典原文中用单数，
+
+    所以，不管禅修者保留多少衣，
+
+    他们全部视为一个整体，
+
+    或者说，“任何一种”**也可以是完整包含一切，而不是不确定词。'
+- unit_id: 66-1186-78-99
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-1186-78-99
+  line: 304
+  source_quote: ‘‘ Yo upaṭṭhātī’’ ti iminā ca dvīsu nāsāpuṭavātesu yo pākaṭataro upaṭṭhāti,
+    so gahetabboti ayampi attho dīpitoti daṭṭhabbaṃ.
+  target_quote: “出现的那个”据此在鼻孔的两通气中哪个表现得更明显，他（禅修者）就应该取哪通气；这样所表达的含义应被知晓。
+- unit_id: 66-1401-44-54
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-1401-44-54
+  line: 332
+  source_quote: Tassa saṅkhārabhūtampi yaṃ kiñci ārammaṇaṃ appaṭikkūlākāreneva paccupatiṭṭhati,
+    pageva sabhāvato.
+  target_quote: 对他（慈住者）而言，作为行的任何目标就以不恶心的令人愉悦的表现来呈现，更何况以本质。
+- unit_id: 67-1291-23-31
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:67-1291-23-31
+  line: 390
+  source_quote: Yaṃ taṃ bhagavatā etassa vibhaṅge aniccādisammasanaṃ vuttanti sambandho.
+  target_quote: 在其分别方面的无常等世尊所说的感触——与之相关。
+variant_translations:
+- takka思考的意思，思考即补充不足， 思考补充不足的动作即takka， 在思惯这个城市有思考的习惯，
+- 说的是：身体疼痛能造成心分散的身体的不合适、折磨人的季候可通过受用住所而规避，因为规避[季候]而同时获得的出离乐。
+- 同样的，在入息与出息之中，哪一个变得明显，就取那个（呼吸），从“一……一……”作为开始，直到“十……十……”，这样来对每每生起的呼吸进行编号，然后数。
+- 错误观察者 即便在造作的努力不存在时，以无明等的自然规律（依然可以）达成（其结果）——因的性质， 由于未能把握那（因的性质）而执取无作用见。
+- （针对）“‘衣’中用单数来表达只有一个”这样的观点 而说**“下衣等中的任何一种”， 因为（衣）这个（词）的种类的含义，在圣典原文中用单数， 所以，不管禅修者保留多少衣，
+  他们全部视为一个整体， 或…
+- “出现的那个”据此在鼻孔的两通气中哪个表现得更明显，他（禅修者）就应该取哪通气；这样所表达的含义应被知晓。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.75
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-simile-comparison-800fcd10
+
+```yaml
+id: open-syntax-simile-comparison-800fcd10
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: simile
+description: 把譬喻关系译为如、譬如、犹如、像。
+grammar_category: simile
+source_pattern: viya / iva / seyyathāpi
+translation_pattern: 如 / 不 / 以 / 时 / 说 / 无
+technique: 把譬喻关系译为如、譬如、犹如、像。
+occurrence_count: 63
+chunk_count: 29
+top_chunks:
+- chunk_id: chunk-0115
+  count: 7
+- chunk_id: chunk-0054
+  count: 7
+- chunk_id: chunk-0153
+  count: 6
+- chunk_id: chunk-0123
+  count: 5
+- chunk_id: chunk-0151
+  count: 4
+- chunk_id: chunk-0049
+  count: 3
+- chunk_id: chunk-0122
+  count: 3
+- chunk_id: chunk-0150
+  count: 2
+evidence:
+- unit_id: 64-184-59-72
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-184-59-72
+  line: 100
+  source_quote: Yo hi kuladārake dhāti viya aṅkena vā khandhena vā paribhaṭati, dhāretīti
+    attho.
+  target_quote: 他好像家庭的乳母/育儿嫂，用腰或背而抱负。
+- unit_id: 64-1653-31-43
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1653-31-43
+  line: 132
+  source_quote: Pañcannaṃ heṭṭhā ṭhapentassa hi sambādhe okāse cittuppādo vipphandati
+    sambādhe vaje sanniruddhagogaṇo viya.
+  target_quote: 因为如止在五以下，则在迫窄的空间内未免心生苦恼，犹如彼押在迫窄的牛舍之内的牛群相似。
+- unit_id: 64-1656-2-12
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1656-2-12
+  line: 149
+  source_quote: Tassevaṃ sīghaṃ sīghaṃ gaṇayato kammaṭṭhānaṃ nirantaraṃ pavattaṃ viya
+    hutvā upaṭṭhāti.
+  target_quote: 这样快快而数的人，其业处如连续而不间断的现起。
+- unit_id: 64-1656-28-40
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1656-28-40
+  line: 151
+  source_quote: Anto pavisanavātena hi saddhiṃ cittaṃ pavesayato abbhantaraṃ vātabbhāhataṃ
+    medapūritaṃ viya hoti.
+  target_quote: 心確實會連同進入（體）內的空氣一起進入到內部，如同風的灌進，又好像灌油。
+- unit_id: 65-1499-201-208
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-1499-201-208
+  line: 206
+  source_quote: Dubbalatāya, pheggu viya sukhabhañjanīyatāya ca asārakato.
+  target_quote: 由于羸弱性，同时，就像边材软木一样容易被损坏，而称为非硬核。
+- unit_id: 65-1499-212-217
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-1499-212-217
+  line: 208
+  source_quote: Mittamukhasapatto viya vissāsaghātitāya vadhakato.
+  target_quote: 就像带着笑脸的敌人，信任的的背叛，刺杀。
+- unit_id: 66-159-2-23
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-159-2-23
+  line: 227
+  source_quote: 18. {Paṭisaṅkhā}ti ayaṃ‘‘ sayaṃ abhiññā’’ tiādīsu( mahāva.11) viya
+    ya-kāralopena niddeso.
+  target_quote: paṭisaṅkhā，这就像“sayaṃ abhiññā”等地方（大品11）一样把ya做了省略而说明。
+- unit_id: 66-1185-34-58
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-1185-34-58
+  line: 296
+  source_quote: Yasmā pana gaṇanādivasena viya phusanāvasena visuṃ manasikāro natthi,
+    phuṭṭhaphuṭṭhaṭṭhāneyeva gaṇanādi kātabbanti dassetuṃ idha phusanāgahaṇanti dīpento‘‘
+    phusanāti phuṭṭhaṭṭhānan’’ ti āha.
+  target_quote: 因此，以接触的方法并没有像数（带起、安置）等可以单独的注意的方法，只有在每每接触的点可以进行数（带起、安置）等（方法）——表达这里（在“注意方法”的小节内）取（其中）的接触（而做），（因此）解释者说“接触为触点”。
+variant_translations:
+- 他好像家庭的乳母/育儿嫂，用腰或背而抱负。
+- 因为如止在五以下，则在迫窄的空间内未免心生苦恼，犹如彼押在迫窄的牛舍之内的牛群相似。
+- 这样快快而数的人，其业处如连续而不间断的现起。
+- 心確實會連同進入（體）內的空氣一起進入到內部，如同風的灌進，又好像灌油。
+- 由于羸弱性，同时，就像边材软木一样容易被损坏，而称为非硬核。
+- 就像带着笑脸的敌人，信任的的背叛，刺杀。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.74
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-question-explanation-52d70666
+
+```yaml
+id: open-syntax-question-explanation-52d70666
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: question_or_problem
+description: 把问句或设问译为何、为什么、若问等解释性结构。
+grammar_category: question_or_problem
+source_pattern: interrogative + explanatory answer
+translation_pattern: ？ / 不 / 说 / 没有 / 如 / 时
+technique: 把问句或设问译为何、为什么、若问等解释性结构。
+occurrence_count: 53
+chunk_count: 26
+top_chunks:
+- chunk_id: chunk-0053
+  count: 8
+- chunk_id: chunk-0042
+  count: 6
+- chunk_id: chunk-0065
+  count: 6
+- chunk_id: chunk-0115
+  count: 3
+- chunk_id: chunk-0027
+  count: 3
+- chunk_id: chunk-0154
+  count: 2
+- chunk_id: chunk-0040
+  count: 2
+- chunk_id: chunk-0118
+  count: 2
+evidence:
+- unit_id: 23-977-234-241
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:23-977-234-241
+  line: 70
+  source_quote: Kuto apāyagāmikammanti vuttaṃ ahetuka rahitā siyun ti.
+  target_quote: 更何况是导向绝境的业呢，因此说不会是无因。
+- unit_id: 64-1971-2-7
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:64-1971-2-7
+  line: 158
+  source_quote: Kasmā panetā evaṃ vuttāti?
+  target_quote: 为什么此等（四梵住）要这样说呢？
+- unit_id: 66-340-10-27
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-340-10-27
+  line: 253
+  source_quote: '{Avitakkasahagatā}ti‘‘ kathaṃ nu kho me avitakkaṃ jhānaṃ bhaveyyā’’
+    ti evaṃ avitakkārammaṇā avitakkavisayā.'
+  target_quote: 没有贯注伴随，“我的没有贯注的禅那会是怎样的呢？”这样的（那些）没有贯注的目标，（那些）没有贯注的[所缘]境。
+- unit_id: 66-1402-25-41
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-1402-25-41
+  line: 335
+  source_quote: Kiṃ pana tanti āha‘‘ sattadukkhan’’ ti, daṇḍappahārādijanitaṃ karajarūpahetukaṃ
+    sattānaṃ uppajjanakadukkhanti attho.
+  target_quote: （因为可能会被问到）“这(苦)是什么？”而说“有情之苦”，意思是棍棒敲打等所产生的有情之苦，身体色法之因的有情之苦。
+- unit_id: 99-248-16-22
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:99-248-16-22
+  line: 758
+  source_quote: Kiṃ pana cittassa vaṇṇo nāma atthīti?
+  target_quote: 不过，所谓心的颜色存在吗？
+- unit_id: 104-105-14-16
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:104-105-14-16
+  line: 902
+  source_quote: Kathaṃ paṭiggaṇhanti?
+  target_quote: 他们如何接住的？
+- unit_id: 104-1496-68-87
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:104-1496-68-87
+  line: 980
+  source_quote: Idañhi‘‘ ko gacchati, kassa gamanaṃ, kiṃ kāraṇā gacchatī’’ ti evaṃ
+    sampajānanaṃ sandhāya vuttaṃ.
+  target_quote: 这里就关于“谁在行走？谁的行走？因何而走？”这样的正确的知解(sampajānana)而说。
+- unit_id: 104-1497-25-29
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:104-1497-25-29
+  line: 986
+  source_quote: Kiṃ kāraṇā gacchatīti ?
+  target_quote: “因何而走？”
+variant_translations:
+- 更何况是导向绝境的业呢，因此说不会是无因。
+- 为什么此等（四梵住）要这样说呢？
+- 没有贯注伴随，“我的没有贯注的禅那会是怎样的呢？”这样的（那些）没有贯注的目标，（那些）没有贯注的[所缘]境。
+- （因为可能会被问到）“这(苦)是什么？”而说“有情之苦”，意思是棍棒敲打等所产生的有情之苦，身体色法之因的有情之苦。
+- 不过，所谓心的颜色存在吗？
+- 他们如何接住的？
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.72
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-conditional-clause-848b81ac
+
+```yaml
+id: open-syntax-conditional-clause-848b81ac
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: conditional
+description: 把条件从句译为若、如果、当……时等条件关系。
+grammar_category: conditional
+source_pattern: sace / ce / yadi + clause
+translation_pattern: 如 / 如果 / 不 / 以 / 说 / 时
+technique: 把条件从句译为若、如果、当……时等条件关系。
+occurrence_count: 41
+chunk_count: 15
+top_chunks:
+- chunk_id: chunk-0053
+  count: 17
+- chunk_id: chunk-0138
+  count: 4
+- chunk_id: chunk-0042
+  count: 4
+- chunk_id: chunk-0052
+  count: 3
+- chunk_id: chunk-0109
+  count: 2
+- chunk_id: chunk-0083
+  count: 2
+- chunk_id: chunk-0064
+  count: 1
+- chunk_id: chunk-0150
+  count: 1
+evidence:
+- unit_id: 14-2012-2-17
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:14-2012-2-17
+  line: 24
+  source_quote: Agginā kuṭiṃ jhāpeti, manasā ce paduṭṭhena, manasā ce pasannena, kāyena
+    kammaṃ karoti.
+  target_quote: '以火来烧kuṭī，
+
+    若以污染之心；
+
+    若以剔透之心；
+
+    以身造业。'
+- unit_id: 65-227-59-70
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-227-59-70
+  line: 179
+  source_quote: Sace disāpakkanto hoti, sayaṃ vā gantvā saddhivihārikādike vā pesetvā
+    khamāpetabbo.
+  target_quote: 如果被谤者已离开到别地方去，则他应自己去或拜托同门等前去（向圣者）求忏悔。
+- unit_id: 66-1572-82-100
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-1572-82-100
+  line: 348
+  source_quote: Yadi hi imā dhātuyo aññamaññassa anto ṭhitā, na sakiccakarā siyuṃ
+    aññamaññānuppavesanato, atha bahi ṭhitā vinibbhuttā siyuṃ.
+  target_quote: 假如这些界能够在互相的内部持续建立，那么将会由于相互侵入而不能发挥自己的作用，同样地，由于分开来看而是可以在外部持续建立。
+- unit_id: 97-2032-32-48
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:97-2032-32-48
+  line: 703
+  source_quote: Sace pana‘ na homī’ ti vadati,‘ abhāṇakatāya na jānāsī’ ti vattabbo.
+  target_quote: 如果回答说“我不是”，那应该回答“非诵者无法了知”。
+- unit_id: 97-2032-49-62
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:97-2032-49-62
+  line: 704
+  source_quote: Sace‘ bhāṇakosmī’ ti vadati,‘ suttaṃ āharā’ ti vattabbo.
+  target_quote: 如果回答说“我是诵者”，那应该回答“请诵出经”。
+- unit_id: 97-2032-63-68
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:97-2032-63-68
+  line: 705
+  source_quote: Sace āharati, iccetaṃ kusalaṃ;
+  target_quote: 如果诵出来，这很好；
+- unit_id: 97-2032-69-74
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:97-2032-69-74
+  line: 706
+  source_quote: no ce āharati sayaṃ āharitabbaṃ–
+  target_quote: 如果没法诵出来应该自己诵：
+- unit_id: 104-100-27-50
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:104-100-27-50
+  line: 894
+  source_quote: Taṃ disvā purisassa rāgo nuppajjatīti na sakkā vattuṃ, sace pana taṃ
+    rattacitto upasaṅkamitukāmo hoti, pādā na vahanti, dibbasaṅkhalikā viya bajjhanti.
+  target_quote: '不能说“见到她（菩萨的母亲）男人的爱染不生起”，
+
+    如果对她（（菩萨的母亲））以爱染心想要靠近，脚无法抬起，就好像被天神的镣铐束缚一样。'
+variant_translations:
+- 以火来烧kuṭī， 若以污染之心； 若以剔透之心； 以身造业。
+- 如果被谤者已离开到别地方去，则他应自己去或拜托同门等前去（向圣者）求忏悔。
+- 假如这些界能够在互相的内部持续建立，那么将会由于相互侵入而不能发挥自己的作用，同样地，由于分开来看而是可以在外部持续建立。
+- 如果回答说“我不是”，那应该回答“非诵者无法了知”。
+- 如果回答说“我是诵者”，那应该回答“请诵出经”。
+- 如果诵出来，这很好；
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.7
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-vasena-relation-202efe52
+
+```yaml
+id: open-syntax-vasena-relation-202efe52
+version_id: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
+type: sentence_pattern
+name: relation_by_mode
+description: 把方式、依据、范围译为以、依、由于、按照……方式。
+grammar_category: relation_by_mode
+source_pattern: X-vasena
+translation_pattern: 以 / 不 / 如 / 时 / 依 / 和
+technique: 把方式、依据、范围译为以、依、由于、按照……方式。
+occurrence_count: 20
+chunk_count: 12
+top_chunks:
+- chunk_id: chunk-0154
+  count: 3
+- chunk_id: chunk-0049
+  count: 3
+- chunk_id: chunk-0027
+  count: 3
+- chunk_id: chunk-0083
+  count: 2
+- chunk_id: chunk-0053
+  count: 2
+- chunk_id: chunk-0150
+  count: 1
+- chunk_id: chunk-0153
+  count: 1
+- chunk_id: chunk-0115
+  count: 1
+evidence:
+- unit_id: 65-1499-241-251
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:65-1499-241-251
+  line: 214
+  source_quote: Taṇhādiṭṭhiduccaritasaṃkilesānaṃ visayadhammatāya {saṃkilesikadhammato}ti
+    evaṃ pabhedato vuttassa aniccādisammasanassa vasena sammasati.
+  target_quote: '由于渴爱成见不善行（等十种）诸烦恼的[所缘]境法——
+
+    由于saṃkilesikadhamma'
+- unit_id: 66-339-94-107
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-339-94-107
+  line: 249
+  source_quote: '{Visesādhigamavasenā}ti visesādhigamassa paccayabhāvavasena, visesaṃ
+    vā adhigacchati etenāti visesādhigamo, tassa vasena.'
+  target_quote: 卓越的达成之力，卓越达成的缘性之力，达成卓越，以此为卓越的达成，以其力量。
+- unit_id: 66-1186-20-35
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-1186-20-35
+  line: 302
+  source_quote: ‘‘ Sikhāppattaṃ nu kho’’ ti idaṃ cirataraṃ gaṇanāya manasi karontassa
+    vasena vuttaṃ.
+  target_quote: 所说的“我是否已达到顶点”这样（的反思）促使能够更长时间地注意数字。
+- unit_id: 66-1187-67-73
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:66-1187-67-73
+  line: 312
+  source_quote: Arittena upatthambhanaṃ arittupatthambhanaṃ, tassa vasena.
+  target_quote: 橹的支持：以橹的支持，它的影响力。
+- unit_id: 67-270-19-24
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:67-270-19-24
+  line: 359
+  source_quote: '{Sutavasenā}ti yathāsutassa paropadesassa vasena.'
+  target_quote: 以听闻的方式，依照所听到的他人指示的方式。
+- unit_id: 104-96-2-22
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:104-96-2-22
+  line: 890
+  source_quote: 19. Cattāro naṃ devaputtā cātuddisaṃ rakkhāya {upagacchantī}ti ettha
+    {cattāro}ti catunnaṃ mahārājānaṃ vasena vuttaṃ.
+  target_quote: 四位天子前来守护四方，这里四位即以四大天王的角度而言。
+- unit_id: 116-862-32-38
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:116-862-32-38
+  line: 1164
+  source_quote: Te sabbepi catunnaṃ paṭipadānaṃ vasena catuvīsati.
+  target_quote: 他们这一切由四种行道而成二十四种。
+- unit_id: 116-862-73-81
+  unit_key: 3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc:116-862-73-81
+  line: 1170
+  source_quote: Te sabbepi saddhādhurapaññādhurānaṃ vasena diguṇā hutvā aṭṭhasataṃ
+    honti.
+  target_quote: 而这些一切由信前导者及慧前导者(各有)两种， (所以一共有)一百零八种395。
+variant_translations:
+- 由于渴爱成见不善行（等十种）诸烦恼的[所缘]境法—— 由于saṃkilesikadhamma
+- 卓越的达成之力，卓越达成的缘性之力，达成卓越，以此为卓越的达成，以其力量。
+- 所说的“我是否已达到顶点”这样（的反思）促使能够更长时间地注意数字。
+- 橹的支持：以橹的支持，它的影响力。
+- 以听闻的方式，依照所听到的他人指示的方式。
+- 四位天子前来守护四方，这里四位即以四大天王的角度而言。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.63
+review_status: machine_generated
+discovery_method: open_syntactic_signal
 ```

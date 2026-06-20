@@ -1,0 +1,1810 @@
+# 开放式特殊句式翻译技巧候选
+
+本文件按开放式句法信号生成：不限定某几个既有规则，而是从全量语料中寻找可复用的句法处理方式。结果是机器候选，供人工筛选、合并和改写。
+
+- source file: `translations/7ac4d13b-a43d-4409-91b5-5f2a82b916b3.jsonl`
+- chunk count: `200`
+- candidate count: `18`
+- review status: `machine_generated`
+
+## 摘要索引
+
+| ID | Category | Source Pattern | Translation Pattern | Count | Chunks |
+| --- | --- | --- | --- | ---: | ---: |
+| open-syntax-iti-gloss-b181fd91 | gloss_or_definition | X-ti / X ti + explanation | 如 / 说 / 不 / 时 / 以 / 无 | 9513 | 189 |
+| open-syntax-bracketed-supplement-syntax-550f5a6c | supplemented_syntax | implicit source relation + bracketed target supplement | 如 / 以 / 说 / 不 / 时 / 无 | 5605 | 176 |
+| open-syntax-quoted-text-ti-fa894249 | quotation_or_citation | quoted text + ti / iti | 说 / 如 / 不 / 时 / ？ / 以 | 5463 | 172 |
+| open-syntax-absolutive-sequence-4e2ef2a0 | absolutive_or_converb | verb-tvā / verb-tvāna | 时 / 说 / 如 / 不 / 以 / 当 | 4575 | 167 |
+| open-syntax-long-sentence-decomposition-da6644d0 | long_sentence | long multi-clause sentence | 如 / 不 / 说 / 时 / 以 / 无 | 2996 | 165 |
+| open-syntax-negative-clause-81fab4d0 | negation | na / no / natthi / mā + predicate | 不 / 说 / 如 / 时 / 无 / 以 | 2715 | 165 |
+| open-syntax-locative-topic-01bea915 | locative_topic | ettha / tattha / idha | 以 / 不 / 如 / 说 / 在此 / 时 | 1248 | 158 |
+| open-syntax-question-explanation-52d70666 | question_or_problem | interrogative + explanatory answer | ？ / 说 / 如 / 时 / 不 / 当 | 1080 | 129 |
+| open-syntax-gerundive-obligation-fcba4188 | gerundive_or_obligation | -tabba / -anīya forms | 应 / 当 / 如 / 以 / 不 / 说 | 1004 | 133 |
+| open-syntax-newline-decomposition-syntax-585a7090 | decomposition | complex source + target line breaks | 时 / 说 / 不 / 如 / 以 / 无 | 963 | 90 |
+| open-syntax-alternative-series-18071276 | alternative_or_variant | X vā Y vā | 或 / 不 / 如 / 以 / 说 / 时 | 823 | 135 |
+| open-syntax-simile-comparison-800fcd10 | simile | viya / iva / seyyathāpi | 如 / 不 / 时 / 以 / 说 / 无 | 594 | 124 |
+| open-syntax-coordinated-series-9a122f4e | coordination | X ca Y ca | 以 / 不 / 和 / 如 / 与 / 时 | 530 | 141 |
+| open-syntax-conditional-clause-848b81ac | conditional | sace / ce / yadi + clause | 如 / 如果 / 不 / 若 / 说 / 以 | 438 | 111 |
+| open-syntax-relative-correlative-56a796f6 | relative_correlative | ya-/yo- relative + ta-/so- correlative | 不 / 说 / 如 / 以 / 若 / 无 | 395 | 118 |
+| open-syntax-cause-reason-relation-43b7ef06 | cause_or_reason | kāraṇā / hetu / hetunā / paccayā | ？ / 以 / 不 / 如 / 无 / 时 | 143 | 61 |
+| open-syntax-vasena-relation-202efe52 | relation_by_mode | X-vasena | 以 / 说 / 如 / 不 / 无 / 依 | 46 | 36 |
+| open-syntax-yatha-tatha-correlative-73c1c803 | correlative_comparison | yathā ... tathā ... | 如 / 不 / 时 / 当 / 说 / 同样 | 44 | 30 |
+
+## 条目
+
+## open-syntax-iti-gloss-b181fd91
+
+```yaml
+id: open-syntax-iti-gloss-b181fd91
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: gloss_or_definition
+description: 把被解释词、引文或定义对象显化为冒号、引号、所谓、意思是。
+grammar_category: gloss_or_definition
+source_pattern: X-ti / X ti + explanation
+translation_pattern: 如 / 说 / 不 / 时 / 以 / 无
+technique: 把被解释词、引文或定义对象显化为冒号、引号、所谓、意思是。
+occurrence_count: 9513
+chunk_count: 189
+top_chunks:
+- chunk_id: chunk-0175
+  count: 152
+- chunk_id: chunk-0173
+  count: 119
+- chunk_id: chunk-0172
+  count: 117
+- chunk_id: chunk-0121
+  count: 104
+- chunk_id: chunk-0177
+  count: 101
+- chunk_id: chunk-0183
+  count: 101
+- chunk_id: chunk-0185
+  count: 101
+- chunk_id: chunk-0110
+  count: 101
+evidence:
+- unit_id: 23-618-162-172
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-618-162-172
+  line: 1
+  source_quote: Apica, maraṇāsannakāle kammabalena kammādīnaṃ upaṭṭhānaṃnāma yebhuyyena
+    saṃmuḷhamaraṇena marantānameva hoti.
+  target_quote: 特别是在临死之时，由于迷痴之死，死者通常藉由业力而有所谓业等的现起。
+- unit_id: 23-618-220-227
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-618-220-227
+  line: 7
+  source_quote: Yamassa dūtā dve yakkhāti hi pāḷiyaṃ vuttaṃ.
+  target_quote: 巴利圣典中确实说过：“两位亚卡是阎摩使者。”
+- unit_id: 23-618-228-234
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-618-228-234
+  line: 8
+  source_quote: Vessavaṇadūtā idha yamassa dūtāti vuttātipi vadanti.
+  target_quote: '[诸注释师]说：“在此，韦思瓦纳的使者也被说为阎摩使者。”'
+- unit_id: 23-1446-25-32
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-1446-25-32
+  line: 10
+  source_quote: Sā pana appanāya āsanne dūreti duvidhā hoti.
+  target_quote: “在那安止的近处和远处”又有两种。
+- unit_id: 23-1446-33-45
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-1446-33-45
+  line: 11
+  source_quote: Tattha yā āsanne, sā appanaṃ upecca samīpe ṭhatvā pavattattā upacārabhāvanāti
+    vuccati.
+  target_quote: 此中，凡在近处，接近安止，并在附近住立后转起者，被称为“近行修习(upacārabhāvanā)”。
+- unit_id: 23-1446-51-62
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-1446-51-62
+  line: 13
+  source_quote: Iti parikammabhāvanāpi samānā pubbāparavisesa pākaṭabhāvatthaṃ aṭṭhakathāsu
+    dvīhi nāmehi gahitāti vuttaṃ parikammabhāvanā.
+  target_quote: “同（一种）预作修习，是在义注中以两种名字（预作、近行）涵盖了前后差异的明显性”，而说为**“预作修习”**。
+- unit_id: 23-1446-65-72
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-1446-65-72
+  line: 14
+  source_quote: '{Tissobhāvanā}ti tāsaṃ pana viseso parato āgamissati.'
+  target_quote: “三种修习”则是从它的其他差别而来的。
+- unit_id: 23-1446-73-78
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-1446-73-78
+  line: 15
+  source_quote: Parikammanimittan ti parikammabhāvanāya ārammaṇabhūtaṃ kasiṇamaṇḍalādinimittaṃ.
+  target_quote: “预作相(parikammanimitta)”者，即预作修习的所缘——遍（禅的）圆盘等相。
+variant_translations:
+- 特别是在临死之时，由于迷痴之死，死者通常藉由业力而有所谓业等的现起。
+- 巴利圣典中确实说过：“两位亚卡是阎摩使者。”
+- '[诸注释师]说：“在此，韦思瓦纳的使者也被说为阎摩使者。”'
+- “在那安止的近处和远处”又有两种。
+- 此中，凡在近处，接近安止，并在附近住立后转起者，被称为“近行修习(upacārabhāvanā)”。
+- “同（一种）预作修习，是在义注中以两种名字（预作、近行）涵盖了前后差异的明显性”，而说为**“预作修习”**。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-bracketed-supplement-syntax-550f5a6c
+
+```yaml
+id: open-syntax-bracketed-supplement-syntax-550f5a6c
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: supplemented_syntax
+description: 用方括号补出主语、宾语、语境、逻辑关系或术语说明。
+grammar_category: supplemented_syntax
+source_pattern: implicit source relation + bracketed target supplement
+translation_pattern: 如 / 以 / 说 / 不 / 时 / 无
+technique: 用方括号补出主语、宾语、语境、逻辑关系或术语说明。
+occurrence_count: 5605
+chunk_count: 176
+top_chunks:
+- chunk_id: chunk-0191
+  count: 115
+- chunk_id: chunk-0182
+  count: 107
+- chunk_id: chunk-0174
+  count: 105
+- chunk_id: chunk-0192
+  count: 100
+- chunk_id: chunk-0121
+  count: 100
+- chunk_id: chunk-0188
+  count: 92
+- chunk_id: chunk-0183
+  count: 91
+- chunk_id: chunk-0180
+  count: 90
+evidence:
+- unit_id: 23-618-173-190
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-618-173-190
+  line: 2
+  source_quote: Itaresaṃ pana paresaṃ payogabalenapi attanā pakatiyā suṭṭhu āsevitānaṃ
+    anussaraṇabalenapi dhammikaupāsakādīnaṃ viya devalokato āgantvā gaṇhantānaṃ devānaṃ
+    ānubhāvenapi hotiyeva.
+  target_quote: 而别的[有情]则通过他人的加行之力、通过自己随念本就善加修习的所缘之力，以及通过像如法近事男等[人]那样的从天界前来接取的诸天威力而有[业等现起]。
+- unit_id: 23-618-191-195
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-618-191-195
+  line: 3
+  source_quote: Nirayapālāpi nirayato āgantvā gaṇhantiyeva.
+  target_quote: 狱卒们也从地狱前来抓捕[亡者]。
+- unit_id: 23-618-196-198
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-618-196-198
+  line: 4
+  source_quote: Revativimānañcettha vattabbaṃ.
+  target_quote: 而在此则应说瑞瓦蒂天宫(revativimāna)[故事]。
+- unit_id: 23-618-210-219
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-618-210-219
+  line: 6
+  source_quote: Te hi yakkha jātikattā vessavaṇaparisāviya tāvatiṃsā bhavanaṃpi gantuṃ
+    sakkontiyeva.
+  target_quote: 事实上，他们由于是亚卡族类的缘故，就像韦思瓦纳(vessavaṇa)[天王]的随众那样也能够前往三十三天界。
+- unit_id: 23-618-228-234
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-618-228-234
+  line: 8
+  source_quote: Vessavaṇadūtā idha yamassa dūtāti vuttātipi vadanti.
+  target_quote: '[诸注释师]说：“在此，韦思瓦纳的使者也被说为阎摩使者。”'
+- unit_id: 37-37-27-105
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-37-27-105
+  line: 17
+  source_quote: Amhākaṃ kira bhagavā brahmadevabuddhamādiṃ katvā yāva porāṇasakyagotamā
+    manopaṇidhivasena, kaṭṭhavāhanajātakaṃādiṃkatvā yāva majjhimadīpaṅkarā vācaṅgavasena
+    majjhimadīpaṅkarapādamūlato paṭṭhāya kāyavācaṅgavasena sabbaṃ sampiṇḍetvā yāva
+    vessantarattabhāvā vīsa…
+  target_quote: 据说，我们的跋葛瓦(bhagavant)从梵天佛(brahmadevabuddha)开始直到过去释迦果德玛(sakyagotama)[佛][时期]以心意发愿；从打柴女本生(kaṭṭhavāhanajātaka)开始直到中间的燃灯(dīpaṅkarā)[佛]以语言[说出]；从中间的燃灯[佛]以来，用身、语将一切结合后，直到维山达勒(vessantara)那一生，正是为了圆满二十个不可数[劫]的巴拉密，为了[证得]一切知智，而斩断了精心装饰的头颅后，布施的一切知菩萨(sabbaññubodhisatta)的头颅[数量…
+- unit_id: 37-37-106-109
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-37-106-109
+  line: 18
+  source_quote: Evaṃ pāramiyo pūrentasseva.
+  target_quote: '[菩萨]正是如此圆满巴拉密。'
+- unit_id: 37-40-39-79
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-40-39-79
+  line: 21
+  source_quote: Vessantarattabhāvena ca sattakamahādānaṃ datvā sattakkhattuṃ pathaviṃ
+    kampetvā vaṅkapabbataṃ gantvā nayanasadise dve putte brāhmaṇassa dāsatthāya datvā
+    dutiyadivase brāhmaṇavaṇṇena āgatassa sakkassa devarañño attasamaṃ maddiṃ nāma
+    bhariyaṃ datvā tasmiṃ bhave …
+  target_quote: 维山达勒那一生作了七种大布施后，大地七次震动，山岳弯折，向婆罗门的奴仆布施眼睛般的两个儿子后，次日又向以婆罗门的荣耀而来的沙格天帝布施了等同自己的名为玛蒂的妻子。在那一生，[菩萨]作了无量福德，从那之后去到喜足天城(tusitapura)。在那里住满寿命后，一万轮围世界的殊胜诸天前来。
+variant_translations:
+- 而别的[有情]则通过他人的加行之力、通过自己随念本就善加修习的所缘之力，以及通过像如法近事男等[人]那样的从天界前来接取的诸天威力而有[业等现起]。
+- 狱卒们也从地狱前来抓捕[亡者]。
+- 而在此则应说瑞瓦蒂天宫(revativimāna)[故事]。
+- 事实上，他们由于是亚卡族类的缘故，就像韦思瓦纳(vessavaṇa)[天王]的随众那样也能够前往三十三天界。
+- '[诸注释师]说：“在此，韦思瓦纳的使者也被说为阎摩使者。”'
+- 据说，我们的跋葛瓦(bhagavant)从梵天佛(brahmadevabuddha)开始直到过去释迦果德玛(sakyagotama)[佛][时期]以心意发愿；从打柴女本生(kaṭṭhavāhanaj…
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-quoted-text-ti-fa894249
+
+```yaml
+id: open-syntax-quoted-text-ti-fa894249
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: quotation_or_citation
+description: 将引文或被解释词显化为中文引号、冒号或引用句。
+grammar_category: quotation_or_citation
+source_pattern: quoted text + ti / iti
+translation_pattern: 说 / 如 / 不 / 时 / ？ / 以
+technique: 将引文或被解释词显化为中文引号、冒号或引用句。
+occurrence_count: 5463
+chunk_count: 172
+top_chunks:
+- chunk_id: chunk-0028
+  count: 106
+- chunk_id: chunk-0015
+  count: 98
+- chunk_id: chunk-0019
+  count: 96
+- chunk_id: chunk-0023
+  count: 93
+- chunk_id: chunk-0050
+  count: 92
+- chunk_id: chunk-0012
+  count: 91
+- chunk_id: chunk-0029
+  count: 90
+- chunk_id: chunk-0013
+  count: 89
+evidence:
+- unit_id: 37-214-2-12
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-214-2-12
+  line: 24
+  source_quote: Saṅgho ca dullabho loke, sappurisāti dullabhā’’ ti.
+  target_quote: “世间难得僧，亦难得善士”。
+- unit_id: 64-30-2-20
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-30-2-20
+  line: 103
+  source_quote: Atha nibbindati dukkhe, esa maggo visuddhiyā’’ ti.( dha. pa.277);
+  target_quote: 得厌离于苦，此为清净道。（法句·277偈）
+- unit_id: 64-32-2-23
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-32-2-23
+  line: 106
+  source_quote: ‘ ‘ Yamhi jhānañca paññā ca, sa ve nibbānasantike’’ ti.( dha. pa.372);
+  target_quote: 若具禅与慧，彼实近涅槃。（法句·372偈）
+- unit_id: 64-35-2-31
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-35-2-31
+  line: 110
+  source_quote: Etena maccā sujjhanti, na gottena dhanena vā’’ ti.( ma. ni.3.387;
+    saṃ. ni.1.48);
+  target_quote: 人依此净化，不由姓与财。（中部·3·387；相应部·1·48）
+- unit_id: 64-38-2-21
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-38-2-21
+  line: 114
+  source_quote: Āraddhavīriyo pahitatto, oghaṃ tarati duttaran’’ ti.( saṃ. ni.1.96);
+  target_quote: 自励勤精进，渡难渡瀑流。（相应部·1·96）
+- unit_id: 64-40-2-33
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-40-2-33
+  line: 117
+  source_quote: ‘ ‘ Ekāyano ayaṃ, bhikkhave, maggo sattānaṃ visuddhiyā… pe… nibbānassa
+    sacchikiriyāya, yadidaṃ cattāro satipaṭṭhānā’’ ti( dī. ni.2.373).
+  target_quote: “诸比库，此唯一道，能清净有情……现证涅槃，这即是四念处“（长部·2·373）。
+- unit_id: 64-44-2-23
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-44-2-23
+  line: 140
+  source_quote: Ātāpī nipako bhikkhu, so imaṃ vijaṭaye jaṭan’’ ti.( saṃ. ni.1.23);
+  target_quote: 热忱智比库，他能解此结。（相应部·1.23）
+- unit_id: 64-48-9-59
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-48-9-59
+  line: 148
+  source_quote: ‘‘ Ko cādi kusalānaṃ dhammānaṃ, sīlañca suvisuddhan’’ ti( saṃ. ni.5.369)
+    hi vacanato,‘‘ sabbapāpassa akaraṇan’’ ti( dī. ni.2.90) ādivacanato ca sīlaṃ sāsanassa
+    ādi, tañca kalyāṇaṃ, avippaṭisārādiguṇāvahattā.
+  target_quote: 正是由于“何为初善法？即是极净戒（相应部·5·369）”之语，及“莫作诸恶（长部·2·90）”等语，戒为教法之初，以及戒因所带来的无悔功德而为善。
+variant_translations:
+- “世间难得僧，亦难得善士”。
+- 得厌离于苦，此为清净道。（法句·277偈）
+- 若具禅与慧，彼实近涅槃。（法句·372偈）
+- 人依此净化，不由姓与财。（中部·3·387；相应部·1·48）
+- 自励勤精进，渡难渡瀑流。（相应部·1·96）
+- “诸比库，此唯一道，能清净有情……现证涅槃，这即是四念处“（长部·2·373）。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-absolutive-sequence-4e2ef2a0
+
+```yaml
+id: open-syntax-absolutive-sequence-4e2ef2a0
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: absolutive_or_converb
+description: 把先行动作、方式、原因或条件关系译成后、而、以、通过等。
+grammar_category: absolutive_or_converb
+source_pattern: verb-tvā / verb-tvāna
+translation_pattern: 时 / 说 / 如 / 不 / 以 / 当
+technique: 把先行动作、方式、原因或条件关系译成后、而、以、通过等。
+occurrence_count: 4575
+chunk_count: 167
+top_chunks:
+- chunk_id: chunk-0012
+  count: 84
+- chunk_id: chunk-0046
+  count: 78
+- chunk_id: chunk-0020
+  count: 74
+- chunk_id: chunk-0029
+  count: 73
+- chunk_id: chunk-0036
+  count: 73
+- chunk_id: chunk-0057
+  count: 73
+- chunk_id: chunk-0016
+  count: 71
+- chunk_id: chunk-0038
+  count: 70
+evidence:
+- unit_id: 23-618-173-190
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-618-173-190
+  line: 2
+  source_quote: Itaresaṃ pana paresaṃ payogabalenapi attanā pakatiyā suṭṭhu āsevitānaṃ
+    anussaraṇabalenapi dhammikaupāsakādīnaṃ viya devalokato āgantvā gaṇhantānaṃ devānaṃ
+    ānubhāvenapi hotiyeva.
+  target_quote: 而别的[有情]则通过他人的加行之力、通过自己随念本就善加修习的所缘之力，以及通过像如法近事男等[人]那样的从天界前来接取的诸天威力而有[业等现起]。
+- unit_id: 23-618-191-195
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-618-191-195
+  line: 3
+  source_quote: Nirayapālāpi nirayato āgantvā gaṇhantiyeva.
+  target_quote: 狱卒们也从地狱前来抓捕[亡者]。
+- unit_id: 23-618-199-209
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-618-199-209
+  line: 5
+  source_quote: Tañhi dve nirayapālā gahetvā pathamaṃ tāvatiṃsābhavanaṃ netvā pacchā
+    nirayaṃ nayiṃsu.
+  target_quote: 确实，两位狱卒抓住她后，先带去三十三天界，而后押往地狱。
+- unit_id: 23-1446-33-45
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-1446-33-45
+  line: 11
+  source_quote: Tattha yā āsanne, sā appanaṃ upecca samīpe ṭhatvā pavattattā upacārabhāvanāti
+    vuccati.
+  target_quote: 此中，凡在近处，接近安止，并在附近住立后转起者，被称为“近行修习(upacārabhāvanā)”。
+- unit_id: 23-1446-79-91
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-1446-79-91
+  line: 16
+  source_quote: Tañca tassā ārammaṇa bhāvena ekaṃpi samānaṃ pubbāparavisesapākaṭabhāvatthaṃ
+    parikammanimittaṃ uggahanimittanti dvidhā bhinditvā vuttaṃ.
+  target_quote: 那是以它（即修习）的所缘按前后差异明显程度将同一个（相）分为预作相和取相(uggahanimitta)两种而说的。
+- unit_id: 37-37-27-105
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-37-27-105
+  line: 17
+  source_quote: Amhākaṃ kira bhagavā brahmadevabuddhamādiṃ katvā yāva porāṇasakyagotamā
+    manopaṇidhivasena, kaṭṭhavāhanajātakaṃādiṃkatvā yāva majjhimadīpaṅkarā vācaṅgavasena
+    majjhimadīpaṅkarapādamūlato paṭṭhāya kāyavācaṅgavasena sabbaṃ sampiṇḍetvā yāva
+    vessantarattabhāvā vīsa…
+  target_quote: 据说，我们的跋葛瓦(bhagavant)从梵天佛(brahmadevabuddha)开始直到过去释迦果德玛(sakyagotama)[佛][时期]以心意发愿；从打柴女本生(kaṭṭhavāhanajātaka)开始直到中间的燃灯(dīpaṅkarā)[佛]以语言[说出]；从中间的燃灯[佛]以来，用身、语将一切结合后，直到维山达勒(vessantara)那一生，正是为了圆满二十个不可数[劫]的巴拉密，为了[证得]一切知智，而斩断了精心装饰的头颅后，布施的一切知菩萨(sabbaññubodhisatta)的头颅[数量…
+- unit_id: 37-40-39-79
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-40-39-79
+  line: 21
+  source_quote: Vessantarattabhāvena ca sattakamahādānaṃ datvā sattakkhattuṃ pathaviṃ
+    kampetvā vaṅkapabbataṃ gantvā nayanasadise dve putte brāhmaṇassa dāsatthāya datvā
+    dutiyadivase brāhmaṇavaṇṇena āgatassa sakkassa devarañño attasamaṃ maddiṃ nāma
+    bhariyaṃ datvā tasmiṃ bhave …
+  target_quote: 维山达勒那一生作了七种大布施后，大地七次震动，山岳弯折，向婆罗门的奴仆布施眼睛般的两个儿子后，次日又向以婆罗门的荣耀而来的沙格天帝布施了等同自己的名为玛蒂的妻子。在那一生，[菩萨]作了无量福德，从那之后去到喜足天城(tusitapura)。在那里住满寿命后，一万轮围世界的殊胜诸天前来。
+- unit_id: 37-227-2-7
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-227-2-7
+  line: 59
+  source_quote: Yojanesupi vuttesu, hitvā kāmappamāṇakaṃ;
+  target_quote: 于所说由旬，舍弃欲界量，
+variant_translations:
+- 而别的[有情]则通过他人的加行之力、通过自己随念本就善加修习的所缘之力，以及通过像如法近事男等[人]那样的从天界前来接取的诸天威力而有[业等现起]。
+- 狱卒们也从地狱前来抓捕[亡者]。
+- 确实，两位狱卒抓住她后，先带去三十三天界，而后押往地狱。
+- 此中，凡在近处，接近安止，并在附近住立后转起者，被称为“近行修习(upacārabhāvanā)”。
+- 那是以它（即修习）的所缘按前后差异明显程度将同一个（相）分为预作相和取相(uggahanimitta)两种而说的。
+- 据说，我们的跋葛瓦(bhagavant)从梵天佛(brahmadevabuddha)开始直到过去释迦果德玛(sakyagotama)[佛][时期]以心意发愿；从打柴女本生(kaṭṭhavāhanaj…
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-long-sentence-decomposition-da6644d0
+
+```yaml
+id: open-syntax-long-sentence-decomposition-da6644d0
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: long_sentence
+description: 把长句拆为分号、句号、方括号补足或换行结构。
+grammar_category: long_sentence
+source_pattern: long multi-clause sentence
+translation_pattern: 如 / 不 / 说 / 时 / 以 / 无
+technique: 把长句拆为分号、句号、方括号补足或换行结构。
+occurrence_count: 2996
+chunk_count: 165
+top_chunks:
+- chunk_id: chunk-0098
+  count: 72
+- chunk_id: chunk-0133
+  count: 56
+- chunk_id: chunk-0010
+  count: 45
+- chunk_id: chunk-0096
+  count: 45
+- chunk_id: chunk-0016
+  count: 41
+- chunk_id: chunk-0099
+  count: 40
+- chunk_id: chunk-0118
+  count: 37
+- chunk_id: chunk-0017
+  count: 37
+evidence:
+- unit_id: 37-37-27-105
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-37-27-105
+  line: 17
+  source_quote: Amhākaṃ kira bhagavā brahmadevabuddhamādiṃ katvā yāva porāṇasakyagotamā
+    manopaṇidhivasena, kaṭṭhavāhanajātakaṃādiṃkatvā yāva majjhimadīpaṅkarā vācaṅgavasena
+    majjhimadīpaṅkarapādamūlato paṭṭhāya kāyavācaṅgavasena sabbaṃ sampiṇḍetvā yāva
+    vessantarattabhāvā vīsa…
+  target_quote: 据说，我们的跋葛瓦(bhagavant)从梵天佛(brahmadevabuddha)开始直到过去释迦果德玛(sakyagotama)[佛][时期]以心意发愿；从打柴女本生(kaṭṭhavāhanajātaka)开始直到中间的燃灯(dīpaṅkarā)[佛]以语言[说出]；从中间的燃灯[佛]以来，用身、语将一切结合后，直到维山达勒(vessantara)那一生，正是为了圆满二十个不可数[劫]的巴拉密，为了[证得]一切知智，而斩断了精心装饰的头颅后，布施的一切知菩萨(sabbaññubodhisatta)的头颅[数量…
+- unit_id: 37-40-39-79
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-40-39-79
+  line: 21
+  source_quote: Vessantarattabhāvena ca sattakamahādānaṃ datvā sattakkhattuṃ pathaviṃ
+    kampetvā vaṅkapabbataṃ gantvā nayanasadise dve putte brāhmaṇassa dāsatthāya datvā
+    dutiyadivase brāhmaṇavaṇṇena āgatassa sakkassa devarañño attasamaṃ maddiṃ nāma
+    bhariyaṃ datvā tasmiṃ bhave …
+  target_quote: 维山达勒那一生作了七种大布施后，大地七次震动，山岳弯折，向婆罗门的奴仆布施眼睛般的两个儿子后，次日又向以婆罗门的荣耀而来的沙格天帝布施了等同自己的名为玛蒂的妻子。在那一生，[菩萨]作了无量福德，从那之后去到喜足天城(tusitapura)。在那里住满寿命后，一万轮围世界的殊胜诸天前来。
+- unit_id: 37-215-8-37
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-8-37
+  line: 26
+  source_quote: Tattha imasmiṃ sattaloke okāsaloke vā sabbaññusammāsambuddho dullabhova
+    tathā hesa loko saṅkhāraloko, sattaloko, okāsalokoti tippabhedo hoti tesaṃ sampattivipatti
+    ca evaṃ veditabbā tattha lujjati palujjatīti lokoti vacanatthena sattaloko veditabbo.
+  target_quote: 于[这首偈颂]中，此有情世间或空间世间中的一切知的正自觉佛(sabbaññusammāsambuddha)确实是难得的。如此，这世间有“行世间、有情世间、空间世间”三种。应当如此了知它们的生成与毁坏。其中，当知以“毁坏、崩解，故为世间”这种语义为有情世间。
+- unit_id: 37-215-46-63
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-46-63
+  line: 28
+  source_quote: Tathā hesa sattā avakasanti etthātiokāsoti vuccati so bhūmivasena
+    apāyabhūmi, kāmasugatibhūmi, rūpāvacarabhūmi, arūpāvacarabhūmiceti catubbidhā
+    hoti.
+  target_quote: 同理，有情所处的这种环境在此被称为空间。那[空间]以地而有“恶趣地、欲界善趣地、色界地、无色界地”四种。
+- unit_id: 37-215-64-77
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-64-77
+  line: 29
+  source_quote: Tattha nirayaṃ, tiracchānayoni, pettivisayo, asurakāyo, ti catasso
+    apāyabhūmi nāma.
+  target_quote: 其中，“地狱、畜生界、鬼界、阿苏罗界”名为四恶趣地。
+- unit_id: 37-215-78-103
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-78-103
+  line: 30
+  source_quote: Manussā, cātumahārājikā, tāvatiṃsā, yāmā, tusitā, nimmānarati, paranimmitavasavattī
+    ceti sattavidhā hoti kāmasugatibhūmi sāpanāyaṃ ekādasavidhāpi kāmataṇhā avacarati
+    etthāti vacanatthena kāmāvacarabhūmi nāma.
+  target_quote: “人间、四大王天、三十三天、亚马天、喜足天、化乐天、他化自在天”这七类是欲界善趣地。这十一种[地]以“欲爱在此转起”这种语义而名为欲界地。
+- unit_id: 37-215-126-141
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-126-141
+  line: 33
+  source_quote: Parittasubhā, appamāṇasubhā, subhakiṇhā ca tatiyajjhānabhūmi idaṃ
+    vātena pariggahitaṭṭhānaṃ, tesaṃ vipattiṃ parato vaṇṇayissāma.
+  target_quote: 少净天、无量净天、遍净天这[三种]第三禅地是为风所占据之处。我们将进一步解释它们的毁坏。
+- unit_id: 37-215-153-165
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-153-165
+  line: 35
+  source_quote: Avihā, atappā, sudassā, sudassī, akaniṭṭhāceti suddhāvāsabhūmi pañcavidhā
+    hoti.
+  target_quote: 无烦天、无热天、善见天、善现天、至高天（色究竟天）是五种净居地。
+variant_translations:
+- 据说，我们的跋葛瓦(bhagavant)从梵天佛(brahmadevabuddha)开始直到过去释迦果德玛(sakyagotama)[佛][时期]以心意发愿；从打柴女本生(kaṭṭhavāhanaj…
+- 维山达勒那一生作了七种大布施后，大地七次震动，山岳弯折，向婆罗门的奴仆布施眼睛般的两个儿子后，次日又向以婆罗门的荣耀而来的沙格天帝布施了等同自己的名为玛蒂的妻子。在那一生，[菩萨]作了无量福德，从那…
+- 于[这首偈颂]中，此有情世间或空间世间中的一切知的正自觉佛(sabbaññusammāsambuddha)确实是难得的。如此，这世间有“行世间、有情世间、空间世间”三种。应当如此了知它们的生成与毁坏…
+- 同理，有情所处的这种环境在此被称为空间。那[空间]以地而有“恶趣地、欲界善趣地、色界地、无色界地”四种。
+- 其中，“地狱、畜生界、鬼界、阿苏罗界”名为四恶趣地。
+- “人间、四大王天、三十三天、亚马天、喜足天、化乐天、他化自在天”这七类是欲界善趣地。这十一种[地]以“欲爱在此转起”这种语义而名为欲界地。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-negative-clause-81fab4d0
+
+```yaml
+id: open-syntax-negative-clause-81fab4d0
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: negation
+description: 把否定结构译为不、没有、不能、无等。
+grammar_category: negation
+source_pattern: na / no / natthi / mā + predicate
+translation_pattern: 不 / 说 / 如 / 时 / 无 / 以
+technique: 把否定结构译为不、没有、不能、无等。
+occurrence_count: 2715
+chunk_count: 165
+top_chunks:
+- chunk_id: chunk-0184
+  count: 44
+- chunk_id: chunk-0081
+  count: 42
+- chunk_id: chunk-0047
+  count: 39
+- chunk_id: chunk-0014
+  count: 38
+- chunk_id: chunk-0030
+  count: 37
+- chunk_id: chunk-0037
+  count: 37
+- chunk_id: chunk-0035
+  count: 36
+- chunk_id: chunk-0129
+  count: 36
+evidence:
+- unit_id: 37-215-193-212
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-193-212
+  line: 39
+  source_quote: Tiracchānaṃ pettivisayo asurakāyoti imesaṃ visuṃ bhūmi nāma natthi,
+    manussabhūmiyaṃyeva yattha katthaci araññavanapatthādīsu nibaddhavāsaṃ vasanti
+    soyeva padeso tesaṃ bhūmi.
+  target_quote: 畜生界、鬼界、阿苏罗界没有独立的地。只是在人间地中，凡于任何林野开阔空间等处的经常住处居住，那个地方即是它们的地。
+- unit_id: 37-239-4-34
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-239-4-34
+  line: 62
+  source_quote: Etthantare sattā tiṭṭhanti, tesaṃ vitthāro apubbaṃ katvā kathetuṃ
+    asakkuṇeyyattā na vakkhāma imasmiṃ sattaloke okāsaloke ca sabbaññusammāsambuddhova
+    dullabho, tathā hi cattāro buddhā anubuddho, sāvakabuddho, paccekabuddho, sammāsambuddhoti.
+  target_quote: 在此期间，有情存续。他们在之前未被详说。我们将不说无法讲述[之事]。于此有情世间、空间时间中，一切知的正自觉佛确实难得。如此，有四种觉者：随觉者、弟子觉者、独觉者、正自觉者。
+- unit_id: 37-239-35-53
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-239-35-53
+  line: 63
+  source_quote: Tattha bahussutaṃ bhikkhuṃ pasaṃsantena ca na so tumhākaṃ sāvako nāma,
+    buddhonāmesa cundāti bahussutassa bhikkhuno buddhabhāvaṃ anujānantena ca.
+  target_quote: 其中，他并非透过称赞多闻的比库而是您的弟子，而是由于那位准德(cunda)是觉悟者，透过认可多闻比库的觉悟状态而成为您的弟子。
+- unit_id: 64-35-2-31
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-35-2-31
+  line: 110
+  source_quote: Etena maccā sujjhanti, na gottena dhanena vā’’ ti.( ma. ni.3.387;
+    saṃ. ni.1.48);
+  target_quote: 人依此净化，不由姓与财。（中部·3·387；相应部·1·48）
+- unit_id: 64-45-2-15
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-45-2-15
+  line: 141
+  source_quote: 5. Tatrāyaṃ yāya paññāya {sapañño}ti vutto, tatrāssa karaṇīyaṃ natthi.
+  target_quote: 于此[偈颂中]说为**“有慧人（sapañño）”**的那种慧，他在此[慧上]无能为力。
+- unit_id: 64-49-2-11
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-49-2-11
+  line: 153
+  source_quote: ‘ ‘ Selo yathā ekaghano, vātena na samīrati;
+  target_quote: 如实心岩石，不为风所摇，
+- unit_id: 64-50-2-19
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-50-2-19
+  line: 154
+  source_quote: Evaṃ nindāpasaṃsāsu, na samiñjanti paṇḍitā’’ ti.( dha. pa.81);
+  target_quote: 智者亦如是，毁誉莫能动。（法句·81偈）
+- unit_id: 64-52-10-19
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-52-10-19
+  line: 157
+  source_quote: Sīlasampattiñhi nissāya tisso vijjā pāpuṇāti, na tato paraṃ.
+  target_quote: 正是依于戒成就而得达三明，而非得达比那[三明]更多[之法]。
+variant_translations:
+- 畜生界、鬼界、阿苏罗界没有独立的地。只是在人间地中，凡于任何林野开阔空间等处的经常住处居住，那个地方即是它们的地。
+- 在此期间，有情存续。他们在之前未被详说。我们将不说无法讲述[之事]。于此有情世间、空间时间中，一切知的正自觉佛确实难得。如此，有四种觉者：随觉者、弟子觉者、独觉者、正自觉者。
+- 其中，他并非透过称赞多闻的比库而是您的弟子，而是由于那位准德(cunda)是觉悟者，透过认可多闻比库的觉悟状态而成为您的弟子。
+- 人依此净化，不由姓与财。（中部·3·387；相应部·1·48）
+- 于此[偈颂中]说为**“有慧人（sapañño）”**的那种慧，他在此[慧上]无能为力。
+- 如实心岩石，不为风所摇，
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-locative-topic-01bea915
+
+```yaml
+id: open-syntax-locative-topic-01bea915
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: locative_topic
+description: 把处所或论题入口译为在此、此中、其中、这里。
+grammar_category: locative_topic
+source_pattern: ettha / tattha / idha
+translation_pattern: 以 / 不 / 如 / 说 / 在此 / 时
+technique: 把处所或论题入口译为在此、此中、其中、这里。
+occurrence_count: 1248
+chunk_count: 158
+top_chunks:
+- chunk_id: chunk-0133
+  count: 33
+- chunk_id: chunk-0083
+  count: 27
+- chunk_id: chunk-0109
+  count: 26
+- chunk_id: chunk-0181
+  count: 23
+- chunk_id: chunk-0192
+  count: 21
+- chunk_id: chunk-0175
+  count: 20
+- chunk_id: chunk-0176
+  count: 20
+- chunk_id: chunk-0180
+  count: 20
+evidence:
+- unit_id: 23-618-228-234
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-618-228-234
+  line: 8
+  source_quote: Vessavaṇadūtā idha yamassa dūtāti vuttātipi vadanti.
+  target_quote: '[诸注释师]说：“在此，韦思瓦纳的使者也被说为阎摩使者。”'
+- unit_id: 23-1446-33-45
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-1446-33-45
+  line: 11
+  source_quote: Tattha yā āsanne, sā appanaṃ upecca samīpe ṭhatvā pavattattā upacārabhāvanāti
+    vuccati.
+  target_quote: 此中，凡在近处，接近安止，并在附近住立后转起者，被称为“近行修习(upacārabhāvanā)”。
+- unit_id: 37-40-39-79
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-40-39-79
+  line: 21
+  source_quote: Vessantarattabhāvena ca sattakamahādānaṃ datvā sattakkhattuṃ pathaviṃ
+    kampetvā vaṅkapabbataṃ gantvā nayanasadise dve putte brāhmaṇassa dāsatthāya datvā
+    dutiyadivase brāhmaṇavaṇṇena āgatassa sakkassa devarañño attasamaṃ maddiṃ nāma
+    bhariyaṃ datvā tasmiṃ bhave …
+  target_quote: 维山达勒那一生作了七种大布施后，大地七次震动，山岳弯折，向婆罗门的奴仆布施眼睛般的两个儿子后，次日又向以婆罗门的荣耀而来的沙格天帝布施了等同自己的名为玛蒂的妻子。在那一生，[菩萨]作了无量福德，从那之后去到喜足天城(tusitapura)。在那里住满寿命后，一万轮围世界的殊胜诸天前来。
+- unit_id: 37-215-8-37
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-8-37
+  line: 26
+  source_quote: Tattha imasmiṃ sattaloke okāsaloke vā sabbaññusammāsambuddho dullabhova
+    tathā hesa loko saṅkhāraloko, sattaloko, okāsalokoti tippabhedo hoti tesaṃ sampattivipatti
+    ca evaṃ veditabbā tattha lujjati palujjatīti lokoti vacanatthena sattaloko veditabbo.
+  target_quote: 于[这首偈颂]中，此有情世间或空间世间中的一切知的正自觉佛(sabbaññusammāsambuddha)确实是难得的。如此，这世间有“行世间、有情世间、空间世间”三种。应当如此了知它们的生成与毁坏。其中，当知以“毁坏、崩解，故为世间”这种语义为有情世间。
+- unit_id: 37-215-38-45
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-38-45
+  line: 27
+  source_quote: Lokiyanti patiṭṭhahanti ettha sattanikāyāti vacanatthena okāsaloko
+    veditabbo.
+  target_quote: 于此，当知以“有情部类确立、住立”这种语义为空间世间。
+- unit_id: 37-215-64-77
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-64-77
+  line: 29
+  source_quote: Tattha nirayaṃ, tiracchānayoni, pettivisayo, asurakāyo, ti catasso
+    apāyabhūmi nāma.
+  target_quote: 其中，“地狱、畜生界、鬼界、阿苏罗界”名为四恶趣地。
+- unit_id: 37-215-177-186
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-177-186
+  line: 37
+  source_quote: Ettāvatā ekatiṃsappabhedāpi bhūmi avakasanti ettha sattanikāyāti vacanatthena
+    okāsoti vuccati.
+  target_quote: 至此，三十一种地以“有情部类在此环境”这种语义而被称为空间。
+- unit_id: 37-215-187-192
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-187-192
+  line: 38
+  source_quote: Tattha aṭṭha mahānirayāni apāyabhūmi nāma.
+  target_quote: 其中，八大地狱名为恶趣地。
+variant_translations:
+- '[诸注释师]说：“在此，韦思瓦纳的使者也被说为阎摩使者。”'
+- 此中，凡在近处，接近安止，并在附近住立后转起者，被称为“近行修习(upacārabhāvanā)”。
+- 维山达勒那一生作了七种大布施后，大地七次震动，山岳弯折，向婆罗门的奴仆布施眼睛般的两个儿子后，次日又向以婆罗门的荣耀而来的沙格天帝布施了等同自己的名为玛蒂的妻子。在那一生，[菩萨]作了无量福德，从那…
+- 于[这首偈颂]中，此有情世间或空间世间中的一切知的正自觉佛(sabbaññusammāsambuddha)确实是难得的。如此，这世间有“行世间、有情世间、空间世间”三种。应当如此了知它们的生成与毁坏…
+- 于此，当知以“有情部类确立、住立”这种语义为空间世间。
+- 其中，“地狱、畜生界、鬼界、阿苏罗界”名为四恶趣地。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-question-explanation-52d70666
+
+```yaml
+id: open-syntax-question-explanation-52d70666
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: question_or_problem
+description: 把问句或设问译为何、为什么、若问等解释性结构。
+grammar_category: question_or_problem
+source_pattern: interrogative + explanatory answer
+translation_pattern: ？ / 说 / 如 / 时 / 不 / 当
+technique: 把问句或设问译为何、为什么、若问等解释性结构。
+occurrence_count: 1080
+chunk_count: 129
+top_chunks:
+- chunk_id: chunk-0028
+  count: 29
+- chunk_id: chunk-0020
+  count: 24
+- chunk_id: chunk-0029
+  count: 23
+- chunk_id: chunk-0013
+  count: 22
+- chunk_id: chunk-0019
+  count: 22
+- chunk_id: chunk-0046
+  count: 22
+- chunk_id: chunk-0038
+  count: 21
+- chunk_id: chunk-0095
+  count: 21
+evidence:
+- unit_id: 64-8-2-20
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-8-2-20
+  line: 70
+  source_quote: Iti hidaṃ vuttaṃ, kasmā panetaṃ vuttaṃ, bhagavantaṃ kira sāvatthiyaṃ
+    viharantaṃ rattibhāge aññataro devaputto upasaṅkamitvā attano saṃsayasamugghāṭatthaṃ–
+  target_quote: 此（经）中如是说，为何这么说呢？据说，跋葛瓦住在沙瓦提城(sāvatthi)时，夜晚时分某位天子来到近前，为了解除自己的疑惑：
+- unit_id: 64-47-2-3
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-47-2-3
+  line: 145
+  source_quote: Kathaṃ ?
+  target_quote: 如何阐明呢？
+- unit_id: 64-63-2-24
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-63-2-24
+  line: 176
+  source_quote: Kiṃ sīlaṃ, kenaṭṭhena sīlaṃ, kānassa lakkhaṇarasapaccupaṭṭhānapadaṭṭhānāni,
+    kimānisaṃsaṃ sīlaṃ, katividhaṃ cetaṃ sīlaṃ, ko cassa saṃkileso, kiṃ vodānanti.
+  target_quote: '什么[称为]戒？
+
+    因何义[称为]戒？
+
+    何为戒的特相、作用、现起、近因？
+
+    何为戒的利益？
+
+    这戒有几种？
+
+    何为戒的杂染？
+
+    何为[戒的]净化？'
+- unit_id: 64-64-5-16
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-64-5-16
+  line: 178
+  source_quote: Kiṃ sīlan ti pāṇātipātādīhi vā viramantassa vattapaṭipattiṃ vā pūrentassa
+    cetanādayo dhammā.
+  target_quote: 什么[称为]戒？[当知，这提问的回答是：]离杀生等[恶行]者或圆满大小义务者的思(cetanā)等法[即是戒]。
+- unit_id: 64-64-17-46
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-64-17-46
+  line: 179
+  source_quote: Vuttañhetaṃ paṭisambhidāyaṃ‘‘ kiṃ sīlanti cetanā sīlaṃ, cetasikaṃ
+    sīlaṃ, saṃvaro sīlaṃ, avītikkamo sīlan’’ ti( paṭi. ma.1.39).
+  target_quote: 辨析[道]乃如此说：“什么是戒？即思戒、心所戒、防护(saṃvara)戒、不违犯戒”。（辨析道·1·39）
+- unit_id: 64-68-98-104
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-68-98-104
+  line: 197
+  source_quote: Idaṃ tāva kiṃ sīlanti pañhassa vissajjanaṃ.
+  target_quote: 首先，这是对“什么[称为]戒”之问的回答。
+- unit_id: 64-94-2-8
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-94-2-8
+  line: 245
+  source_quote: Sīlagandhasamo gandho, kuto nāma bhavissati;
+  target_quote: 又有何种香，如同戒香者？
+- unit_id: 64-96-2-8
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-96-2-8
+  line: 247
+  source_quote: Saggārohaṇasopānaṃ , aññaṃ sīlasamaṃ kuto;
+  target_quote: 何有如戒梯，升至诸天界？
+variant_translations:
+- 此（经）中如是说，为何这么说呢？据说，跋葛瓦住在沙瓦提城(sāvatthi)时，夜晚时分某位天子来到近前，为了解除自己的疑惑：
+- 如何阐明呢？
+- 什么[称为]戒？ 因何义[称为]戒？ 何为戒的特相、作用、现起、近因？ 何为戒的利益？ 这戒有几种？ 何为戒的杂染？ 何为[戒的]净化？
+- 什么[称为]戒？[当知，这提问的回答是：]离杀生等[恶行]者或圆满大小义务者的思(cetanā)等法[即是戒]。
+- 辨析[道]乃如此说：“什么是戒？即思戒、心所戒、防护(saṃvara)戒、不违犯戒”。（辨析道·1·39）
+- 首先，这是对“什么[称为]戒”之问的回答。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-gerundive-obligation-fcba4188
+
+```yaml
+id: open-syntax-gerundive-obligation-fcba4188
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: gerundive_or_obligation
+description: 把应做、可做、当知、应被理解等义务或可能性显化。
+grammar_category: gerundive_or_obligation
+source_pattern: -tabba / -anīya forms
+translation_pattern: 应 / 当 / 如 / 以 / 不 / 说
+technique: 把应做、可做、当知、应被理解等义务或可能性显化。
+occurrence_count: 1004
+chunk_count: 133
+top_chunks:
+- chunk_id: chunk-0191
+  count: 47
+- chunk_id: chunk-0190
+  count: 43
+- chunk_id: chunk-0084
+  count: 42
+- chunk_id: chunk-0095
+  count: 41
+- chunk_id: chunk-0125
+  count: 35
+- chunk_id: chunk-0164
+  count: 28
+- chunk_id: chunk-0174
+  count: 26
+- chunk_id: chunk-0111
+  count: 25
+evidence:
+- unit_id: 23-618-196-198
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-618-196-198
+  line: 4
+  source_quote: Revativimānañcettha vattabbaṃ.
+  target_quote: 而在此则应说瑞瓦蒂天宫(revativimāna)[故事]。
+- unit_id: 37-215-8-37
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-8-37
+  line: 26
+  source_quote: Tattha imasmiṃ sattaloke okāsaloke vā sabbaññusammāsambuddho dullabhova
+    tathā hesa loko saṅkhāraloko, sattaloko, okāsalokoti tippabhedo hoti tesaṃ sampattivipatti
+    ca evaṃ veditabbā tattha lujjati palujjatīti lokoti vacanatthena sattaloko veditabbo.
+  target_quote: 于[这首偈颂]中，此有情世间或空间世间中的一切知的正自觉佛(sabbaññusammāsambuddha)确实是难得的。如此，这世间有“行世间、有情世间、空间世间”三种。应当如此了知它们的生成与毁坏。其中，当知以“毁坏、崩解，故为世间”这种语义为有情世间。
+- unit_id: 37-215-38-45
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-38-45
+  line: 27
+  source_quote: Lokiyanti patiṭṭhahanti ettha sattanikāyāti vacanatthena okāsaloko
+    veditabbo.
+  target_quote: 于此，当知以“有情部类确立、住立”这种语义为空间世间。
+- unit_id: 64-27-2-12
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-27-2-12
+  line: 96
+  source_quote: 3. Tattha {visuddhī}ti sabbamalavirahitaṃ accantaparisuddhaṃ nibbānaṃ
+    veditabbaṃ.
+  target_quote: 3.此中，当知，祛除一切尘垢而绝对清净的涅槃即是**“清净（visuddhi）”**。
+- unit_id: 64-64-102-118
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-64-102-118
+  line: 184
+  source_quote: Saṃvaro sīlan ti ettha pañcavidhena saṃvaro veditabbo pātimokkhasaṃvaro,
+    satisaṃvaro, ñāṇasaṃvaro, khantisaṃvaro, vīriyasaṃvaroti.
+  target_quote: 在防护戒中，当依巴帝摩卡(pātimokkha)防护、念防护、智防护、忍防护、精进防护这五种来了知防护。
+- unit_id: 64-68-75-90
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-68-75-90
+  line: 195
+  source_quote: Iti ayaṃ pañcavidhopi saṃvaro, yā ca pāpabhīrukānaṃ kulaputtānaṃ sampattavatthuto
+    virati, sabbampetaṃ saṃvarasīlanti veditabbaṃ.
+  target_quote: 如此，当知这五种防护，以及畏惧罪恶的良家子从所遇[恶]事上的任何远离，这一切皆是**“防护戒(saṃvarasīla)”**。
+- unit_id: 64-76-2-15
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-76-2-15
+  line: 212
+  source_quote: Tasmā idaṃ sīlaṃ nāma kiccaṭṭhena rasena dussīlyaviddhaṃsanarasaṃ,
+    sampattiatthena rasena anavajjarasanti veditabbaṃ.
+  target_quote: 当知，这戒以应作义之味而有毁坏无戒的作用，以成就义之味而有无过失的作用。
+- unit_id: 64-110-2-10
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-110-2-10
+  line: 266
+  source_quote: 11. Tattha ekavidhakoṭṭhāse attho vuttanayeneva veditabbo.
+  target_quote: 11.在其中的一种[戒的]部分中，当依前述方法了知[其]义。
+variant_translations:
+- 而在此则应说瑞瓦蒂天宫(revativimāna)[故事]。
+- 于[这首偈颂]中，此有情世间或空间世间中的一切知的正自觉佛(sabbaññusammāsambuddha)确实是难得的。如此，这世间有“行世间、有情世间、空间世间”三种。应当如此了知它们的生成与毁坏…
+- 于此，当知以“有情部类确立、住立”这种语义为空间世间。
+- 3.此中，当知，祛除一切尘垢而绝对清净的涅槃即是**“清净（visuddhi）”**。
+- 在防护戒中，当依巴帝摩卡(pātimokkha)防护、念防护、智防护、忍防护、精进防护这五种来了知防护。
+- 如此，当知这五种防护，以及畏惧罪恶的良家子从所遇[恶]事上的任何远离，这一切皆是**“防护戒(saṃvarasīla)”**。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-newline-decomposition-syntax-585a7090
+
+```yaml
+id: open-syntax-newline-decomposition-syntax-585a7090
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: decomposition
+description: 用换行拆解并列、长句、偈颂或注释层次。
+grammar_category: decomposition
+source_pattern: complex source + target line breaks
+translation_pattern: 时 / 说 / 不 / 如 / 以 / 无
+technique: 用换行拆解并列、长句、偈颂或注释层次。
+occurrence_count: 963
+chunk_count: 90
+top_chunks:
+- chunk_id: chunk-0030
+  count: 39
+- chunk_id: chunk-0045
+  count: 34
+- chunk_id: chunk-0051
+  count: 31
+- chunk_id: chunk-0031
+  count: 30
+- chunk_id: chunk-0039
+  count: 27
+- chunk_id: chunk-0048
+  count: 27
+- chunk_id: chunk-0053
+  count: 27
+- chunk_id: chunk-0044
+  count: 26
+evidence:
+- unit_id: 64-63-2-24
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-63-2-24
+  line: 176
+  source_quote: Kiṃ sīlaṃ, kenaṭṭhena sīlaṃ, kānassa lakkhaṇarasapaccupaṭṭhānapadaṭṭhānāni,
+    kimānisaṃsaṃ sīlaṃ, katividhaṃ cetaṃ sīlaṃ, ko cassa saṃkileso, kiṃ vodānanti.
+  target_quote: '什么[称为]戒？
+
+    因何义[称为]戒？
+
+    何为戒的特相、作用、现起、近因？
+
+    何为戒的利益？
+
+    这戒有几种？
+
+    何为戒的杂染？
+
+    何为[戒的]净化？'
+- unit_id: 64-368-2-3
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-368-2-3
+  line: 635
+  source_quote: Aggikkhandhāliṅganadukkhādhikadukkhakaṭukaphalaṃ ;
+  target_quote: '不离欲乐者，破戒有何乐？
+
+    彼得之苦果，胜于抱火聚。'
+- unit_id: 64-370-2-9
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-370-2-9
+  line: 636
+  source_quote: Abhivādanasādiyane , kiṃ nāma sukhaṃ vipannasīlassa;
+  target_quote: '破戒受礼敬，又能有何乐？
+
+    彼有苦之份，胜于牢绳锯。'
+- unit_id: 64-372-2-6
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-372-2-6
+  line: 637
+  source_quote: Saddhānamañjalikammasādiyane kiṃ sukhaṃ asīlassa;
+  target_quote: '受信众合掌，无戒者何乐？
+
+    彼所受之苦，胜于利刃刺。'
+- unit_id: 64-374-2-7
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-374-2-7
+  line: 638
+  source_quote: Cīvaraparibhogasukhaṃ , kiṃ nāma asaṃyatassa;
+  target_quote: '不自调御者，受用衣何乐？
+
+    以之堕地狱，炽燃铁板触。'
+- unit_id: 64-376-2-7
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-376-2-7
+  line: 639
+  source_quote: Madhuropi piṇḍapāto, halāhalavisūpamo asīlassa;
+  target_quote: '钵食虽美味，对彼如毒药；
+
+    无戒者以此，久吞炙铁丸。'
+- unit_id: 64-378-2-7
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-378-2-7
+  line: 640
+  source_quote: Sukhasammatopi dukkho, asīlino mañcapīṭhaparibhogo;
+  target_quote: '无戒用床座，思乐实为苦；
+
+    炽燃铁床座，久将恼害彼。'
+- unit_id: 64-379-2-7
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-379-2-7
+  line: 641
+  source_quote: Yaṃ bādhissanti ciraṃ, jalitaayomañcapīṭhāni.
+  target_quote: '无戒用床座，思乐实为苦；
+
+    炽燃铁床座，久将恼害彼。'
+variant_translations:
+- 什么[称为]戒？ 因何义[称为]戒？ 何为戒的特相、作用、现起、近因？ 何为戒的利益？ 这戒有几种？ 何为戒的杂染？ 何为[戒的]净化？
+- 不离欲乐者，破戒有何乐？ 彼得之苦果，胜于抱火聚。
+- 破戒受礼敬，又能有何乐？ 彼有苦之份，胜于牢绳锯。
+- 受信众合掌，无戒者何乐？ 彼所受之苦，胜于利刃刺。
+- 不自调御者，受用衣何乐？ 以之堕地狱，炽燃铁板触。
+- 钵食虽美味，对彼如毒药； 无戒者以此，久吞炙铁丸。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-alternative-series-18071276
+
+```yaml
+id: open-syntax-alternative-series-18071276
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: alternative_or_variant
+description: 把多项替代或并列解释译为或、或者、换行列举。
+grammar_category: alternative_or_variant
+source_pattern: X vā Y vā
+translation_pattern: 或 / 不 / 如 / 以 / 说 / 时
+technique: 把多项替代或并列解释译为或、或者、换行列举。
+occurrence_count: 823
+chunk_count: 135
+top_chunks:
+- chunk_id: chunk-0133
+  count: 67
+- chunk_id: chunk-0097
+  count: 40
+- chunk_id: chunk-0191
+  count: 32
+- chunk_id: chunk-0125
+  count: 31
+- chunk_id: chunk-0131
+  count: 29
+- chunk_id: chunk-0083
+  count: 16
+- chunk_id: chunk-0084
+  count: 16
+- chunk_id: chunk-0129
+  count: 15
+evidence:
+- unit_id: 37-37-27-105
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-37-27-105
+  line: 17
+  source_quote: Amhākaṃ kira bhagavā brahmadevabuddhamādiṃ katvā yāva porāṇasakyagotamā
+    manopaṇidhivasena, kaṭṭhavāhanajātakaṃādiṃkatvā yāva majjhimadīpaṅkarā vācaṅgavasena
+    majjhimadīpaṅkarapādamūlato paṭṭhāya kāyavācaṅgavasena sabbaṃ sampiṇḍetvā yāva
+    vessantarattabhāvā vīsa…
+  target_quote: 据说，我们的跋葛瓦(bhagavant)从梵天佛(brahmadevabuddha)开始直到过去释迦果德玛(sakyagotama)[佛][时期]以心意发愿；从打柴女本生(kaṭṭhavāhanajātaka)开始直到中间的燃灯(dīpaṅkarā)[佛]以语言[说出]；从中间的燃灯[佛]以来，用身、语将一切结合后，直到维山达勒(vessantara)那一生，正是为了圆满二十个不可数[劫]的巴拉密，为了[证得]一切知智，而斩断了精心装饰的头颅后，布施的一切知菩萨(sabbaññubodhisatta)的头颅[数量…
+- unit_id: 64-64-5-16
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-64-5-16
+  line: 178
+  source_quote: Kiṃ sīlan ti pāṇātipātādīhi vā viramantassa vattapaṭipattiṃ vā pūrentassa
+    cetanādayo dhammā.
+  target_quote: 什么[称为]戒？[当知，这提问的回答是：]离杀生等[恶行]者或圆满大小义务者的思(cetanā)等法[即是戒]。
+- unit_id: 64-64-47-58
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-64-47-58
+  line: 180
+  source_quote: Tattha cetanā sīlaṃ nāma pāṇātipātādīhi vā viramantassa vattapaṭipattiṃ
+    vā pūrentassa cetanā.
+  target_quote: 其中，离杀生等[恶行]者或圆满大小义务者的思即是**“思戒”**。
+- unit_id: 64-113-11-62
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-113-11-62
+  line: 292
+  source_quote: Tattha yaṃ‘‘ imināhaṃ sīlena devo vā bhavissāmi devaññataro vā’’ ti(
+    dī. ni.3.320; ma. ni.1.186; a. ni.5.206;7.50) evaṃ bhavasampattiṃ ākaṅkhamānena
+    pavattitaṃ, idaṃ taṇhānissitaṃ.
+  target_quote: “我以此戒，将成为[知名]天人或某位[无名]天人”（长部·3·320；中部·1·186；增支部·5·206,7·50），如此透过希求有成就(bhavasampatti)而产生任何[戒]，这即是爱依著(taṇhānissita)。
+- unit_id: 64-120-21-31
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-120-21-31
+  line: 334
+  source_quote: Vatthumhi vā āpattiyā vā ajjhācāre vā vematikassa sīlaṃ vematikasīlaṃ
+    nāma.
+  target_quote: 对[罪]事[是否构成罪]、[犯何种]罪或[是否]犯[罪]有疑惑者的戒是有疑戒。
+- unit_id: 64-141-18-30
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-141-18-30
+  line: 372
+  source_quote: '{Bhikkhū}ti saṃsāre bhayaṃ ikkhaṇatāya vā bhinnapaṭadharāditāya vā
+    evaṃ laddhavohāro saddhāpabbajito kulaputto.'
+  target_quote: “比库”：在教法中因见到怖畏及能持割截衣等，而有所得之名的信心出家的良家子。
+- unit_id: 64-143-22-47
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-143-22-47
+  line: 385
+  source_quote: Idhekacco veḷudānena vā pattadānena vā pupphaphalasinānadantakaṭṭhadānena
+    vā cāṭukamyatāya vā muggasūpyatāya vā pāribhaṭyatāya vā jaṅghapesanikena vā aññataraññatarena
+    vā buddhapaṭikuṭṭhena micchāājīvena jīvikaṃ kappeti, ayaṃ vuccati anācāro.
+  target_quote: 于此，一些[比库]通过[向施主]赠送竹、赠送叶、赠送花、果、浴粉、齿木，或通过说谄媚语、豆羹语，或通过看护[施主的孩子]，或通过为人走使，或通过佛陀所呵责的其他各类邪命过活，这称为不正行。
+- unit_id: 64-144-21-55
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-144-21-55
+  line: 389
+  source_quote: Idhekacco na veḷudānena vā na pattana pupphana phalana sinānana dantakaṭṭhadānena
+    vā na cāṭukamyatāya vā na muggasūpyatāya vā na pāribhaṭyatāya vā na jaṅghapesanikena
+    vā na aññataraññatarena vā buddhapaṭikuṭṭhena micchāājīvena jīvikaṃ kappeti, ayaṃ
+    vuccati āc…
+  target_quote: 于此，一些[比库]不通过[向施主]赠送竹、赠送叶、赠送花、果、浴粉、齿木，或不通过说谄媚语、豆羹语，或不通过看护[施主的孩子]，或不通过为人走使，或不通过佛陀所呵责的其他各类邪命过活，这称为正行。
+variant_translations:
+- 据说，我们的跋葛瓦(bhagavant)从梵天佛(brahmadevabuddha)开始直到过去释迦果德玛(sakyagotama)[佛][时期]以心意发愿；从打柴女本生(kaṭṭhavāhanaj…
+- 什么[称为]戒？[当知，这提问的回答是：]离杀生等[恶行]者或圆满大小义务者的思(cetanā)等法[即是戒]。
+- 其中，离杀生等[恶行]者或圆满大小义务者的思即是**“思戒”**。
+- “我以此戒，将成为[知名]天人或某位[无名]天人”（长部·3·320；中部·1·186；增支部·5·206,7·50），如此透过希求有成就(bhavasampatti)而产生任何[戒]，这即是爱依著…
+- 对[罪]事[是否构成罪]、[犯何种]罪或[是否]犯[罪]有疑惑者的戒是有疑戒。
+- “比库”：在教法中因见到怖畏及能持割截衣等，而有所得之名的信心出家的良家子。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-simile-comparison-800fcd10
+
+```yaml
+id: open-syntax-simile-comparison-800fcd10
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: simile
+description: 把譬喻关系译为如、譬如、犹如、像。
+grammar_category: simile
+source_pattern: viya / iva / seyyathāpi
+translation_pattern: 如 / 不 / 时 / 以 / 说 / 无
+technique: 把譬喻关系译为如、譬如、犹如、像。
+occurrence_count: 594
+chunk_count: 124
+top_chunks:
+- chunk_id: chunk-0183
+  count: 28
+- chunk_id: chunk-0190
+  count: 14
+- chunk_id: chunk-0193
+  count: 12
+- chunk_id: chunk-0191
+  count: 11
+- chunk_id: chunk-0174
+  count: 11
+- chunk_id: chunk-0049
+  count: 11
+- chunk_id: chunk-0192
+  count: 10
+- chunk_id: chunk-0075
+  count: 10
+evidence:
+- unit_id: 23-618-173-190
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:23-618-173-190
+  line: 2
+  source_quote: Itaresaṃ pana paresaṃ payogabalenapi attanā pakatiyā suṭṭhu āsevitānaṃ
+    anussaraṇabalenapi dhammikaupāsakādīnaṃ viya devalokato āgantvā gaṇhantānaṃ devānaṃ
+    ānubhāvenapi hotiyeva.
+  target_quote: 而别的[有情]则通过他人的加行之力、通过自己随念本就善加修习的所缘之力，以及通过像如法近事男等[人]那样的从天界前来接取的诸天威力而有[业等现起]。
+- unit_id: 64-42-130-161
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-42-130-161
+  line: 135
+  source_quote: Seyyathāpi nāma puriso pathaviyaṃ patiṭṭhāya sunisitaṃ satthaṃ ukkhipitvā
+    mahantaṃ veḷugumbaṃ vijaṭeyya, evameva sīlapathaviyaṃ patiṭṭhāya samādhisilāyaṃ
+    sunisitaṃ vipassanāpaññāsatthaṃ vīriyabalapaggahitena pārihārikapaññāhatthena
+    ukkhipitvā sabbampi taṃ att…
+  target_quote: 就如男人立于地上，举起锋利的武器而能切除大竹丛一般。同样地，他住立于戒地之上，藉由以精进力策励的保护慧之手，举起在定石上打磨锋利的维巴舍那慧武器，而能解开、斩断、切除在自己的相续[诸蕴]中沉沦的那一切爱结。
+- unit_id: 64-156-63-84
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-156-63-84
+  line: 429
+  source_quote: Īdisī panesā‘ dhanunā vijjhatī’ tiādīsu viya sasambhārakathā nāma
+    hoti, tasmā cakkhuviññāṇena rūpaṃ disvāti ayamevettha attho’’ ti.
+  target_quote: 虽然如此，但犹如在“我以弓射[箭]”等[例子]之处一样，那像这样的[“以眼见色”]即是[在说]连同要素因的见论。所以，以眼识见色乃是这[句圣典]在此之义。
+- unit_id: 64-156-100-122
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-156-100-122
+  line: 431
+  source_quote: '{Nānubyañjanaggāhī}ti kilesānaṃ anuanubyañjanato pākaṭabhāvakaraṇato
+    anubyañjananti laddhavohāraṃ hatthapādasitahasitakathitavilokitādibhedaṃ ākāraṃ
+    na gaṇhāti, yaṃ tattha bhūtaṃ, tadeva gaṇhāti, cetiyapabbatavāsī mahātissatthero
+    viya.'
+  target_quote: “不取频相”：对能够使烦恼频频显现，故而得名“频相”的手、足、微笑、戏笑、观看等种类的形相不执取，那[身体上]什么明显，就把取什么。犹如住在塔山(cetiyapabbata)的“马哈帝思(mahātissa)”长老那样。
+- unit_id: 64-157-2-27
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-157-2-27
+  line: 432
+  source_quote: Theraṃ kira cetiyapabbatā anurādhapuraṃ piṇḍacāratthāya āgacchantaṃ
+    aññatarā kulasuṇhā sāmikena saddhiṃ bhaṇḍitvā sumaṇḍitapasādhitā devakaññā viya
+    kālasseva anurādhapurato nikkhamitvā ñātigharaṃ gacchantī antarāmagge disvā vipallatthacittā
+    mahāhasitaṃ hasi.
+  target_quote: 据说，长老为了集食而从塔山去往阿努拉德普勒(anurādhapura)期间，某位良家妇女同丈夫争吵后，盛装打扮得犹如天女一般。她清早从阿努拉德普勒出发，前往娘家时，途中见到[长老]后，起了颠倒心而放声大笑。
+- unit_id: 64-179-20-99
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-179-20-99
+  line: 526
+  source_quote: Idhekacco pāpiccho icchāpakato sambhāvanādhippāyo‘ evaṃ maṃ jano sambhāvessatī’
+    ti gamanaṃ saṇṭhapeti , ṭhānaṃ saṇṭhapeti, nisajjaṃ saṇṭhapeti, sayanaṃ saṇṭhapeti,
+    paṇidhāya gacchati, paṇidhāya tiṭṭhati, paṇidhāya nisīdati, paṇidhāya seyyaṃ kappeti,
+    samāhito …
+  target_quote: 于此，一些[比库]恶欲，为欲所迫而贪图恭敬，[认为：]“如此人们便会恭敬我”，于是善加整肃行，善加整肃住，善加整肃坐，善加整肃卧，渴望[为人所知]而行，渴望[为人所知]而住，渴望[为人所知]而坐，渴望[为人所知]而卧，犹如得定一般行、住、坐、卧，并于大庭广众之下像入定一般禅修。若有像那样的皱眉、蹙额、虚伪、矫饰、伪装，这即是名为[伪现]威仪的虚伪事。（大义释·87）
+- unit_id: 64-184-59-72
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-184-59-72
+  line: 563
+  source_quote: Yo hi kuladārake dhāti viya aṅkena vā khandhena vā paribhaṭati, dhāretīti
+    attho.
+  target_quote: 即是说，若人像保姆那样能以腰部或肩膀照料[俗]家孩子，即带[孩子]之义。
+- unit_id: 64-186-11-28
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-186-11-28
+  line: 573
+  source_quote: Taṃ disvā adātukāmā gharaṇī‘‘ taṇḍulā natthī’’ ti bhaṇantī taṇḍule
+    āharitukāmā viya paṭivissakagharaṃ gatā.
+  target_quote: 女主人看见他后，不想供养便一边哀叹：“没有米了！”一边装作取米而前往邻家。
+variant_translations:
+- 而别的[有情]则通过他人的加行之力、通过自己随念本就善加修习的所缘之力，以及通过像如法近事男等[人]那样的从天界前来接取的诸天威力而有[业等现起]。
+- 就如男人立于地上，举起锋利的武器而能切除大竹丛一般。同样地，他住立于戒地之上，藉由以精进力策励的保护慧之手，举起在定石上打磨锋利的维巴舍那慧武器，而能解开、斩断、切除在自己的相续[诸蕴]中沉沦的那一…
+- 虽然如此，但犹如在“我以弓射[箭]”等[例子]之处一样，那像这样的[“以眼见色”]即是[在说]连同要素因的见论。所以，以眼识见色乃是这[句圣典]在此之义。
+- “不取频相”：对能够使烦恼频频显现，故而得名“频相”的手、足、微笑、戏笑、观看等种类的形相不执取，那[身体上]什么明显，就把取什么。犹如住在塔山(cetiyapabbata)的“马哈帝思(mahāt…
+- 据说，长老为了集食而从塔山去往阿努拉德普勒(anurādhapura)期间，某位良家妇女同丈夫争吵后，盛装打扮得犹如天女一般。她清早从阿努拉德普勒出发，前往娘家时，途中见到[长老]后，起了颠倒心而放…
+- 于此，一些[比库]恶欲，为欲所迫而贪图恭敬，[认为：]“如此人们便会恭敬我”，于是善加整肃行，善加整肃住，善加整肃坐，善加整肃卧，渴望[为人所知]而行，渴望[为人所知]而住，渴望[为人所知]而坐，渴…
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-coordinated-series-9a122f4e
+
+```yaml
+id: open-syntax-coordinated-series-9a122f4e
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: coordination
+description: 把多项并列译为和、与、以及，或用顿号/换行列举。
+grammar_category: coordination
+source_pattern: X ca Y ca
+translation_pattern: 以 / 不 / 和 / 如 / 与 / 时
+technique: 把多项并列译为和、与、以及，或用顿号/换行列举。
+occurrence_count: 530
+chunk_count: 141
+top_chunks:
+- chunk_id: chunk-0120
+  count: 18
+- chunk_id: chunk-0067
+  count: 13
+- chunk_id: chunk-0182
+  count: 12
+- chunk_id: chunk-0122
+  count: 12
+- chunk_id: chunk-0197
+  count: 10
+- chunk_id: chunk-0058
+  count: 10
+- chunk_id: chunk-0057
+  count: 9
+- chunk_id: chunk-0178
+  count: 8
+evidence:
+- unit_id: 37-37-27-105
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-37-27-105
+  line: 17
+  source_quote: Amhākaṃ kira bhagavā brahmadevabuddhamādiṃ katvā yāva porāṇasakyagotamā
+    manopaṇidhivasena, kaṭṭhavāhanajātakaṃādiṃkatvā yāva majjhimadīpaṅkarā vācaṅgavasena
+    majjhimadīpaṅkarapādamūlato paṭṭhāya kāyavācaṅgavasena sabbaṃ sampiṇḍetvā yāva
+    vessantarattabhāvā vīsa…
+  target_quote: 据说，我们的跋葛瓦(bhagavant)从梵天佛(brahmadevabuddha)开始直到过去释迦果德玛(sakyagotama)[佛][时期]以心意发愿；从打柴女本生(kaṭṭhavāhanajātaka)开始直到中间的燃灯(dīpaṅkarā)[佛]以语言[说出]；从中间的燃灯[佛]以来，用身、语将一切结合后，直到维山达勒(vessantara)那一生，正是为了圆满二十个不可数[劫]的巴拉密，为了[证得]一切知智，而斩断了精心装饰的头颅后，布施的一切知菩萨(sabbaññubodhisatta)的头颅[数量…
+- unit_id: 37-40-39-79
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-40-39-79
+  line: 21
+  source_quote: Vessantarattabhāvena ca sattakamahādānaṃ datvā sattakkhattuṃ pathaviṃ
+    kampetvā vaṅkapabbataṃ gantvā nayanasadise dve putte brāhmaṇassa dāsatthāya datvā
+    dutiyadivase brāhmaṇavaṇṇena āgatassa sakkassa devarañño attasamaṃ maddiṃ nāma
+    bhariyaṃ datvā tasmiṃ bhave …
+  target_quote: 维山达勒那一生作了七种大布施后，大地七次震动，山岳弯折，向婆罗门的奴仆布施眼睛般的两个儿子后，次日又向以婆罗门的荣耀而来的沙格天帝布施了等同自己的名为玛蒂的妻子。在那一生，[菩萨]作了无量福德，从那之后去到喜足天城(tusitapura)。在那里住满寿命后，一万轮围世界的殊胜诸天前来。
+- unit_id: 37-213-2-11
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-213-2-11
+  line: 23
+  source_quote: ‘ ‘ Buddho ca dullabho loke, saddhammasavanampi ca;
+  target_quote: “世间难得佛，难得闻正法，
+- unit_id: 37-215-142-152
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-215-142-152
+  line: 34
+  source_quote: Vehapphalā, asaññasattā, suddhāvāsā ca catutthajjhānabhūmiceti rūpāvacarabhūmi
+    soḷasavidhā hoti.
+  target_quote: 广果天、无想天、净居天[这七种]第四禅地[加上前面所述的九种地]共有十六种色界地。
+- unit_id: 37-220-39-57
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-220-39-57
+  line: 52
+  source_quote: Ettāvatā ca manussabhūmito yāva bhavaggā yojanānaṃ sattakoṭi ca aṭṭhārasalakkhā
+    ca pañcanahutāni ca chasahassāni ca honti tenetaṃ vuccati porāṇehi.
+  target_quote: 至此，从人间地到有顶天有七千一百八十五万六千由旬。所以先贤将其说为：
+- unit_id: 37-239-4-34
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-239-4-34
+  line: 62
+  source_quote: Etthantare sattā tiṭṭhanti, tesaṃ vitthāro apubbaṃ katvā kathetuṃ
+    asakkuṇeyyattā na vakkhāma imasmiṃ sattaloke okāsaloke ca sabbaññusammāsambuddhova
+    dullabho, tathā hi cattāro buddhā anubuddho, sāvakabuddho, paccekabuddho, sammāsambuddhoti.
+  target_quote: 在此期间，有情存续。他们在之前未被详说。我们将不说无法讲述[之事]。于此有情世间、空间时间中，一切知的正自觉佛确实难得。如此，有四种觉者：随觉者、弟子觉者、独觉者、正自觉者。
+- unit_id: 37-239-35-53
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:37-239-35-53
+  line: 63
+  source_quote: Tattha bahussutaṃ bhikkhuṃ pasaṃsantena ca na so tumhākaṃ sāvako nāma,
+    buddhonāmesa cundāti bahussutassa bhikkhuno buddhabhāvaṃ anujānantena ca.
+  target_quote: 其中，他并非透过称赞多闻的比库而是您的弟子，而是由于那位准德(cunda)是觉悟者，透过认可多闻比库的觉悟状态而成为您的弟子。
+- unit_id: 64-34-2-13
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-34-2-13
+  line: 109
+  source_quote: ‘ ‘ Kammaṃ vijjā ca dhammo ca, sīlaṃ jīvitamuttamaṃ;
+  target_quote: 业、明以及法，最上活命戒，
+variant_translations:
+- 据说，我们的跋葛瓦(bhagavant)从梵天佛(brahmadevabuddha)开始直到过去释迦果德玛(sakyagotama)[佛][时期]以心意发愿；从打柴女本生(kaṭṭhavāhanaj…
+- 维山达勒那一生作了七种大布施后，大地七次震动，山岳弯折，向婆罗门的奴仆布施眼睛般的两个儿子后，次日又向以婆罗门的荣耀而来的沙格天帝布施了等同自己的名为玛蒂的妻子。在那一生，[菩萨]作了无量福德，从那…
+- “世间难得佛，难得闻正法，
+- 广果天、无想天、净居天[这七种]第四禅地[加上前面所述的九种地]共有十六种色界地。
+- 至此，从人间地到有顶天有七千一百八十五万六千由旬。所以先贤将其说为：
+- 在此期间，有情存续。他们在之前未被详说。我们将不说无法讲述[之事]。于此有情世间、空间时间中，一切知的正自觉佛确实难得。如此，有四种觉者：随觉者、弟子觉者、独觉者、正自觉者。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-conditional-clause-848b81ac
+
+```yaml
+id: open-syntax-conditional-clause-848b81ac
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: conditional
+description: 把条件从句译为若、如果、当……时等条件关系。
+grammar_category: conditional
+source_pattern: sace / ce / yadi + clause
+translation_pattern: 如 / 如果 / 不 / 若 / 说 / 以
+technique: 把条件从句译为若、如果、当……时等条件关系。
+occurrence_count: 438
+chunk_count: 111
+top_chunks:
+- chunk_id: chunk-0095
+  count: 18
+- chunk_id: chunk-0190
+  count: 16
+- chunk_id: chunk-0083
+  count: 16
+- chunk_id: chunk-0084
+  count: 16
+- chunk_id: chunk-0043
+  count: 14
+- chunk_id: chunk-0130
+  count: 13
+- chunk_id: chunk-0173
+  count: 11
+- chunk_id: chunk-0129
+  count: 11
+evidence:
+- unit_id: 64-82-45-71
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-82-45-71
+  line: 229
+  source_quote: Puna caparaṃ gahapatayo sīlavā sīlasampanno yaññadeva parisaṃ upasaṅkamati
+    yadi khattiyaparisaṃ yadi brāhmaṇaparisaṃ yadi gahapatiparisaṃ yadi samaṇaparisaṃ,
+    visārado upasaṅkamati amaṅkubhūto, ayaṃ tatiyo ānisaṃso sīlavato sīlasampadāya.
+  target_quote: 再者，家主们，具足戒的持戒者无论去到哪一众中：若刹帝利众、若婆罗门众、若家主众、若沙门众中，去到时都有自信而不羞愧。这是持戒者因具足戒而有的第三种利益。
+- unit_id: 64-83-2-42
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-83-2-42
+  line: 232
+  source_quote: Aparepi ‘‘ ākaṅkheyya ce, bhikkhave, bhikkhu sabrahmacārīnaṃ piyo
+    ca assaṃ manāpo ca garu ca bhāvanīyo cāti, sīlesvevassa paripūrakārī’’ tiādinā(
+    ma. ni.1.65) nayena piyamanāpatādayo āsavakkhayapariyosānā anekā sīlānisaṃsā vuttā.
+  target_quote: 又以“诸比库，假如比库希望:‘愿同梵行者们喜欢、满意、尊重和尊敬我’，他应完全持戒”（中部·1·65）等方式，说了喜悦、满意为始，漏尽为终的戒的种种利益。
+- unit_id: 64-164-15-32
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-164-15-32
+  line: 452
+  source_quote: Javanakkhaṇe pana sace dussīlyaṃ vā muṭṭhasaccaṃ vā aññāṇaṃ vā akkhanti
+    vā kosajjaṃ vā uppajjati, asaṃvaro hoti.
+  target_quote: 如果破戒、失念、无智、不忍或懈怠在速行刹那生起，这即是不防护。
+- unit_id: 64-175-19-76
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-175-19-76
+  line: 490
+  source_quote: Tattha cīvarādīhi nimantitassa tadatthikasseva sato pāpicchataṃ nissāya
+    paṭikkhipanena, te ca gahapatike attani suppatiṭṭhitasaddhe ñatvā puna tesaṃ‘‘
+    aho ayyo appiccho na kiñci paṭiggaṇhituṃ icchati, suladdhaṃ vata no assa sace
+    appamattakampi kiñci paṭiggaṇh…
+  target_quote: 于此，以衣等[资具]而受邀请者，虽然内心渴求该物，却出于恶欲而加以拒绝，等到得知那些家主对自己建立了牢固的信心，并且[思惟：]“圣尊真是少欲啊！不愿接受任何[资具]，要是他能接受任何一点[资具]，那可真是我们的善得！”他才对那些以各种各样的理由而带来胜妙的衣等[资具]者表示，只是想要摄益他们而接受。此后，虽然[施主们主动]用货车运来[资具]，但也应以此了知作为纷至沓来[的供养]之因的哗众取宠即是名为资具受用的虚伪事。
+- unit_id: 64-181-2-35
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-181-2-35
+  line: 539
+  source_quote: Lapanāniddese {ālapanā}ti vihāraṃ āgate manusse disvā‘‘ kimatthāya
+    bhonto āgatā, kiṃ bhikkhū nimantituṃ, yadi evaṃ gacchatha re, ahaṃ pacchato pattaṃ
+    gahetvā āgacchāmī’’ ti evaṃ āditova lapanā.
+  target_quote: 在攀缘义释(lapanāniddesa)中，“主动攀缘”：看见到寺院来的人们后，便先攀缘：“大德们为何而来啊？为邀请比库[而来]吗？要是这样，你们就回去吧，我带上钵就来。”
+- unit_id: 64-183-12-30
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-183-12-30
+  line: 554
+  source_quote: Sace ettha deyyadhammo uppajjati, mayhameva detī’’ ti evaṃ ukkhipitvā
+    kācanā ukkācanā, uddīpanāti vuttaṃ hoti.
+  target_quote: 要是[他们]家中有施物，那只会供养我。”如此抬举后，彰显、夸耀。即是说赞誉。
+- unit_id: 64-185-31-79
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-185-31-79
+  line: 569
+  source_quote: Obhāsakamman ti vacchapālake disvā‘‘ kiṃ ime vacchā khīragovacchā
+    udāhu takkagovacchā’’ ti pucchitvā‘‘ khīragovacchā, bhante’’ ti vutte‘‘ na khīragovacchā,
+    yadi khīragovacchā siyuṃ, bhikkhūpi khīraṃ labheyyun’’ ti evamādinā nayena tesaṃ
+    dārakānaṃ mātāpitūnaṃ …
+  target_quote: “作暗示”：看见放牧牛犊者而询问：“这些牛犊是喝奶的牛犊，还是喝酪乳的牛犊？”“是喝奶的牛犊，尊者。”当如此说时，[他又说]：“不是喝奶的牛犊吧，要是喝奶的牛犊，那么比库们也能得到牛乳”，以如此等方法令那些孩子回告父母而有令供牛乳等[布施]的作暗示。
+- unit_id: 64-718-2-18
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-718-2-18
+  line: 689
+  source_quote: Tasmā sace khīṇāsavaṃ labhati, iccetaṃ kusalaṃ, no ce labhati, anāgāmisakadāgāmisotāpannajhānalābhīputhujjanatipiṭakadharadvipiṭakadharaekapiṭakadharesu
+    purimassa purimassa santike.
+  target_quote: 因此，若能得到漏尽者，那确实很好，若得不到，则于不来者、一来者、入流者、证得禅那的凡夫、三藏持者、二藏持者、一藏持者中，[应]到更先者跟前[取得业处]。
+variant_translations:
+- 再者，家主们，具足戒的持戒者无论去到哪一众中：若刹帝利众、若婆罗门众、若家主众、若沙门众中，去到时都有自信而不羞愧。这是持戒者因具足戒而有的第三种利益。
+- 又以“诸比库，假如比库希望:‘愿同梵行者们喜欢、满意、尊重和尊敬我’，他应完全持戒”（中部·1·65）等方式，说了喜悦、满意为始，漏尽为终的戒的种种利益。
+- 如果破戒、失念、无智、不忍或懈怠在速行刹那生起，这即是不防护。
+- 于此，以衣等[资具]而受邀请者，虽然内心渴求该物，却出于恶欲而加以拒绝，等到得知那些家主对自己建立了牢固的信心，并且[思惟：]“圣尊真是少欲啊！不愿接受任何[资具]，要是他能接受任何一点[资具]，那…
+- 在攀缘义释(lapanāniddesa)中，“主动攀缘”：看见到寺院来的人们后，便先攀缘：“大德们为何而来啊？为邀请比库[而来]吗？要是这样，你们就回去吧，我带上钵就来。”
+- 要是[他们]家中有施物，那只会供养我。”如此抬举后，彰显、夸耀。即是说赞誉。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-relative-correlative-56a796f6
+
+```yaml
+id: open-syntax-relative-correlative-56a796f6
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: relative_correlative
+description: 把关系从句转成汉语的所、凡、若、此/彼对应关系。
+grammar_category: relative_correlative
+source_pattern: ya-/yo- relative + ta-/so- correlative
+translation_pattern: 不 / 说 / 如 / 以 / 若 / 无
+technique: 把关系从句转成汉语的所、凡、若、此/彼对应关系。
+occurrence_count: 395
+chunk_count: 118
+top_chunks:
+- chunk_id: chunk-0095
+  count: 20
+- chunk_id: chunk-0131
+  count: 16
+- chunk_id: chunk-0109
+  count: 10
+- chunk_id: chunk-0096
+  count: 9
+- chunk_id: chunk-0133
+  count: 8
+- chunk_id: chunk-0084
+  count: 8
+- chunk_id: chunk-0172
+  count: 7
+- chunk_id: chunk-0194
+  count: 7
+evidence:
+- unit_id: 64-110-11-25
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-110-11-25
+  line: 267
+  source_quote: Duvidhakoṭṭhāse yaṃ bhagavatā‘‘ idaṃ kattabban’’ ti paññattasikkhāpadapūraṇaṃ,
+    taṃ cārittaṃ.
+  target_quote: 在二种[戒的]部分中，‘这应当作’，奉行跋葛瓦如此制定的学处为作持(cāritta)。
+- unit_id: 64-110-26-40
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-110-26-40
+  line: 268
+  source_quote: Yaṃ‘‘ idaṃ na kattabban’’ ti paṭikkhittassa akaraṇaṃ, taṃ vārittaṃ.
+  target_quote: ‘这不应作’，不作[ 跋葛瓦 ]如此禁止的[恶行]为止持(vāritta)。
+- unit_id: 64-119-2-12
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-119-2-12
+  line: 329
+  source_quote: Tatiyattike yaṃ dukesu nissitanti vuttaṃ, taṃ taṇhādiṭṭhīhi parāmaṭṭhattā
+    parāmaṭṭhaṃ.
+  target_quote: 在第三组三法中，凡二法中所说的依著[戒]，因为该[戒]以爱见而执取，故名**“执取(parāmaṭṭha)[戒]”**。
+- unit_id: 64-120-2-15
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-120-2-15
+  line: 332
+  source_quote: Catutthattike yaṃ āpattiṃ anāpajjantena pūritaṃ, āpajjitvā vā puna
+    katapaṭikammaṃ, taṃ visuddhaṃ.
+  target_quote: 在第四组三法中，凡以不犯罪而圆满[之戒]，或者违犯后再作忏悔[之戒]，那即是**“清净[戒]”**。
+- unit_id: 64-139-43-76
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-139-43-76
+  line: 365
+  source_quote: Yaṃ pana‘‘ so cakkhunā rūpaṃ disvā na nimittaggāhī hoti nānubyañjanaggāhī,
+    yatvādhikaraṇamenaṃ cakkhundriyaṃ asaṃvutaṃ viharantaṃ abhijjhādomanassā pāpakā
+    akusalā dhammā anvāssaveyyuṃ, tassa saṃvarāya paṭipajjati, rakkhati cakkhundriyaṃ,
+    cakkhundriye saṃvaraṃ…
+  target_quote: 再者，凡[ 跋葛瓦如此 ]说戒：“他以眼见色，不取于相，不取随相，由于不防护眼根而住，贪、忧、诸恶不善法则会侵入，修习防护眼根，守护眼根，实行眼根防护。
+- unit_id: 64-141-37-53
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-141-37-53
+  line: 374
+  source_quote: Tañhi yo naṃ pāti rakkhati, taṃ mokkheti mocayati āpāyikādīhi dukkhehi,
+    tasmā pātimokkhan ti vuccati.
+  target_quote: 因为“若人保护、守护那[戒]，他就能解脱苦界(apāya)等苦”，所以称其为“巴帝摩卡”（即取其护解脱之义）。
+- unit_id: 64-156-2-27
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-156-2-27
+  line: 426
+  source_quote: 15. Yaṃ panetaṃ tadanantaraṃ‘‘ so cakkhunā rūpaṃ disvā’’ tiādinā nayena
+    dassitaṃ indriyasaṃvarasīlaṃ, tattha {so}ti pātimokkhasaṃvarasīle ṭhito bhikkhu.
+  target_quote: 15.紧随前文之后，又以“他眼见色后”等方法显示这根防护戒。此中，“他”即是[通过具足而]住于巴帝摩卡防护戒的比库。
+- unit_id: 64-168-37-54
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-168-37-54
+  line: 469
+  source_quote: Ājīvahetu ājīvakāraṇā‘ yo te vihāre vasati so bhikkhu arahā’ ti bhaṇati,
+    paṭivijānantassa āpatti thullaccayassa.
+  target_quote: （3）因为活命，出于活命而说：“住于你寺院的那位比库是阿拉汉”，[对方]理解时，犯土喇吒亚(thullaccaya)。
+variant_translations:
+- 在二种[戒的]部分中，‘这应当作’，奉行跋葛瓦如此制定的学处为作持(cāritta)。
+- ‘这不应作’，不作[ 跋葛瓦 ]如此禁止的[恶行]为止持(vāritta)。
+- 在第三组三法中，凡二法中所说的依著[戒]，因为该[戒]以爱见而执取，故名**“执取(parāmaṭṭha)[戒]”**。
+- 在第四组三法中，凡以不犯罪而圆满[之戒]，或者违犯后再作忏悔[之戒]，那即是**“清净[戒]”**。
+- 再者，凡[ 跋葛瓦如此 ]说戒：“他以眼见色，不取于相，不取随相，由于不防护眼根而住，贪、忧、诸恶不善法则会侵入，修习防护眼根，守护眼根，实行眼根防护。
+- 因为“若人保护、守护那[戒]，他就能解脱苦界(apāya)等苦”，所以称其为“巴帝摩卡”（即取其护解脱之义）。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.88
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-cause-reason-relation-43b7ef06
+
+```yaml
+id: open-syntax-cause-reason-relation-43b7ef06
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: cause_or_reason
+description: 把原因、条件或依据译为因为、由于、以……为缘。
+grammar_category: cause_or_reason
+source_pattern: kāraṇā / hetu / hetunā / paccayā
+translation_pattern: ？ / 以 / 不 / 如 / 无 / 时
+technique: 把原因、条件或依据译为因为、由于、以……为缘。
+occurrence_count: 143
+chunk_count: 61
+top_chunks:
+- chunk_id: chunk-0121
+  count: 9
+- chunk_id: chunk-0180
+  count: 8
+- chunk_id: chunk-0131
+  count: 7
+- chunk_id: chunk-0182
+  count: 6
+- chunk_id: chunk-0194
+  count: 5
+- chunk_id: chunk-0196
+  count: 5
+- chunk_id: chunk-0097
+  count: 5
+- chunk_id: chunk-0183
+  count: 4
+evidence:
+- unit_id: 64-163-2-21
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-163-2-21
+  line: 441
+  source_quote: Yatvādhikaraṇamenan tiādimhi yaṃkāraṇā yassa cakkhundriyāsaṃvarassa
+    hetu etaṃ puggalaṃ satikavāṭena cakkhundriyaṃ asaṃvutaṃ apihitacakkhudvāraṃ hutvā
+    viharantaṃ ete abhijjhādayo dhammā anvāssaveyyuṃ anubandheyyuṃ.
+  target_quote: 在“若因不防护眼根”等[文句]中，若因不防护眼根即不论因哪种不防护眼根之因，这不以念之窗防护、关闭眼根而住者，便会为这贪婪等法跟随、牵绊。
+- unit_id: 64-786-2-37
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-786-2-37
+  line: 737
+  source_quote: '{Paccayato}ti imesu pana kammaṭṭhānesu ṭhapetvā ākāsakasiṇaṃ sesā
+    nava kasiṇā āruppānaṃ paccayā honti, dasa kasiṇā abhiññānaṃ, tayo brahmavihārā
+    catutthabrahmavihārassa, heṭṭhimaṃ heṭṭhimaṃ āruppaṃ uparimassa uparimassa, nevasaññānāsaññāyatanaṃ
+    nirodhasamāpat…'
+  target_quote: “依缘”：除了这[四十种]业处中的虚空遍(ākāsakasiṇa)以外，其余九遍是无色[定]之缘。十遍是神通之缘。[前]三种梵住是第四种梵住之缘。更下的无色[定]是更上的无色[定]之缘。非想非非想处是灭定(nirodhasamāpatti)之缘。一切[业处]皆是乐住、维巴舍那及有成就之缘。
+- unit_id: 64-2023-62-65
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-2023-62-65
+  line: 1103
+  source_quote: Taṃ kissa hetu?
+  target_quote: 那是什么原因呢？
+- unit_id: 65-125-35-62
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-125-35-62
+  line: 1736
+  source_quote: Ko nu kho, bhante, hetu ko paccayo, yaṃ etarahi neva sineruṃ passāmi…
+    pe… na vejayantassa pāsādassa upari dhajaṃ passāmī’’ ti.
+  target_quote: 尊者，究竟是何因何缘，如今既不能看见须弥山……又看不见胜利殿之上的旗帜呢？”
+- unit_id: 65-260-11-13
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-260-11-13
+  line: 2492
+  source_quote: Kiṃ kāraṇā?
+  target_quote: 为什么呢？
+- unit_id: 65-840-2-11
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-840-2-11
+  line: 2597
+  source_quote: 573. Tatrāyaṃ vacanattho, imesaṃ paccayā idappaccayā.
+  target_quote: 于此，这是[上句话的]语义：这些[老、死等法]的缘为此缘。
+- unit_id: 65-846-2-23
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-846-2-23
+  line: 2633
+  source_quote: 576. Yepi maññanti‘‘ idappaccayānaṃ bhāvo idappaccayatā, bhāvo ca
+    nāma yo ākāro avijjādīnaṃ saṅkhārādipātubhāve hetu, so.
+  target_quote: 576.又有人认为：“此缘的状态为此缘性。所谓**状态（bhāvo）**者，即无明等的运作（行相），[它]在行等的显现中作为原因。
+- unit_id: 65-846-41-91
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-846-41-91
+  line: 2637
+  source_quote: Bhagavatā hi‘‘ tasmātiha, ānanda, eseva hetu, etaṃ nidānaṃ, esa samudayo,
+    esa paccayo jarāmaraṇassa yadidaṃ jāti… pe… saṅkhārānaṃ, yadidaṃ avijjā’’ ti(
+    dī. ni.2.98 ādayo) evaṃ avijjādayova hetūti vuttā, na tesaṃ vikāro.
+  target_quote: 正如跋葛瓦所说：“所以，阿难，于此，唯此是老、死之因，此是因缘，此是集起，此是缘，此即是生……行……此即是无明。“（长部·2·98等）如此，唯有无明等为因。而非其转变[为因]。
+variant_translations:
+- 在“若因不防护眼根”等[文句]中，若因不防护眼根即不论因哪种不防护眼根之因，这不以念之窗防护、关闭眼根而住者，便会为这贪婪等法跟随、牵绊。
+- “依缘”：除了这[四十种]业处中的虚空遍(ākāsakasiṇa)以外，其余九遍是无色[定]之缘。十遍是神通之缘。[前]三种梵住是第四种梵住之缘。更下的无色[定]是更上的无色[定]之缘。非想非非想处…
+- 那是什么原因呢？
+- 尊者，究竟是何因何缘，如今既不能看见须弥山……又看不见胜利殿之上的旗帜呢？”
+- 为什么呢？
+- 于此，这是[上句话的]语义：这些[老、死等法]的缘为此缘。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.87
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-vasena-relation-202efe52
+
+```yaml
+id: open-syntax-vasena-relation-202efe52
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: relation_by_mode
+description: 把方式、依据、范围译为以、依、由于、按照……方式。
+grammar_category: relation_by_mode
+source_pattern: X-vasena
+translation_pattern: 以 / 说 / 如 / 不 / 无 / 依
+technique: 把方式、依据、范围译为以、依、由于、按照……方式。
+occurrence_count: 46
+chunk_count: 36
+top_chunks:
+- chunk_id: chunk-0180
+  count: 4
+- chunk_id: chunk-0085
+  count: 3
+- chunk_id: chunk-0190
+  count: 2
+- chunk_id: chunk-0193
+  count: 2
+- chunk_id: chunk-0199
+  count: 2
+- chunk_id: chunk-0093
+  count: 2
+- chunk_id: chunk-0030
+  count: 2
+- chunk_id: chunk-0188
+  count: 1
+evidence:
+- unit_id: 64-139-147-175
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-139-147-175
+  line: 367
+  source_quote: Yā pana ājīvahetupaññattānaṃ channaṃ sikkhāpadānaṃ vītikkamassa,‘‘
+    kuhanā lapanā nemittikatā nippesikatā lābhena lābhaṃ nijigīsanatā’’ ti evamādīnañca
+    pāpadhammānaṃ vasena pavattā micchājīvā virati, idaṃ ājīvapārisuddhisīlaṃ.
+  target_quote: 再者，违犯因活命而制定的六条学处，以及“诡诈、虚谈、暗示、贬损、以利求利”，远离通过如此等恶法而产生的邪命，这是**“活命遍净戒(ājīvapārisuddhisīla)”**。
+- unit_id: 64-189-64-100
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-189-64-100
+  line: 610
+  source_quote: Iti yvāyaṃ imesaṃ ājīvahetu paññattānaṃ channaṃ sikkhāpadānaṃ vītikkamavasena,
+    imesañca‘‘ kuhanā lapanā nemittikatā nippesikatā lābhena lābhaṃ nijigīsanatā’’
+    ti evamādīnaṃ pāpadhammānaṃ vasena pavatto micchājīvo, yā tasmā sabbappakārāpi
+    micchājīvā virati, ida…
+  target_quote: 如此说这透过违犯因活命而制定的这六条学处及透过“虚伪、攀缘、暗示、贬损”这些恶法而转起的邪命，若远离那邪命，这即是活命遍净戒。
+- unit_id: 64-716-62-80
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-716-62-80
+  line: 685
+  source_quote: Tasmiṃ asati yaṃ kammaṭṭhānaṃ gahetukāmo hoti, tasseva vasena catukkapañcakajjhānāni
+    nibbattetvā jhānapadaṭṭhānaṃ vipassanaṃ vaḍḍhetvā āsavakkhayappattassa khīṇāsavassa
+    santike gahetabbaṃ.
+  target_quote: 若[大弟子也]不在世时，只要有依那[业处]而生起四种或五种禅那，并以禅那为近因而增长维巴沙那(vipassana)后，证达漏尽的漏尽者，想要取得业处者就应在其跟前取得。
+- unit_id: 64-1982-29-68
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-1982-29-68
+  line: 955
+  source_quote: So iti paṭisaṅkhāya rūpānaṃyeva nibbidāya virāgāya nirodhāya paṭipanno
+    hotī’’ ti( ma. ni.2.103) vacanato etesaṃ daṇḍādānādīnañceva cakkhusotarogādīnañca
+    ābādhasahassānaṃ vasena karajarūpe ādīnavaṃ disvā tassa samatikkamāya ṭhapetvā
+    paricchinnākāsakasiṇaṃ nava…
+  target_quote: 由于“为厌离、厌弃、灭除色而行道”之语，因此以[所说]的这握持棍棒等和眼耳之病等数千种疾病而见到粗劣色中的过患。为了超越该[色]，于除了限定虚空遍之外的九遍中任何一遍生起第四禅。
+- unit_id: 64-2025-2-38
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-2025-2-38
+  line: 1109
+  source_quote: 287. Idāni yaṃ taṃ evamadhigatāya saññāya vasena nevasaññānāsaññāyatananti
+    vuccati, taṃ atthato dassetuṃ‘‘ nevasaññānāsaññāyatananti nevasaññānāsaññāyatanaṃ
+    samāpannassa vā upapannassa vā diṭṭhadhammasukhavihārissa vā cittacetasikā dhammā’’
+    ti( vibha.620) vut…
+  target_quote: 287.现在，那[微妙四蕴]以如此证得之想而被称为“非想非非想处”。为从究竟上阐明它而说：“‘非想非非想处’，即入非想非非想处[定]者、投生[该处]者或现法乐住者的心、心所法。”（分别[论]·620）
+- unit_id: 64-2027-68-77
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:64-2027-68-77
+  line: 1123
+  source_quote: Nāḷipūraṇādīnaṃ vasena‘‘ natthī’’ ti hoti.
+  target_quote: 以没有足够装满油筒的油等而说：“没有”。
+- unit_id: 65-6-2-25
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-6-2-25
+  line: 1191
+  source_quote: 365. Idāni yāsaṃ lokikābhiññānaṃ vasena ayaṃ samādhibhāvanā abhiññānisaṃsāti
+    vuttā, tā abhiññā sampādetuṃ yasmā pathavīkasiṇādīsu adhigatacatutthajjhānena
+    yoginā yogo kātabbo.
+  target_quote: 365.现在，凡依某些世间神通而说此修定有神通的利益，就为了成就那些神通故，于地遍等[业处]证得第四禅的禅修者应当勤勉。
+- unit_id: 65-142-27-35
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-142-27-35
+  line: 1856
+  source_quote: Kāyavasena cittaṃ {pariṇāmetī}ti karajakāyassa vasena cittaṃ pariṇāmeti.
+  target_quote: “以身倾向心”：以不净身倾向心。
+variant_translations:
+- 再者，违犯因活命而制定的六条学处，以及“诡诈、虚谈、暗示、贬损、以利求利”，远离通过如此等恶法而产生的邪命，这是**“活命遍净戒(ājīvapārisuddhisīla)”**。
+- 如此说这透过违犯因活命而制定的这六条学处及透过“虚伪、攀缘、暗示、贬损”这些恶法而转起的邪命，若远离那邪命，这即是活命遍净戒。
+- 若[大弟子也]不在世时，只要有依那[业处]而生起四种或五种禅那，并以禅那为近因而增长维巴沙那(vipassana)后，证达漏尽的漏尽者，想要取得业处者就应在其跟前取得。
+- 由于“为厌离、厌弃、灭除色而行道”之语，因此以[所说]的这握持棍棒等和眼耳之病等数千种疾病而见到粗劣色中的过患。为了超越该[色]，于除了限定虚空遍之外的九遍中任何一遍生起第四禅。
+- 287.现在，那[微妙四蕴]以如此证得之想而被称为“非想非非想处”。为从究竟上阐明它而说：“‘非想非非想处’，即入非想非非想处[定]者、投生[该处]者或现法乐住者的心、心所法。”（分别[论]·620）
+- 以没有足够装满油筒的油等而说：“没有”。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.71
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```
+
+## open-syntax-yatha-tatha-correlative-73c1c803
+
+```yaml
+id: open-syntax-yatha-tatha-correlative-73c1c803
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+type: sentence_pattern
+name: correlative_comparison
+description: 把如是对应结构译为如……同样/也……。
+grammar_category: correlative_comparison
+source_pattern: yathā ... tathā ...
+translation_pattern: 如 / 不 / 时 / 当 / 说 / 同样
+technique: 把如是对应结构译为如……同样/也……。
+occurrence_count: 44
+chunk_count: 30
+top_chunks:
+- chunk_id: chunk-0180
+  count: 4
+- chunk_id: chunk-0118
+  count: 4
+- chunk_id: chunk-0042
+  count: 3
+- chunk_id: chunk-0172
+  count: 2
+- chunk_id: chunk-0067
+  count: 2
+- chunk_id: chunk-0041
+  count: 2
+- chunk_id: chunk-0044
+  count: 2
+- chunk_id: chunk-0109
+  count: 2
+evidence:
+- unit_id: 65-95-27-81
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-95-27-81
+  line: 1592
+  source_quote: Tathā vīsayojanasataṃ mahākappinassa paccuggamanaṃ katvā taṃ anāgāmiphale,
+    amaccasahassañcassa sotāpattiphale patiṭṭhāpetvā, tassa anumaggaṃ āgatā sahassitthiparivārā
+    anojādevī āgantvā samīpe nisinnāpi yathā saparisaṃ rājānaṃ na passati, tathā katvā‘‘
+    api, bh…
+  target_quote: 此外，[ 跋葛瓦 ]对马哈咖比那(mahākappina)前迎一百二十由旬，令他住立于不来果(anāgāmiphala)，令他的一千位大臣住立于入流果(sotāpattiphala)。随后，在一千位侍女的陪同下，循道而来的阿耨佳(anojā)王后赶到了。她坐在附近时，怎样能使她们见不到有随从的国王，[佛陀]就那样作。“尊者，您看到国王了吗？”当如此说时，[佛陀说：]“对你而言，寻找国王重要，还是[寻找]自己[重要]？”
+- unit_id: 65-95-82-109
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-95-82-109
+  line: 1593
+  source_quote: ‘‘ Attānaṃ, bhante’’ ti vatvā nisinnāya tassā tathā dhammaṃ desesi,
+    yathā sā saddhiṃ itthisahassena sotāpattiphale patiṭṭhāsi, amaccā anāgāmiphale,
+    rājā arahatteti.
+  target_quote: “[寻找]自己，尊者！”说完，[佛陀]同样为坐着的她说法时，她与一千位侍女一起住立于入流果，大臣们[住立于]不来果，国王[住立于]阿拉汉[果]。
+- unit_id: 65-123-49-64
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-123-49-64
+  line: 1732
+  source_quote: Atha bhagavā yathā nāgarājā passati, tathā katvā tassa vitānamatthakeneva
+    pañcahi bhikkhusatehi saddhiṃ tāvatiṃsadevalokābhimukho pāyāsi.
+  target_quote: 当时，跋葛瓦怎样使龙王看见，就那样作后，与五百位比库一起途经他的宫殿上方而朝三十三天界行进。
+- unit_id: 65-850-67-106
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-850-67-106
+  line: 2648
+  source_quote: Tassa cāyaṃ hetusamūho paccayoti tappaccayattā ayampi, yathā loke
+    semhassa paccayo guḷo semho {guḷo}ti vuccati, yathā ca sāsane sukhappaccayo buddhānaṃ
+    uppādo‘‘ sukho buddhānaṃ uppādo’’ ti vuccati, tathā paṭiccasamuppādo icceva phalavohārena
+    vuttoti veditabbo.
+  target_quote: 此外，由于这些因的组合是那些[果的组合]之缘，故为彼缘。譬如，将世间中作为痰之缘的糖称为“痰糖”；又如，将作为快乐之缘的佛陀出现称为“诸佛出现乐”。同样地，当知，只以果的名义而称为缘起。
+- unit_id: 65-1060-2-36
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-1060-2-36
+  line: 2971
+  source_quote: Yathā hi rukkhasaṅkhātānaṃ dhammānaṃ ekadesabhūtassa rukkhaphalassa
+    uppattiyā eva rukkho phalatīti vā phalitoti vā vuccati, tathā devamanussasaṅkhātānaṃ
+    khandhānaṃ ekadesabhūtassa upabhogasaṅkhātassa sukhadukkhaphalassa uppādeneva
+    devo, manusso vā upabhuñjatī…
+  target_quote: 正如只是通过称为树的部分法的树果的生起，而将树说为结果或得果；同样地，只是通过称为天与人部分蕴的名为受用物的苦乐之果的生起，而将天或人说为能受用或有苦乐。
+- unit_id: 65-1122-2-10
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-1122-2-10
+  line: 3004
+  source_quote: Yathā ca paccayo hoti, tathā neyyaṃ vibhāvinā.
+  target_quote: 以及如何而为缘，智者应当如是知。
+- unit_id: 65-1136-32-52
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-1136-32-52
+  line: 3028
+  source_quote: Evaṃ tāva nāmameva paṭisandhiyaṃ pavatte vā yassa yassa āyatanassa
+    paccayo hoti, yathā ca paccayo hoti, tathā veditabbaṃ.
+  target_quote: 当先如此了知，名在结生时和生命期间对哪些处是缘，怎样为缘。
+- unit_id: 65-1144-70-88
+  unit_key: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3:65-1144-70-88
+  line: 3041
+  source_quote: Evaṃ rūpameva paṭisandhiyaṃ pavatte vā yassa yassa āyatanassa paccayo
+    hoti, yathā ca paccayo hoti, tathā veditabbaṃ.
+  target_quote: 当如是了知色在结生时和生命期间对哪些处为缘，如何为缘。
+variant_translations:
+- 此外，[ 跋葛瓦 ]对马哈咖比那(mahākappina)前迎一百二十由旬，令他住立于不来果(anāgāmiphala)，令他的一千位大臣住立于入流果(sotāpattiphala)。随后，在一千位…
+- “[寻找]自己，尊者！”说完，[佛陀]同样为坐着的她说法时，她与一千位侍女一起住立于入流果，大臣们[住立于]不来果，国王[住立于]阿拉汉[果]。
+- 当时，跋葛瓦怎样使龙王看见，就那样作后，与五百位比库一起途经他的宫殿上方而朝三十三天界行进。
+- 此外，由于这些因的组合是那些[果的组合]之缘，故为彼缘。譬如，将世间中作为痰之缘的糖称为“痰糖”；又如，将作为快乐之缘的佛陀出现称为“诸佛出现乐”。同样地，当知，只以果的名义而称为缘起。
+- 正如只是通过称为树的部分法的树果的生起，而将树说为结果或得果；同样地，只是通过称为天与人部分蕴的名为受用物的苦乐之果的生起，而将天或人说为能受用或有苦乐。
+- 以及如何而为缘，智者应当如是知。
+conditions:
+- 由开放式句法信号全量发现；需人工判断是否可提升为翻译规则。
+counter_examples: []
+confidence: 0.7
+review_status: machine_generated
+discovery_method: open_syntactic_signal
+```

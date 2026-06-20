@@ -1,0 +1,47 @@
+version_id: 331447b6-39bb-4b49-ac10-6206db93a050
+display_name: 钱玮
+source_file: translations/331447b6-39bb-4b49-ac10-6206db93a050.jsonl
+source_language: pi
+target_language: zh
+record_count: 6350
+translator: 钱玮
+review_status: machine_generated_full_draft
+raw_schema:
+  fields:
+  - id
+  - original
+  - translation
+  - category
+  - path
+observed_quality:
+  valid_jsonl: true
+  unique_ids_within_version: true
+  empty_category_path_records: []
+style_profile:
+  summary: 解释性、讨论型，常保留巴利词形、补足隐含关系并拆分复杂说明。
+  literalness: medium
+  explanatory_density: high
+  pali_retention: high
+  bracketed_supplements: high
+  line_break_usage: medium
+statistics:
+  multiline_translation_count: 94
+  parenthetical_pali_candidate_count: 1411
+  bracketed_translation_count: 1288
+  average_source_length_chars: 86.42
+  average_target_length_chars: 40.27
+derived_outputs:
+  chunk_count: 117
+  terminology_entries: 1756
+  collocation_entries: 200
+  sentence_pattern_entries: 18
+  style_observation_entries: 3
+  strategy_entries: 5
+  evidence_rows: 6721
+  style_markdown_format: natural_language
+  style_prompt: style-prompt.md
+  generated_by: scripts/build_version_kb.py
+  markdown_yaml_entries: 1979
+  collocation_discovery: open_default
+  sentence_pattern_discovery: open_default
+  strategy_discovery: open_synthesis

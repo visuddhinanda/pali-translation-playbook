@@ -1,0 +1,47 @@
+version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+display_name: 法护-Dhammapāla
+source_file: translations/7ac4d13b-a43d-4409-91b5-5f2a82b916b3.jsonl
+source_language: pi
+target_language: zh
+record_count: 19345
+translator: 法护-Dhammapāla
+review_status: machine_generated_full_draft
+raw_schema:
+  fields:
+  - id
+  - original
+  - translation
+  - category
+  - path
+observed_quality:
+  valid_jsonl: true
+  unique_ids_within_version: true
+  empty_category_path_records: []
+style_profile:
+  summary: 解释性、讨论型，常保留巴利词形、补足隐含关系并拆分复杂说明。
+  literalness: medium
+  explanatory_density: high
+  pali_retention: high
+  bracketed_supplements: high
+  line_break_usage: medium
+statistics:
+  multiline_translation_count: 963
+  parenthetical_pali_candidate_count: 2832
+  bracketed_translation_count: 5605
+  average_source_length_chars: 92.56
+  average_target_length_chars: 35.87
+derived_outputs:
+  chunk_count: 200
+  terminology_entries: 3775
+  collocation_entries: 200
+  sentence_pattern_entries: 18
+  style_observation_entries: 3
+  strategy_entries: 5
+  evidence_rows: 21100
+  style_markdown_format: natural_language
+  style_prompt: style-prompt.md
+  generated_by: scripts/build_version_kb.py
+  markdown_yaml_entries: 3998
+  collocation_discovery: open_default
+  sentence_pattern_discovery: open_default
+  strategy_discovery: open_synthesis

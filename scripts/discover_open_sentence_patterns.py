@@ -339,6 +339,7 @@ def main() -> None:
     parser.add_argument("--chunk-plan", type=Path, required=True)
     parser.add_argument("--kb-dir", type=Path, required=True)
     parser.add_argument("--limit", type=int, default=120)
+    parser.add_argument("--output-stem", default="sentence-patterns")
     args = parser.parse_args()
 
     records = load_records(args.source_file)
@@ -347,8 +348,10 @@ def main() -> None:
 
     entries_dir = args.kb_dir / "entries"
     entries_dir.mkdir(parents=True, exist_ok=True)
-    write_jsonl(entries_dir / "sentence-patterns-open.jsonl", candidates)
-    write_markdown(args.kb_dir / "sentence-patterns-open.md", candidates, args.source_file, len(chunks))
+    output_jsonl = entries_dir / f"{args.output_stem}.jsonl"
+    output_markdown = args.kb_dir / f"{args.output_stem}.md"
+    write_jsonl(output_jsonl, candidates)
+    write_markdown(output_markdown, candidates, args.source_file, len(chunks))
     print(
         json.dumps(
             {
@@ -356,8 +359,8 @@ def main() -> None:
                 "records": len(records),
                 "chunks": len(chunks),
                 "candidates": len(candidates),
-                "output_markdown": str(args.kb_dir / "sentence-patterns-open.md"),
-                "output_jsonl": str(entries_dir / "sentence-patterns-open.jsonl"),
+                "output_markdown": str(output_markdown),
+                "output_jsonl": str(output_jsonl),
             },
             ensure_ascii=False,
             indent=2,

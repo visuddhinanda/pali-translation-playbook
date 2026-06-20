@@ -1,0 +1,262 @@
+{
+  "record_count": 6350,
+  "unique_id_count": 6350,
+  "empty_category_or_path": [],
+  "source_length": {
+    "average": 86.42,
+    "median": 67.0,
+    "max": 935
+  },
+  "target_length": {
+    "average": 40.27,
+    "median": 30.0,
+    "max": 426
+  },
+  "top_categories": [
+    {
+      "value": "añña > ṭīkā > visuddhimagga",
+      "count": 2812
+    },
+    {
+      "value": "sutta > aṭṭhakathā > khuddakanikāya",
+      "count": 1058
+    },
+    {
+      "value": "añña > byākaraṇa ganthasaṅgaha > nirutti",
+      "count": 551
+    },
+    {
+      "value": "ṭīkā > abhidhamma > vibhaṅga",
+      "count": 307
+    },
+    {
+      "value": "ṭīkā > abhidhamma > dhātukathā",
+      "count": 302
+    },
+    {
+      "value": "sutta > aṭṭhakathā > aṅguttaranikāya",
+      "count": 185
+    },
+    {
+      "value": "abhidhamma > aṭṭhakathā > dhātukathā",
+      "count": 161
+    },
+    {
+      "value": "ṭīkā > sutta > aṅguttaranikāya",
+      "count": 151
+    },
+    {
+      "value": "añña > aṭṭhakathā > visuddhimagga",
+      "count": 137
+    },
+    {
+      "value": "sutta > mūla > pāḷi",
+      "count": 127
+    },
+    {
+      "value": "abhidhamma > aṭṭhakathā > dhammasaṅgaṇī",
+      "count": 113
+    },
+    {
+      "value": "sutta > aṭṭhakathā > papañcasūdanī",
+      "count": 105
+    },
+    {
+      "value": "sutta > aṭṭhakathā > sāratthappakāsinī",
+      "count": 60
+    },
+    {
+      "value": "ṭīkā > sutta > dīghanikāya",
+      "count": 50
+    },
+    {
+      "value": "ṭīkā > sutta > saṃyuttanikāya",
+      "count": 38
+    },
+    {
+      "value": "sutta > aṭṭhakathā > dīghanikāya",
+      "count": 25
+    },
+    {
+      "value": "abhidhamma > mūla > pāḷi",
+      "count": 22
+    },
+    {
+      "value": "ṭīkā > abhidhamma > pāḷi",
+      "count": 19
+    },
+    {
+      "value": "ṭīkā > sutta > majjhimanikāya",
+      "count": 18
+    },
+    {
+      "value": "sutta > khuddakanikāya > mūla",
+      "count": 16
+    }
+  ],
+  "top_paths": [
+    {
+      "value": "visuddhimagga-mahāṭīkā > Visuddhimagga-mahāṭīkā(Paṭhamo bhāgo)",
+      "count": 1462
+    },
+    {
+      "value": "visuddhimagga-mahāṭīkā > Visuddhimagga-mahāṭīkā(Dutiyo bhāgo)",
+      "count": 1350
+    },
+    {
+      "value": "vimānavatthu-aṭṭhakathā > Vimānavatthu-aṭṭhakathā",
+      "count": 810
+    },
+    {
+      "value": "mahākaccāyanasaddāpāṭha > Mahākaccāyanasaddāpāṭha",
+      "count": 536
+    },
+    {
+      "value": "anuṭīkā > Vibhaṅga-anuṭīkā",
+      "count": 291
+    },
+    {
+      "value": "anuṭīkā > Paṭṭhānapakaraṇa-anuṭīkā",
+      "count": 197
+    },
+    {
+      "value": "jātaka-aṭṭhakathā > Jātaka-aṭṭhakathā(Dutiyo bhāgo)",
+      "count": 195
+    },
+    {
+      "value": "paṭṭhānappakaraṇa-aṭṭhakathā > Paṭṭhānappakaraṇa-aṭṭhakathā",
+      "count": 155
+    },
+    {
+      "value": "manorathapūraṇī > Dukanipāta-aṭṭhakathā",
+      "count": 133
+    },
+    {
+      "value": "dukanipāta-ṭīkā > Dukanipāta-ṭīkā",
+      "count": 131
+    },
+    {
+      "value": "visuddhimagga > Visuddhimaggo(Dutiyo bhāgo)",
+      "count": 123
+    },
+    {
+      "value": "dukanipātapāḷi > Dukanipātapāḷi",
+      "count": 122
+    },
+    {
+      "value": "dhammasaṅgaṇī-aṭṭhakathā > Dhammasaṅgaṇī-aṭṭhakathā",
+      "count": 113
+    },
+    {
+      "value": "mūlaṭīkā > Paṭṭhānapakaraṇa-mūlaṭīkā",
+      "count": 105
+    },
+    {
+      "value": "papañcasūdanī > (MN) Mūlapaṇṇāsa-aṭṭhakathā",
+      "count": 92
+    },
+    {
+      "value": "sāratthappakāsinī > (SN) Nidānavagga-aṭṭhakathā",
+      "count": 48
+    },
+    {
+      "value": "līnatthappakāsanā > (SN)Nidānavagga-ṭīkā",
+      "count": 37
+    },
+    {
+      "value": "līnatthappakāsanā > (DN)Mahāvaggaṭīkā",
+      "count": 35
+    },
+    {
+      "value": "dhammasaṅgaṇīpāḷi > Dhammasaṅgaṇīpāḷi",
+      "count": 21
+    },
+    {
+      "value": "manorathapūraṇī > Tikanipāta-aṭṭhakathā",
+      "count": 20
+    }
+  ],
+  "source_signals": {
+    "paccayo": 99,
+    "vuccati": 79,
+    "nāma": 200,
+    "vā": 372,
+    "absolutive_tvā": 698,
+    "ti_or_iti": 2897
+  },
+  "target_signals": {
+    "parenthetical_pali": 1411,
+    "square_bracket_supplement": 1288,
+    "newline": 94
+  },
+  "chinese_markers": [
+    {
+      "value": "以",
+      "count": 1259
+    },
+    {
+      "value": "即",
+      "count": 1184
+    },
+    {
+      "value": "由于",
+      "count": 753
+    },
+    {
+      "value": "被",
+      "count": 681
+    },
+    {
+      "value": "应",
+      "count": 485
+    },
+    {
+      "value": "义",
+      "count": 456
+    },
+    {
+      "value": "因此",
+      "count": 400
+    },
+    {
+      "value": "或",
+      "count": 388
+    },
+    {
+      "value": "这里",
+      "count": 268
+    },
+    {
+      "value": "称为",
+      "count": 229
+    },
+    {
+      "value": "根据",
+      "count": 105
+    },
+    {
+      "value": "故为",
+      "count": 57
+    },
+    {
+      "value": "所谓",
+      "count": 39
+    },
+    {
+      "value": "名为",
+      "count": 35
+    },
+    {
+      "value": "后缀",
+      "count": 33
+    },
+    {
+      "value": "其中",
+      "count": 29
+    },
+    {
+      "value": "如是",
+      "count": 28
+    }
+  ]
+}

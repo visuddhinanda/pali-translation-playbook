@@ -33,11 +33,15 @@ statistics:
 derived_outputs:
   chunk_count: 191
   terminology_entries: 4039
-  collocation_entries: 4
-  sentence_pattern_entries: 4
+  collocation_entries: 200
+  sentence_pattern_entries: 18
   style_observation_entries: 3
-  strategy_entries: 4
+  strategy_entries: 5
   evidence_rows: 16861
   style_markdown_format: natural_language
   style_prompt: style-prompt.md
   generated_by: scripts/build_version_kb.py
+  markdown_yaml_entries: 4262
+  collocation_discovery: open_default
+  sentence_pattern_discovery: open_default
+  strategy_discovery: open_synthesis

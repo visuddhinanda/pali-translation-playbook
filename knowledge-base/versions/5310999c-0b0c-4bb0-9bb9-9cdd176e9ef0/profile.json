@@ -1,0 +1,126 @@
+{
+  "record_count": 8650,
+  "unique_id_count": 8650,
+  "empty_category_or_path": [],
+  "source_length": {
+    "average": 91.69,
+    "median": 65.0,
+    "max": 2502
+  },
+  "target_length": {
+    "average": 33.55,
+    "median": 24.0,
+    "max": 1087
+  },
+  "top_categories": [
+    {
+      "value": "sutta > aṭṭhakathā > khuddakanikāya",
+      "count": 8647
+    },
+    {
+      "value": "sutta > khuddakanikāya > mūla",
+      "count": 2
+    },
+    {
+      "value": "ṭīkā > sutta > khuddakanikāya",
+      "count": 1
+    }
+  ],
+  "top_paths": [
+    {
+      "value": "dhammapada-aṭṭhakathā > Dhammapada-aṭṭhakathā",
+      "count": 8638
+    },
+    {
+      "value": "udāna-aṭṭhakathā > Udāna-aṭṭhakathā",
+      "count": 9
+    },
+    {
+      "value": "udānapāḷi > Udānapāḷi",
+      "count": 2
+    },
+    {
+      "value": "nettivibhāvinī > Nettivibhāvinī",
+      "count": 1
+    }
+  ],
+  "source_signals": {
+    "paccayo": 6,
+    "vuccati": 28,
+    "nāma": 595,
+    "vā": 257,
+    "absolutive_tvā": 3006,
+    "ti_or_iti": 4321
+  },
+  "target_signals": {
+    "parenthetical_pali": 865,
+    "square_bracket_supplement": 1602,
+    "newline": 595
+  },
+  "chinese_markers": [
+    {
+      "value": "以",
+      "count": 838
+    },
+    {
+      "value": "被",
+      "count": 341
+    },
+    {
+      "value": "即",
+      "count": 321
+    },
+    {
+      "value": "义",
+      "count": 277
+    },
+    {
+      "value": "应",
+      "count": 247
+    },
+    {
+      "value": "或",
+      "count": 218
+    },
+    {
+      "value": "由于",
+      "count": 164
+    },
+    {
+      "value": "因此",
+      "count": 143
+    },
+    {
+      "value": "这里",
+      "count": 100
+    },
+    {
+      "value": "名为",
+      "count": 92
+    },
+    {
+      "value": "称为",
+      "count": 84
+    },
+    {
+      "value": "如是",
+      "count": 70
+    },
+    {
+      "value": "其中",
+      "count": 51
+    },
+    {
+      "value": "所谓",
+      "count": 23
+    },
+    {
+      "value": "故为",
+      "count": 17
+    },
+    {
+      "value": "根据",
+      "count": 3
+    }
+  ]
+}

@@ -9,11 +9,39 @@ versions:
   source_language: pi
   target_language: zh
   kb_path: knowledge-base/versions/3b0cb0aa-ea88-4ce5-b67d-00a3e76220cc
-  status: pilot
+  status: machine_generated_full_draft
 - version_id: e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43
   source_file: translations/e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43.jsonl
   display_name: 初译·高级班内部讨论
   source_language: pi
   target_language: zh-Hans
   kb_path: knowledge-base/versions/e5bc5c97-a6fb-4ccb-b7df-be6dcfee9c43
+  status: machine_generated_full_draft
+- version_id: 331447b6-39bb-4b49-ac10-6206db93a050
+  source_file: translations/331447b6-39bb-4b49-ac10-6206db93a050.jsonl
+  display_name: 钱玮
+  source_language: pi
+  target_language: zh
+  kb_path: knowledge-base/versions/331447b6-39bb-4b49-ac10-6206db93a050
+  status: machine_generated_full_draft
+- version_id: 5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0
+  source_file: translations/5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0.jsonl
+  display_name: 法句义注中译组——一校
+  source_language: pi
+  target_language: zh
+  kb_path: knowledge-base/versions/5310999c-0b0c-4bb0-9bb9-9cdd176e9ef0
+  status: machine_generated_full_draft
+- version_id: 74ebf4c5-c243-4948-955d-6c277e29276a
+  source_file: translations/74ebf4c5-c243-4948-955d-6c277e29276a.jsonl
+  display_name: 云台教理组
+  source_language: pi
+  target_language: zh
+  kb_path: knowledge-base/versions/74ebf4c5-c243-4948-955d-6c277e29276a
+  status: machine_generated_full_draft
+- version_id: 7ac4d13b-a43d-4409-91b5-5f2a82b916b3
+  source_file: translations/7ac4d13b-a43d-4409-91b5-5f2a82b916b3.jsonl
+  display_name: 法护-Dhammapāla
+  source_language: pi
+  target_language: zh
+  kb_path: knowledge-base/versions/7ac4d13b-a43d-4409-91b5-5f2a82b916b3
   status: machine_generated_full_draft
